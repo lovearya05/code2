@@ -1,0 +1,59 @@
+.container {
+  /* background-color: grey; */
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainView {
+  width: 20vw;
+  background-color: green;
+  height: 100vh;
+}
+
+.logoDiv {
+  /* margin-left: 50; */
+  margin-left: 16px;
+  margin-right: 16px;
+  padding-left: 40;
+  margin-top: 18vh;
+}
+
+.logoImg {
+  /* margin-left: 16px; */
+  height: 30vw;
+}
+
+.logoText {
+  height: 5vw;
+  margin-top: 2vh;
+}
+
+/* .side1{
+  display: flex;
+  flex: 1;
+} */
+.text1 {
+  color: #fff;
+  font-size: 14vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-top: 10px;
+}
+
+@media (max-width: 420px) {
+  .container {
+    display: grid;
+    /* flex: 1;
+    flex-direction: row; */
+  }
+
+  .mainView {
+    width: 100vw;
+    background-color: var(--backColor);
+    height: 100vh;
+  }
+}
