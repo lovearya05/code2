@@ -1,0 +1,12 @@
+.socialMedia {
+  display: flex;
+  flex-direction: row;
+  /* width: 50%; */
+  justify-content: space-around;
+}
+.socialMedia > img {
+  margin: 0 15px;
+  border: 1px solid #404040;
+  padding: 4px;
+  border-radius: 5px;
+}

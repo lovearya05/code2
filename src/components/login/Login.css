@@ -1,0 +1,112 @@
+.loginPage {
+  background: #272727;
+  height: 100vh;
+}
+.loginLogoImg {
+  width: 28.993px;
+  height: 29.5px;
+}
+
+.loginPageText img {
+  margin-left: 10px;
+  width: 40%;
+}
+.loginPageLeft {
+  height: 50%;
+}
+/* upperLogin Part */
+.upperLoginPart {
+  padding: 12% 7%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.loginPageText {
+  display: flex;
+  width: 100%;
+  align-items: center; /* Align content vertically in the center */
+  margin-left: 4%; /* Position it 8% from the left */
+}
+
+.loginPageText h2 {
+  color: #fff;
+  font-family: "Poppins", sans-serif; /* Use proper font-family syntax */
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0; /* Remove default margin to prevent extra space */
+}
+
+.loginPageText img.logoText {
+  margin-left: 15px; /* Add space between the image and text */
+  max-height: 100%; /* Ensure the image does not exceed the container height */
+}
+/* Middle part of login page */
+.inputTextBox {
+  padding: 12% 7%;
+}
+.forgotText {
+  color: #fff;
+  font-family: Poppins;
+  margin-top: 0px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.alreadyUser {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.alreadyUser > p {
+  margin-right: 5px;
+  color: #fff;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.alreadyUser > a {
+  text-decoration: none;
+  color: #00955f;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration-line: underline;
+}
+.continue {
+  text-align: center;
+  color: #a9a3a3;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.bottomLogin {
+  text-align: center;
+}
+.bottomLogin p {
+  color: #a9a3a3;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.bottomLogin > p > a {
+  color: #00955f;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration-line: underline;
+}

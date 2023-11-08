@@ -38,7 +38,8 @@
 .text1 {
   color: #fff;
   font-size: 14vw;
-  font-style: normal;
+  font-family: 'Poppins', sans-serif;
+  /* font-style: normal; */
   font-weight: 600;
   line-height: normal;
   margin-top: 10px;
