@@ -1,10 +1,10 @@
 .profileBox {
   display: flex;
-  flex-direction: row;
-  /* justify-content: space-around; */
+  flex-direction: column;
+  justify-content: space-around;
   justify-content: center;
   align-items: center;
-  padding: 6px 10px;
+  /* padding: 6px 10px; */
   border-radius: 8px;
   background: linear-gradient(
       0deg,
@@ -12,9 +12,10 @@
       rgba(255, 255, 255, 0.05) 100%
     ),
     rgba(0, 0, 0, 0.64);
-  margin: 15px 0px;
-  border: 1px solid #3dc182;
-  width: 55%;
+  margin: 15px 15px;
+  border: 1px solid transparent;
+  width: 150px;
+  height: 140px;
 }
 .profileBox > p {
   color: #3dc182;

@@ -1,6 +1,5 @@
 .profile {
   background: #272727;
-  height: 100vh;
 }
 .profile > h2 {
   color: #fff;
@@ -15,7 +14,7 @@
 }
 .boxes {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 }

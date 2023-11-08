@@ -1,0 +1,55 @@
+.otpScreen {
+  padding: 50px 15px 0px;
+}
+.otpScreen .otpScreenText > h2 {
+  color: #fff;
+  font-family: Poppins;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0px;
+}
+.otpScreen > .otpScreenText > p {
+  margin: 0px;
+  color: #d6d6d6;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.otpEmail {
+  color: #00955f;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.otpBoxes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.timer {
+}
+.timer p {
+  /* margin: 0px; */
+  color: #d6d6d6;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.timer > p > span {
+  color: #f0ad00;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}

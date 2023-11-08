@@ -1,6 +1,6 @@
 import React from "react";
 import code2Logo from "../../assets/code2Logo.svg";
-import "./Signup.css";
+import "../login/Login.css";
 import code2LogoText from "../../assets/code2LogoText.svg";
 import InputText from "../login/EssentialComponents/InputText";
 import InputBox from "../login/EssentialComponents/InputBox";

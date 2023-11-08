@@ -1,64 +1,24 @@
 .container {
-  /* background-color: grey; */
-  display: flex;
-  flex: 1;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  padding: 15px;
+  margin-top: 32%;
 }
 
 .mainView {
-  width: 20vw;
   background-color: var(--backColor);
-  height: 100vh;
 }
-
-.logoDiv {
-  /* margin-left: 50; */
-  margin-top: 20vh;
-  margin-left: 16px;
-  margin-right: 16px;
-  padding-left: 40;
+.logoDiv .logoImg {
+  width: 40%;
+  margin-bottom: 30px;
 }
-
-.logoImg {
-  /* margin-left: 16px; */
-  height: 8vw;
+.logoDiv .logoText {
+  width: 25%;
 }
-
-.logoText {
-  height: 1vw;
-  margin-top: 2vh;
-}
-
-/* .side1{
-  display: flex;
-  flex: 1;
-} */
 .text1splash {
   color: #fff;
-  font-size: 2vw;
-  font-family: 'Poppins', sans-serif;
+  font-size: 3.2rem;
+  font-family: "Poppins", sans-serif;
   /* font-style: normal; */
   font-weight: 600;
   line-height: normal;
   margin-top: 10px;
-}
-
-@media (max-width: 420px) {
-  .container {
-    display: grid;
-    /* flex: 1;
-    flex-direction: row; */
-  }
-
-  .mainView {
-    width: 100vw;
-    background-color: var(--backColor);
-    height: 100vh;
-  }
-  .text1splash {
-    font-size: 4vw;
-    margin-top: 10px;
-  }
 }
