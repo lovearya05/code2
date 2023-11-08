@@ -1,0 +1,15 @@
+.greenButton {
+  border-radius: 8px;
+  background: #00955f;
+  padding: 10px 10px;
+  text-align: center;
+  width: 100%;
+  color: #fff;
+  font-family: Poppins;
+  border: 1px solid #00955f;
+  margin-top: 25px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}

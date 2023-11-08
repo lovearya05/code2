@@ -37,8 +37,9 @@
 } */
 .text1splash {
   color: #fff;
-  font-size: 3vw;
-  font-style: normal;
+  font-size: 2vw;
+  font-family: 'Poppins', sans-serif;
+  /* font-style: normal; */
   font-weight: 600;
   line-height: normal;
   margin-top: 10px;
@@ -55,5 +56,9 @@
     width: 100vw;
     background-color: var(--backColor);
     height: 100vh;
+  }
+  .text1splash {
+    font-size: 4vw;
+    margin-top: 10px;
   }
 }
