@@ -15,3 +15,20 @@ code {
 :root{
   --backColor : #272727
 }
+
+.allCenter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.marTop3{
+  margin-top: 1.6vw;
+}
+.text12gry4{
+  color: #A9A3A3;
+  font-size: 1vw;
+}
+.row{
+  display: flex;
+  flex-direction: row;
+}
