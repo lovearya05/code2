@@ -24,11 +24,6 @@ const Profile = () => {
           isSelected={selectedButton === "Business"}
           onClick={() => handleButtonClick("Business")}
         />
-        <ProfileBox
-          title="Admin"
-          isSelected={selectedButton === "Admin"}
-          onClick={() => handleButtonClick("Admin")}
-        />
       </div>
 
       <div className="button">

@@ -17,8 +17,8 @@ const Login = () => {
             <img src={code2Logo} alt="" className="loginLogoImg" />
           </div>
           <div className="loginPageText">
-            <h2>Sign In to</h2>
-            <img className="loginTextlogo" src={code2LogoText} alt="" />
+            <h2>Welcome Back</h2>
+            {/* <img className="loginTextlogo" src={code2LogoText} alt="" /> */}
           </div>
         </div>
         {/* Middle part of login page */}

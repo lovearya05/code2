@@ -4,15 +4,23 @@ import Splash from "../login/Splash";
 import Login from "../login/Login";
 import Signup from "../Signup/Signup";
 import Profile from "../Profile/Profile";
+import OtpScreen from "../OtpScreen/OtpScreen";
 
 export default function RoutesServer() {
   return (
-    <Routes>
-      <Route exact path="/splash" element={<Splash />}></Route>
-      <Route exact path="/login" element={<Login />}></Route>
-      <Route exact path="/signup" element={<Signup />}></Route>
-      <Route exact path="/" element={<Profile />}></Route>
-      {/* <Route exact path='/signup' element={< Signup />}></Route> */}
-    </Routes>
+    <div style={{ backgroundColor: "#272727", width: "100%" }}>
+      <div
+        style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
+      >
+        <Routes>
+          <Route exact path="/splash" element={<Splash />}></Route>
+          <Route exact path="/login" element={<Login />}></Route>
+          <Route exact path="/signup" element={<Signup />}></Route>
+          <Route exact path="/profile" element={<Profile />}></Route>
+          <Route exact path="/otp" element={<OtpScreen />}></Route>
+          {/* <Route exact path='/signup' element={< Signup />}></Route> */}
+        </Routes>
+      </div>
+    </div>
   );
 }
