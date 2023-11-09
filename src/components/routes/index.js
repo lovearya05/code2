@@ -17,7 +17,7 @@ export default function RoutesServer() {
                 <Routes>
                     <Route exact path="/code2/" element={<Splash />}></Route>
                     <Route exact path="/code2/login" element={<Login />}></Route>
-                    <Route exact path="/code2/signup" element={<Signup />}></Route>
+                    <Route exact path="/signup" element={<Signup />}></Route>
                     <Route exact path="/code2/profile" element={<Profile />}></Route>
                     {/* <Route exact path="/otp" element={<OtpScreen />}></Route> */}
                     <Route exact path='/code2/temp' element={< Temp />}></Route>
