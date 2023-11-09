@@ -36,7 +36,6 @@ const Signup = () => {
 
   const handleSenOtp = async () => {
     if (loading) return
-    setLaoding(true)
     const emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
     if (!email || !emailPattern.test(email)) {
       toast('Please enter a valid Email')
@@ -46,6 +45,7 @@ const Signup = () => {
       toast('Password should be 6 chracter long')
       return
     }
+    setLaoding(true)
     await sendEmail()
     setLaoding(false)
   }
