@@ -101,7 +101,7 @@ const Login = () => {
             </div>
             <div onClick={handleGoToSignup} className="alreadyUser">
               <p>Want to register?</p>
-              <p>Sign up</p>
+              <p style={{color : '#00955F'}} >Sign up</p>
             </div>
             <p className="continue">Or continue with</p>
             <div className="socialMedia">

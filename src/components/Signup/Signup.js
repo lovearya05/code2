@@ -163,7 +163,7 @@ const Signup = () => {
               </div>
               <div className="alreadyUser" onClick={handleGotoLogin}>
                 <p>Already a user?</p>
-                <p>Login here</p>
+                <p style={{color : '#00955F'}} >Login here</p>
               </div>
               <p className="continue">Or continue with</p>
               <div className="socialMedia">
