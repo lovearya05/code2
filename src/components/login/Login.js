@@ -69,6 +69,9 @@ const Login = () => {
     setLaoding(false)
   }
 
+  const handleGoToSignup =()=>{
+    navigate('/code2/signup',{ replace: true })
+  }
 
   return (
     <>
@@ -96,9 +99,9 @@ const Login = () => {
             <div>
               <GreenButton buttonText="Login" onClickFunc={handlleLoginClick} />
             </div>
-            <div className="alreadyUser">
+            <div onClick={handleGoToSignup} className="alreadyUser">
               <p>Want to register?</p>
-              <a href="/code2/signup">Sign up</a>
+              <p>Sign up</p>
             </div>
             <p className="continue">Or continue with</p>
             <div className="socialMedia">

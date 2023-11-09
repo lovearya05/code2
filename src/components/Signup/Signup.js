@@ -124,6 +124,9 @@ const Signup = () => {
         });
     }
   }
+  const handleGotoLogin = ()=>{
+    navigate('/code2/login',{ replace: true }) 
+  }
 
   if (showOptPage) {
     return (
@@ -158,9 +161,9 @@ const Signup = () => {
               <div onClick={() => handleSenOtp()} >
                 <GreenButton buttonText="Send me OTP" />
               </div>
-              <div className="alreadyUser">
+              <div className="alreadyUser" onClick={handleGotoLogin}>
                 <p>Already a user?</p>
-                <a href="/code2/login">Login here</a>
+                <p>Login here</p>
               </div>
               <p className="continue">Or continue with</p>
               <div className="socialMedia">
