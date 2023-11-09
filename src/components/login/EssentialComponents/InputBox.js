@@ -1,9 +1,10 @@
 import React from "react";
 import "./InputBox.css";
-const InputBox = ({ placeholdeText }) => {
+const InputBox = ({ placeholdeText='',type='text', setValue=()=>{} }) => {
   return (
     <input
       className="inputBox"
+      type={type}
       placeholder={placeholdeText}
       style={{
         width: "95%",
@@ -13,6 +14,7 @@ const InputBox = ({ placeholdeText }) => {
         paddingTop: "6px",
         paddingBottom: "6px",
       }}
+      onChange={(e)=>setValue(e.target.value)}
     />
   );
 };

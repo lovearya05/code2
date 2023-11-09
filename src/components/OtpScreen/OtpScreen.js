@@ -3,15 +3,16 @@ import GreenButton from "../login/EssentialComponents/GreenButton";
 import "./OtpScreen.css";
 import OtpInput from "./OtpInput";
 
-const OtpScreen = () => {
+const OtpScreen = ({ handleVerifyOTP = () => { }, handleSenOtp=()=>{} }) => {
   const [otpValues, setOtpValues] = useState(["", "", "", ""]);
-
   const handleOtpChange = (index, value) => {
     // Update the OTP value at the specified index
     const newOtpValues = [...otpValues];
     newOtpValues[index] = value;
     setOtpValues(newOtpValues);
   };
+
+  
   return (
     <div className="otpScreen">
       <div className="otpScreenText">
@@ -36,7 +37,11 @@ const OtpScreen = () => {
           Resend Code in <span>00:30</span>
         </p>
       </div>
-      <GreenButton buttonText="Verify OTP" />
+      <GreenButton onClickFunc={() => {
+        const otp = otpValues.join('')
+        // console.log('otp is', otp)
+        handleVerifyOTP(otp)
+      }} buttonText="Verify OTP" />
     </div>
   );
 };

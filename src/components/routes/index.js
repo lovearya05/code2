@@ -8,17 +8,18 @@ import OtpScreen from "../OtpScreen/OtpScreen";
 import Temp from "../../Temp";
 
 export default function RoutesServer() {
+    
     return (
         <div style={{ backgroundColor: "#272727", width: "100%" }}>
             <div
                 style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
             >
                 <Routes>
-                    <Route exact path="/splash" element={<Splash />}></Route>
+                    <Route exact path="/" element={<Splash />}></Route>
                     <Route exact path="/login" element={<Login />}></Route>
                     <Route exact path="/signup" element={<Signup />}></Route>
                     <Route exact path="/profile" element={<Profile />}></Route>
-                    <Route exact path="/otp" element={<OtpScreen />}></Route>
+                    {/* <Route exact path="/otp" element={<OtpScreen />}></Route> */}
                     <Route exact path='/temp' element={< Temp />}></Route>
                     {/* <Route exact path='/signup' element={< Signup />}></Route> */}
                 </Routes>
