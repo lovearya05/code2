@@ -132,7 +132,7 @@ const Signup = () => {
     return (
       <>
         {loading && <Loader />}
-        <OtpScreen handleSenOtp={handleSenOtp} handleVerifyOTP={handleVerifyOTP} />
+        <OtpScreen handleSenOtp={handleSenOtp} email={email} handleVerifyOTP={handleVerifyOTP} />
       </>
     )
   } else {
