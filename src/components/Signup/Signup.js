@@ -160,7 +160,7 @@ const Signup = () => {
               </div>
               <div className="alreadyUser">
                 <p>Already a user?</p>
-                <a href="/login">Login here</a>
+                <a href="/code2/login">Login here</a>
               </div>
               <p className="continue">Or continue with</p>
               <div className="socialMedia">
