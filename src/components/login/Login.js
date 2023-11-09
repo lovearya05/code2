@@ -98,7 +98,7 @@ const Login = () => {
             </div>
             <div className="alreadyUser">
               <p>Want to register?</p>
-              <a href="/signup">Sign up</a>
+              <a href="/code2/signup">Sign up</a>
             </div>
             <p className="continue">Or continue with</p>
             <div className="socialMedia">
