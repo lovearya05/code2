@@ -110,7 +110,7 @@ const Signup = () => {
             displayName: '',
             photoUrl: ''
           }))
-          navigate('/profile',{ replace: true })
+          navigate('/code2/profile',{ replace: true })
         })
         .catch((error) => {
           const errorCode = error.code;

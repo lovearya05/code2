@@ -13,7 +13,7 @@ function Splash() {
 
   useEffect(()=>{
     setTimeout(()=>{
-      user ? navigate('/profile',{ replace: true }) : navigate('/signup',{ replace: true });
+      user ? navigate('/code2/profile',{ replace: true }) : navigate('/code2/signup',{ replace: true });
     },2000)
   },[])
 
