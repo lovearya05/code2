@@ -1,6 +1,7 @@
 {
   "name": "code2",
   "version": "0.1.0",
+  "homepage": "https://lovearya05.github.io/code2",
   "private": true,
   "dependencies": {
     "@react-email/render": "^0.0.9",
@@ -24,6 +25,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -45,5 +48,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.0.0"
   }
 }
