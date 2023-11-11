@@ -47,7 +47,7 @@
 
 .forgotText {
   color: #fff;
-  font-family: Poppins;
+  font-family: 'Poppins', sans-serif;
   margin-top: 0px;
   font-size: 12px;
   font-style: normal;
@@ -65,7 +65,7 @@
 .alreadyUser > p {
   margin-right: 5px;
   color: #fff;
-  font-family: Poppins;
+  font-family: 'Poppins', sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -74,7 +74,7 @@
 .alreadyUser > a {
   text-decoration: none;
   color: #00955f;
-  font-family: Poppins;
+  font-family: 'Poppins', sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -84,7 +84,7 @@
 .continue {
   text-align: center;
   color: #a9a3a3;
-  font-family: Poppins;
+  font-family: 'Poppins', sans-serif;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -95,7 +95,7 @@
 }
 .bottomLogin p {
   color: #a9a3a3;
-  font-family: Poppins;
+  font-family: 'Poppins', sans-serif;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -103,7 +103,7 @@
 }
 .bottomLogin > p > a {
   color: #00955f;
-  font-family: Poppins;
+  font-family: 'Poppins', sans-serif;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;

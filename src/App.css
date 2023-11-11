@@ -12,7 +12,11 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+p,
+h2,
+a {
+  font-family: "Poppins", sans-serif;
+}
 body {
   margin: 0px 36%;
   background-color: #fff;

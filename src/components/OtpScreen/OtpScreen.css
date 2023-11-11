@@ -3,7 +3,7 @@
 }
 .otpScreen .otpScreenText > h2 {
   color: #fff;
-  font-family: Poppins;
+  font-family: 'Poppins', sans-serif;
   font-size: 30px;
   font-style: normal;
   font-weight: 600;
@@ -13,7 +13,7 @@
 .otpScreen > .otpScreenText > p {
   margin: 0px;
   color: #d6d6d6;
-  font-family: Poppins;
+  font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -21,7 +21,7 @@
 }
 .otpEmail {
   color: #00955f;
-  font-family: Poppins;
+  font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -40,7 +40,7 @@
 .timer p {
   /* margin: 0px; */
   color: #d6d6d6;
-  font-family: Poppins;
+  font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -48,7 +48,7 @@
 }
 .timer > p > span {
   color: #f0ad00;
-  font-family: Poppins;
+  font-family: "Poppins", sans-serif;
   font-size: 12px;
   font-style: normal;
   font-weight: 600;

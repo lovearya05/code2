@@ -1,0 +1,91 @@
+.carbon__book {
+  padding: 10px 15px;
+}
+.carbon__book .business__title > p {
+  color: #fff;
+  font-size: 24px;
+  font-style: normal;
+  margin: 0;
+  font-weight: 600;
+  line-height: normal;
+}
+.carbon__input > p {
+  color: #787878;
+  font-size: 14px;
+  font-style: normal;
+  margin: 15px 0px 7px;
+  font-weight: 400;
+  line-height: normal;
+}
+.addButton {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.plusButton {
+  font-size: 24px;
+  color: #00955f;
+}
+
+.addButton > p {
+  margin-left: 6px;
+  color: var(--Secondary_Green, #3dc182);
+  font-family: "Poppins";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.calender__selection {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  justify-content: space-between;
+  width: 100%;
+}
+.calender__from {
+  width: 45%;
+}
+.calender__from > p {
+  margin: 0;
+  color: #787878;
+  font-family: "Poppins";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.calender__to > p {
+  margin: 0;
+  color: #787878;
+  font-family: "Poppins";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.calender__to {
+  width: 45%;
+}
+
+.carbon__save {
+  display: flex;
+  justify-content: center;
+}
+.carbon__save__button {
+  margin-top: 20px;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  border: none;
+  padding: 8px 30px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border-radius: 8px;
+  background: #00955f;
+}
