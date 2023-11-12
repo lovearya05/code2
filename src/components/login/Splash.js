@@ -10,12 +10,16 @@ function Splash() {
   const {user} = useSelector(state=>state?.appData)
   console.log({user})
   const navigate = useNavigate();
+  const handleNavigate = ()=>{
+    user ? navigate('/code2/profile',{ replace: true }) : navigate('/code2/signup',{ replace: true });
+  }
 
   useEffect(()=>{
-    setTimeout(()=>{
-      user ? navigate('/code2/profile',{ replace: true }) : navigate('/code2/signup',{ replace: true });
-    },2000)
-  },[])
+    let inter = setTimeout(()=>{
+      handleNavigate()
+    },1000)
+    return ()=> clearTimeout(inter)
+  },[user])
 
   return (
     <div className="container"> 
