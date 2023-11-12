@@ -46,6 +46,7 @@
 /* Middle part of login page */
 
 .forgotText {
+  cursor: pointer;
   color: #fff;
   font-family: 'Poppins', sans-serif;
   margin-top: 0px;

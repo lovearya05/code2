@@ -157,7 +157,7 @@ const Signup = () => {
               <InputBox placeholdeText="abc@gmail.com" setValue={setEmail} />
               <InputText title="Password" />
               <InputBox placeholdeText="enter password" type={'password'} setValue={setPassword} />
-              <p className="forgotText">I forgot my password.</p>
+              {/* <p className="forgotText">I forgot my password.</p> */}
               <div onClick={() => handleSenOtp()} >
                 <GreenButton buttonText="Send me OTP" />
               </div>

@@ -7,12 +7,13 @@ import InputBox from "./EssentialComponents/InputBox";
 import GreenButton from "./EssentialComponents/GreenButton";
 import SocialMedia from "./EssentialComponents/SocialMedia";
 import { useNavigate } from "react-router";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, sendPasswordResetEmail, signInWithEmailAndPassword } from "firebase/auth";
 import { async } from "q";
 import { useDispatch } from "react-redux";
 import { login } from "../../reduxStore/storeSlicer";
 import toast, { toastConfig } from 'react-simple-toasts';
 import Loader from "./EssentialComponents/Loader";
+import { app } from "../../firebaseConfig";
 
 toastConfig({ theme: 'dark' });
 
@@ -45,7 +46,6 @@ const Login = () => {
     // setLaoding(false)
   }
   const handleUserLogin = async () => {
-    console.log('handle click pressed')
     setLaoding(true)
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password)
@@ -69,10 +69,23 @@ const Login = () => {
     setLaoding(false)
   }
 
-  const handleGoToSignup =()=>{
-    navigate('/code2/signup',{ replace: true })
+  const handleGoToSignup = () => {
+    navigate('/code2/signup', { replace: true })
   }
-
+  const handleForgotPassword = () => {
+    const emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+    if (!email || !emailPattern.test(email)) {
+      toast('Enter a valid Email to Reset Password')
+      return
+    }
+    sendPasswordResetEmail(auth, email).then(() => {
+      console.log('email sent!');
+      toast('Reset password link send on your email')
+    }).catch(function (error) {
+      console.log(error)
+      // An error happened.
+    });
+  }
   return (
     <>
       {loading && <Loader />}
@@ -95,13 +108,13 @@ const Login = () => {
             <InputBox placeholdeText="abc@gmail.com" setValue={setEmail} />
             <InputText title="Password" />
             <InputBox placeholdeText="enter password" type={'password'} setValue={setPassword} />
-            <p className="forgotText">I forgot my password.</p>
+            <p onClick={handleForgotPassword} className="forgotText">I forgot my password.</p>
             <div>
               <GreenButton buttonText="Login" onClickFunc={handlleLoginClick} />
             </div>
             <div onClick={handleGoToSignup} className="alreadyUser">
               <p>Want to register?</p>
-              <p style={{color : '#00955F'}} >Sign up</p>
+              <p style={{ color: '#00955F' }} >Sign up</p>
             </div>
             <p className="continue">Or continue with</p>
             <div className="socialMedia">
