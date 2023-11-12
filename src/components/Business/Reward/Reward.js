@@ -24,12 +24,13 @@ const Reward = () => {
             <CalenderOption />
           </div>
         </div>
-        <p>Redemption Value</p>
-        <BusinessInput />
+
         <p>Turnover to be covered with CODE2</p>
         <BusinessInput />
         <p>Reward Distribution ratio</p>
         <Dropdown />
+        <p>Redemption Value</p>
+        <BusinessInput />
         <p>Currency</p>
         <BusinessInput />
         <p>Maximum Possible Discount</p>

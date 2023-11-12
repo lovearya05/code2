@@ -17,8 +17,8 @@
   line-height: normal;
 }
 .down__arrow {
-  font-size: 22px;
-  color: #404040;
+  font-size: 14px;
+  color: #fff;
 }
 .business__input:focus {
   outline: none;
@@ -34,21 +34,30 @@
   font-weight: 400;
   line-height: normal;
 }
-.dropdown[style*="30%"] {
-  flex: 0 0 30%;
+/* .dropdown[style*="100%"] {
+  flex: 0 0 100%;
 }
-.dropdown[style*="50%"] {
-  flex: 0 0 50%;
-}
+.dropdown[style*="51%"] {
+  flex: 0 0 65%;
+} */
 .drop_menu {
   background-color: #404040;
   border-radius: 8px;
+  margin-top: 5px;
 }
 .drop_menu > p {
-  border-top: 1px solid var(--Stroke_color, black);
+  border-top: 1px solid var(--Stroke_color, #404040);
   margin: 0;
   padding: 10px;
   color: #d9d9d9;
+  font-family: "Poppins";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.kg {
+  color: #cfcccc;
   font-family: "Poppins";
   font-size: 14px;
   font-style: normal;
