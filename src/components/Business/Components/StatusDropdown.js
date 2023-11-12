@@ -5,15 +5,20 @@ import "./Dropdown.css";
 import { AiOutlineDown } from "react-icons/ai";
 const StatusDropdown = () => {
   const [dropdown, setDropdown] = useState(false);
+
   return (
-    <div>
+    <div style={{ width: "32%" }}>
       <div
         className="dropdown"
-        style={{ width: "85%" }}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          paddingLeft: "18px",
+        }}
         onClick={() => setDropdown(!dropdown)}
       >
         <div className="dropdown__option">Status</div>
-        <div className="dropdown__button">
+        <div className="dropdown__button" style={{ paddingLeft: "20px" }}>
           <AiOutlineDown className="down__arrow" />
         </div>
       </div>

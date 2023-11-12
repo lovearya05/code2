@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../../Navbar/Navbar";
 import "./CarbonCredit.css";
 import CalenderOption from "../Components/CalenderOption";
@@ -6,6 +6,7 @@ import "../Carbon_Book/Carbon_Book.css";
 import Dropdown from "../Components/Dropdown";
 import StatusDropdown from "../Components/StatusDropdown";
 import CarbonCreditStatus from "../Components/CarbonCreditStatus";
+import BusinessInput from "../Components/BusinessInput";
 
 const CarbonCredit = () => {
   return (
@@ -26,7 +27,7 @@ const CarbonCredit = () => {
           </div>
         </div>
         <p>Carbon emission reduction</p>
-        <Dropdown />
+        <BusinessInput option={true} />
         <p>Select Standards</p>
         <div className="status__dropdown">
           <CarbonCreditStatus />

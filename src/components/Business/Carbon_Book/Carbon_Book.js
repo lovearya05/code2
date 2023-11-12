@@ -19,14 +19,23 @@ const Carbon_Book = () => {
           <Dropdown />
           <p>Type of Renewal</p>
           <Dropdown />
-          <p>TGenerated Renewal</p>
+          <p>Generated Renewal</p>
           <BusinessInput />
-          <p>CO2 Reduction </p>
+          <p>CO2 Reduction by Renewals </p>
           <BusinessInput />
+          {/*  */}
+          <p>Kwh Reduction by other initiatives </p>
+          <BusinessInput />
+          <p>Country of Reduction </p>
+          <BusinessInput />
+          <p>CO2 Reduction by other measures </p>
+          <BusinessInput />
+
           <div className="addButton">
             <AiOutlinePlusCircle className="plusButton" />
             <p>Add Other Initiatives</p>
           </div>
+
           <div className="calender__selection">
             <div className="calender__from">
               <p>From</p>
@@ -37,10 +46,10 @@ const Carbon_Book = () => {
               <CalenderOption />
             </div>
           </div>
-          <p>Generation</p>
-          <Dropdown />
-          <p>TCO2 Reduction </p>
-          <Dropdown />
+          <p>Total CO2 Reduction</p>
+          <BusinessInput />
+          <p>Total CO2 Reduction(Externally Calculated) </p>
+          <BusinessInput />
         </div>
         <div className="carbon__save">
           <button className="carbon__save__button">Save</button>
