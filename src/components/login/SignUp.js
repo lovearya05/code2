@@ -9,7 +9,7 @@ import facebookIcon from "../../assets/facebookIcon.svg";
 function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  console.log({ password, email });
+  // console.log({ password, email });
 
   return (
     <div className="container">

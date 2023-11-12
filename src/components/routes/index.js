@@ -13,8 +13,11 @@ import CarbonCredit from "../Business/Carbon_Credit_Book/CarbonCredit";
 import Reward from "../Business/Reward/Reward";
 import Support from "../Business/Support/Support";
 import UpdateDeals from "../Business/Update_Deals/UpdateDeals";
+import { useSelector } from "react-redux";
 
 export default function RoutesServer() {
+  const {user} = useSelector(state=>state?.appData)
+  const userType = 'business'
   return (
     <div style={{ backgroundColor: "#272727", width: "100%" }}>
       <div
@@ -26,11 +29,12 @@ export default function RoutesServer() {
       >
         <Routes>
           <Route exact path="/code2/" element={<Splash />}></Route>
-          <Route exact path="/code2/login" element={<Login />}></Route>
-          <Route exact path="/code2/signup" element={<Signup />}></Route>
-          <Route exact path="/code2/profile" element={<Profile />}></Route>
-          <Route exact path="/code2/profile" element={<Profile />}></Route>
-          <Route exact path="/code2/tracker" element={<Tracker />}></Route>
+          <Route exact path="/code2/temp" element={<Temp />}></Route>
+        </Routes>
+
+        {user && userType === 'business' ?
+        <Routes>
+          <Route index exact path="/code2/tracker" element={<Tracker />}></Route>
           <Route
             exact
             path="/code2/carbon_book"
@@ -49,12 +53,16 @@ export default function RoutesServer() {
             element={<BusinessProfile />}
           ></Route>
           <Route exact path="/code2/support" element={<Support />}></Route>
-
-          {/* <Route exact path="/otp" element={<OtpScreen />}></Route> */}
-          <Route exact path="/code2/temp" element={<Temp />}></Route>
-          {/* <Route exact path='/signup' element={< Signup />}></Route> */}
+          <Route exact path="/code2/profile" element={<Profile />}></Route>
         </Routes>
+          :
+        <Routes>
+          <Route exact path="/code2/login" element={<Login />}></Route>
+          <Route exact path="/code2/signup" element={<Signup />}></Route>
+        </Routes>
+            
+        }
       </div>
-    </div>
+     </div>
   );
 }

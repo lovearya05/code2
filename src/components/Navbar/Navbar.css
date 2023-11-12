@@ -93,6 +93,7 @@
   border: none;
   margin-top: 50%;
   padding-left: 15px;
+  width: 100px;
 }
 .logout__button > p {
   margin-left: 10px;
