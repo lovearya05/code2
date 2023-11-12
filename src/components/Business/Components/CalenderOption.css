@@ -1,0 +1,24 @@
+.calender__option {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  /* width: 100%; */
+  border-radius: 8px;
+  border: 1px solid var(--Stroke_color, #404040);
+  padding: 12px;
+  margin-top: 10px;
+}
+.calender__option > p {
+  color: #cfcccc;
+  font-family: "Poppins";
+  font-size: 14px;
+  margin: 0;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.calender__option .calender {
+  font-size: 18px;
+  color: #404040;
+}

@@ -1,0 +1,31 @@
+.business__profile {
+  padding: 2px 15px;
+}
+.profile__front {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.edit__profile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 8px;
+  padding: 8px;
+  border: 1px solid var(--Stroke_color, #404040);
+}
+.edit__profile > p {
+  color: #3dc182;
+  margin: 0;
+  font-family: "Poppins";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.edit__pencil {
+  color: #3dc182;
+  margin-left: 10px;
+  font-size: 24px;
+}

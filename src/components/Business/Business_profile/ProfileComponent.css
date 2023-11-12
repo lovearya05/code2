@@ -1,0 +1,24 @@
+.profile__component {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--Stroke_color, #404040);
+  padding: 0px 10px;
+}
+.profile__component > .component__left {
+  color: #787878;
+  font-family: "Poppins";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.profile__component .component__right {
+  color: var(--Primary_text-color, #fff);
+  font-family: "Poppins";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

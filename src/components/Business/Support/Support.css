@@ -1,9 +1,9 @@
 .support {
-  padding: 15px;
+  padding: 2px 15px;
 }
 .business__title {
   color: var(--Primary_text-color, #fff);
-  font-family: Poppins;
+  font-family: "Poppins", sans-serif;
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
@@ -14,7 +14,7 @@
 }
 .support__company {
   color: var(--Primary_text-color, #fff);
-  font-family: Poppins;
+  font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -24,7 +24,7 @@
 .support__contact {
   margin: 3px 0px 0px;
   color: #a19c9c;
-  font-family: Poppins;
+  font-family: "Poppins", sans-serif;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -44,7 +44,7 @@
   padding: 10px;
   border: none;
   color: var(--Primary_text-color, #fff);
-  font-family: Poppins;
+  font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -62,7 +62,7 @@
 .support__post {
   margin-top: 20px;
   color: #fff;
-  font-family: Poppins;
+  font-family: "Poppins", sans-serif;
   border: none;
   padding: 8px 30px;
   font-size: 16px;

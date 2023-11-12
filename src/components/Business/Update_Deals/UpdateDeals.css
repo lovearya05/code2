@@ -1,9 +1,9 @@
 .deals {
-  padding: 15px;
+  padding: 1px 15px;
 }
 .business__title {
   color: var(--Primary_text-color, #fff);
-  font-family: Poppins;
+  font-family: "Poppins", sans-serif;
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
@@ -13,7 +13,7 @@
 .deals__input1 > p {
   margin: 0 0px 7px;
   color: #787878;
-  font-family: Poppins;
+  font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -25,7 +25,7 @@
 .deals__input2 > p {
   margin: 0 0px 7px;
   color: #787878;
-  font-family: Poppins;
+  font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -52,7 +52,7 @@
 .deals__save__button {
   margin-top: 20px;
   color: #fff;
-  font-family: Poppins;
+  font-family: "Poppins", sans-serif;
   border: none;
   padding: 8px 30px;
   font-size: 16px;
