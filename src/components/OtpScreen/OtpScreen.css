@@ -1,9 +1,19 @@
+.otp_fullScreen {
+  display: flex;
+  flex-direction: row;
+}
+.otp__left {
+  width: 40%;
+}
+.otp__right {
+  width: 60%;
+}
 .otpScreen {
-  padding: 50px 15px 0px;
+  padding: 50px 120px 0px;
 }
 .otpScreen .otpScreenText > h2 {
   color: #fff;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 30px;
   font-style: normal;
   font-weight: 600;
@@ -53,4 +63,9 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+}
+@media only screen and (max-width: 768px) {
+  .otpScreen {
+    padding: 50px 15px 0px;
+  }
 }

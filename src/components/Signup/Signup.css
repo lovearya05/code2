@@ -1,0 +1,20 @@
+.signupPage {
+  background: #272727;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.signup__page {
+  width: 55%;
+}
+.signupPage .bottomLogin {
+  margin-top: 90px;
+}
+/* Media query for mobile devices */
+@media only screen and (max-width: 768px) {
+  .signup__page {
+    width: 95%;
+  }
+}

@@ -14,13 +14,13 @@
     rgba(0, 0, 0, 0.64);
   margin: 15px 15px;
   border: 1px solid transparent;
-  width: 150px;
-  height: 140px;
+  width: 170px;
+  height: 160px;
 }
 .profileBox > p {
   color: #3dc182;
   margin-left: 10px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -29,4 +29,25 @@
 }
 .selected {
   border-color: #3dc182;
+}
+@media only screen and (max-width: 768px) {
+  .profileBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    /* padding: 6px 10px; */
+    border-radius: 8px;
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.05) 0%,
+        rgba(255, 255, 255, 0.05) 100%
+      ),
+      rgba(0, 0, 0, 0.64);
+    margin: 15px 15px;
+    border: 1px solid transparent;
+    width: 150px;
+    height: 140px;
+  }
 }

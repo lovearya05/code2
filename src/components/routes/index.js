@@ -16,8 +16,8 @@ import UpdateDeals from "../Business/Update_Deals/UpdateDeals";
 import { useSelector } from "react-redux";
 
 export default function RoutesServer() {
-  const {user} = useSelector(state=>state?.appData)
-  const userType = 'business'
+  const { user } = useSelector((state) => state?.appData);
+  const userType = "business";
   return (
     <div style={{ backgroundColor: "#272727", width: "100%" }}>
       <div
@@ -32,38 +32,43 @@ export default function RoutesServer() {
           <Route exact path="/code2/temp" element={<Temp />}></Route>
         </Routes>
 
-        {user && userType === 'business' ?
-        <Routes>
-          <Route element={<Tracker />} />
-          <Route index exact path="/code2/tracker" element={<Tracker />}></Route>
-          <Route
-            exact
-            path="/code2/carbon_book"
-            element={<Carbon_Book />}
-          ></Route>
-          <Route
-            exact
-            path="/code2/credit_book"
-            element={<CarbonCredit />}
-          ></Route>
-          <Route exact path="/code2/deals" element={<UpdateDeals />}></Route>
-          <Route exact path="/code2/reward" element={<Reward />}></Route>
-          <Route
-            exact
-            path="/code2/business_profile"
-            element={<BusinessProfile />}
-          ></Route>
-          <Route exact path="/code2/support" element={<Support />}></Route>
-          <Route exact path="/code2/profile" element={<Profile />}></Route>
-        </Routes>
-          :
-        <Routes>
-          <Route exact path="/code2/login" element={<Login />}></Route>
-          <Route exact path="/code2/signup" element={<Signup />}></Route>
-        </Routes>
-            
-        }
+        {user && userType === "business" ? (
+          <Routes>
+            <Route element={<Tracker />} />
+            <Route
+              index
+              exact
+              path="/code2/tracker"
+              element={<Tracker />}
+            ></Route>
+            <Route
+              exact
+              path="/code2/carbon_book"
+              element={<Carbon_Book />}
+            ></Route>
+            <Route
+              exact
+              path="/code2/credit_book"
+              element={<CarbonCredit />}
+            ></Route>
+            <Route exact path="/code2/deals" element={<UpdateDeals />}></Route>
+            <Route exact path="/code2/reward" element={<Reward />}></Route>
+            <Route
+              exact
+              path="/code2/business_profile"
+              element={<BusinessProfile />}
+            ></Route>
+            <Route exact path="/code2/support" element={<Support />}></Route>
+            <Route exact path="/code2/profile" element={<Profile />}></Route>
+          </Routes>
+        ) : (
+          <Routes>
+            <Route exact path="/code2/login" element={<Login />}></Route>
+            <Route exact path="/code2/signup" element={<Signup />}></Route>
+          </Routes>
+        )}
       </div>
-     </div>
+       {" "}
+    </div>
   );
 }

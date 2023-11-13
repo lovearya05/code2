@@ -2,11 +2,10 @@
   background: #272727;
 }
 .profile > h2 {
-  color: #fff;
+  color: var(--Primary_text-color, #fff);
   text-align: center;
-  font-family: 'Poppins', sans-serif;
-  /* font-size: 24px; */
-  font-style: normal;
+  font-family: "Poppins";
+  font-size: 32px;
   padding: 100px 40px;
   margin-top: 0px;
   font-weight: 600;
@@ -29,9 +28,22 @@
   background: #00955f;
   border: 1px solid transparent;
   padding: 10px 10px;
-  width: 100px;
+  width: 130px;
   color: white;
   text-align: center;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 16px;
+}
+@media only screen and (max-width: 768px) {
+  .profile > h2 {
+    color: #fff;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    /* font-size: 24px; */
+    font-style: normal;
+    padding: 100px 40px;
+    margin-top: 0px;
+    font-weight: 600;
+    line-height: normal;
+  }
 }

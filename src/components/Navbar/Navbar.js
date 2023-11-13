@@ -28,18 +28,19 @@ const Navbar = () => {
   };
   const handleLogOut = () => {
     const auth = getAuth();
-    signOut(auth).then(() => {
-      toast('Logout successful.')
-      navigate(`/code2/login`);
-    }).catch((error) => {
-      // An error happened.
-      console.log(error)
-    });
-
-  }
+    signOut(auth)
+      .then(() => {
+        toast("Logout successful.");
+        navigate(`/code2/login`);
+      })
+      .catch((error) => {
+        // An error happened.
+        console.log(error);
+      });
+  };
 
   return (
-    <div style={{zIndex:5}}>
+    <div className="nav">
       <div className={`navbar ${isSidebarOpen ? "sidebar-open" : ""}`}>
         <button
           style={{ background: "none", border: "none" }}
@@ -61,52 +62,59 @@ const Navbar = () => {
           <div className="upperSideNavigation">
             <button
               onClick={() => gotoLocation("tracker")}
-              className={`sidebar_button ${location.pathname === "/code2/tracker" ? "greenText" : ""
-                }`}
+              className={`sidebar_button ${
+                location.pathname === "/code2/tracker" ? "greenText" : ""
+              }`}
             >
               Tracker
             </button>
             <button
               onClick={() => gotoLocation("carbon_book")}
-              className={`sidebar_button ${location.pathname === "/code2/carbon_book" ? "greenText" : ""
-                }`}
+              className={`sidebar_button ${
+                location.pathname === "/code2/carbon_book" ? "greenText" : ""
+              }`}
             >
               Carbon Book
             </button>
             <button
               onClick={() => gotoLocation("credit_book")}
-              className={`sidebar_button ${location.pathname === "/code2/credit_book" ? "greenText" : ""
-                }`}
+              className={`sidebar_button ${
+                location.pathname === "/code2/credit_book" ? "greenText" : ""
+              }`}
             >
               Carbon Credit Book
             </button>
             <button
               onClick={() => gotoLocation("reward")}
-              className={`sidebar_button ${location.pathname === "/code2/reward" ? "greenText" : ""
-                }`}
+              className={`sidebar_button ${
+                location.pathname === "/code2/reward" ? "greenText" : ""
+              }`}
             >
               Reward Book
             </button>
             <button
               onClick={() => gotoLocation("deals")}
-              className={`sidebar_button ${location.pathname === "/code2/deals" ? "greenText" : ""
-                }`}
+              className={`sidebar_button ${
+                location.pathname === "/code2/deals" ? "greenText" : ""
+              }`}
             >
               Update Deals
             </button>
             <button
               onClick={() => gotoLocation("business_profile")}
-              className={`sidebar_button ${location.pathname === "/code2/business_profile"
+              className={`sidebar_button ${
+                location.pathname === "/code2/business_profile"
                   ? "greenText"
                   : ""
-                }`}
+              }`}
             >
               Profile
             </button>
             <button
               onClick={() => gotoLocation("support")}
-              className={`sidebar_button ${location.pathname === "/code2/support" ? "greenText" : ""
-                }`}
+              className={`sidebar_button ${
+                location.pathname === "/code2/support" ? "greenText" : ""
+              }`}
             >
               Support
             </button>

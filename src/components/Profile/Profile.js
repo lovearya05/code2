@@ -2,19 +2,19 @@ import React, { useState } from "react";
 import "./Profile.css";
 import ProfileBox from "./ProfileBox";
 import Person from "./Icons/avatar_7313885.svg";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
   const [selectedButton, setSelectedButton] = useState(null);
-  const navigate = useNavigate ();
+  const navigate = useNavigate();
   const handleButtonClick = (title) => {
     setSelectedButton(title);
   };
-  const handleGoClick = ()=>{
-    if(selectedButton==='Business'){
-      navigate("/code2/tracker", { replace: true })
+  const handleGoClick = () => {
+    if (selectedButton === "Business") {
+      navigate("/code2/tracker", { replace: true });
     }
-  }
+  };
 
   return (
     <div className="profile">
@@ -33,7 +33,7 @@ const Profile = () => {
       </div>
 
       <div className="button">
-        <button onClick={ ()=> handleGoClick()} >Go→</button>
+        <button onClick={() => handleGoClick()}>Go Next</button>
       </div>
     </div>
   );
