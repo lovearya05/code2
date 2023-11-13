@@ -3,9 +3,8 @@ import "./StatusDropdown.css";
 
 import "./Dropdown.css";
 import { AiOutlineDown } from "react-icons/ai";
-const StatusDropdown = () => {
+const StatusDropdown = ({options=[], setValue=()=>{}, currValue='' }) => {
   const [dropdown, setDropdown] = useState(false);
-  const [value, setValue] = useState("Select");
 
   const saveFunction = (chosenValue) => {
     setValue(chosenValue);
@@ -23,15 +22,16 @@ const StatusDropdown = () => {
         }}
         onClick={() => setDropdown(!dropdown)}
       >
-        <div className="dropdown__option">{value}</div>
+        <div className="dropdown__option">{currValue}</div>
         <div className="dropdown__button" style={{ paddingLeft: "20px" }}>
           <AiOutlineDown className="down__arrow" />
         </div>
       </div>
       {dropdown && dropdown ? (
         <div className="drop_menu">
-          <p onClick={() => saveFunction("Selected")}>Selected</p>
-          <p onClick={() => saveFunction("TBD")}>To be done (TBD)</p>
+          {options.map((val,i)=>{
+            return <p key={i} onClick={() => saveFunction(val)}>{val}</p>
+          })}
         </div>
       ) : null}
     </div>

@@ -39,7 +39,7 @@ const Navbar = () => {
   }
 
   return (
-    <div>
+    <div style={{zIndex:5}}>
       <div className={`navbar ${isSidebarOpen ? "sidebar-open" : ""}`}>
         <button
           style={{ background: "none", border: "none" }}

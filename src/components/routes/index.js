@@ -34,6 +34,7 @@ export default function RoutesServer() {
 
         {user && userType === 'business' ?
         <Routes>
+          <Route element={<Tracker />} />
           <Route index exact path="/code2/tracker" element={<Tracker />}></Route>
           <Route
             exact

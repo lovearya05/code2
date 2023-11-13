@@ -2,22 +2,21 @@ import React, { useState } from "react";
 import "./Dropdown.css";
 import { AiOutlineDown } from "react-icons/ai";
 
-const Business__Input = ({ option }) => {
-  const [value, setValue] = useState("");
+const Business__Input = ({ option, setValue=()=>{}, currValue='', type="text" }) => {
 
   return (
     <div className="dropdown" style={{}}>
       <input
         className="business__input"
-        type="text"
-        value={value}
+        type={type}
+        value={currValue}
         onChange={(e) => setValue(e.target.value)}
       />
-      {option && option ? (
+      {/* {option && option ? (
         <p className="kg" style={{ margin: "0" }}>
           kg
         </p>
-      ) : null}
+      ) : null} */}
     </div>
   );
 };

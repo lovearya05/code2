@@ -5,6 +5,8 @@ import { useDispatch } from "react-redux";
 import { getAuth } from "@firebase/auth";
 import { useEffect } from "react";
 import { login, logout } from "./reduxStore/storeSlicer";
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 
 function App() {
   const dispatch = useDispatch();
@@ -31,9 +33,11 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
-      <RoutesServer />
-    </BrowserRouter>
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <BrowserRouter>
+        <RoutesServer />
+      </BrowserRouter>
+    </LocalizationProvider>
   );
 }
 
