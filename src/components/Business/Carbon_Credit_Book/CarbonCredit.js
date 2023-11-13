@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../../Navbar/Navbar";
 import "./CarbonCredit.css";
 import CalenderOption from "../Components/CalenderOption";
@@ -8,7 +8,7 @@ import StatusDropdown from "../Components/StatusDropdown";
 import CarbonCreditStatus from "../Components/CarbonCreditStatus";
 import BusinessInput from "../Components/BusinessInput";
 import { useSelector } from "react-redux";
-import { collection, addDoc } from "firebase/firestore"; 
+import { collection, addDoc, getDocs, query, where,doc, setDoc, updateDoc } from "firebase/firestore"; 
 import { db } from "../../../firebaseConfig";
 import Loader from "../../login/EssentialComponents/Loader";
 import toast from "react-simple-toasts";
@@ -31,6 +31,35 @@ const CarbonCredit = () => {
   const [carbonCreditTrades, setCarbonCreditTrades] = useState('')
   const [carbonCreditTradesStatus, setCarbonCreditTradesStatus] = useState('')
 
+  useEffect(()=>{
+    loadInitalData()
+  },[])
+
+  const loadInitalData = async ()=>{
+    setLaoding(true)
+    try{
+      const dataItem = 'carbonCredit'
+      const rewardBookCollection = collection(db, dataItem);
+      const querySnapshot = await getDocs(query(rewardBookCollection, where('companyUserId', '==', user?.uid)));
+      if (querySnapshot.size > 0){
+        const firstDoc = querySnapshot.docs[0];
+        const data = firstDoc?.data()
+        // setStartDate(data?.startDate)
+        // setEndDate(data?.endDate)
+        setCarbonReduction(data?.carbonReduction)
+        setStandard(data?.standard)
+        setStandardStatus(data?.standardStatus)
+        setValidation(data?.validation)
+        setValidationStatus(data?.validationStatus)
+        setCarbonCreditRegister(data?.carbonCreditRegister)
+        setCarbonCreditRegisterStatus(data?.carbonCreditRegisterStatus)
+        setCarbonCreditTrades(data?.carbonCreditTrades)
+        setCarbonCreditTradesStatus(data?.carbonCreditTradesStatus)
+
+      }
+    }catch(e){console.log(e)}
+    setLaoding(false)
+  }
   const handleSaveBtn = ()=>{
     if(!startDate || !endDate || !carbonReduction || !standard || !standardStatus || !validation || !validationStatus 
       || !carbonCreditRegister || !carbonCreditRegisterStatus || !carbonCreditTrades || !carbonCreditTradesStatus){
@@ -38,50 +67,61 @@ const CarbonCredit = () => {
       return
     }
     // console.log('save button click')
-    !loading && handleSave()
+    !loading && handleSave(user?.uid,{
+      companyName: 'code2 new deal',
+      companyUserId: user?.uid,
+      startDate : startDate,
+      endDate : endDate,
+      carbonReduction : carbonReduction,
+      standard : standard,
+      standardStatus : standardStatus,
+      validation : validation,
+      validationStatus :validationStatus,
+      carbonCreditRegister : carbonCreditRegister,
+      carbonCreditRegisterStatus : carbonCreditRegisterStatus,
+      carbonCreditTrades: carbonCreditTrades,
+      carbonCreditTradesStatus: carbonCreditTradesStatus,
+
+      active : true,
+      isApproved : false
+    })
   }
-
-
-  const handleSave = async () => {
+  const handleSave = async (companyUserId='', newData={}) => {
     setLaoding(true)
+    const dataItem = 'carbonCredit'
+    const rewardBookCollection = collection(db, dataItem);
+    const querySnapshot = await getDocs(query(rewardBookCollection, where('companyUserId', '==', companyUserId)));
     
     try {
-      const docRef = await addDoc(collection(db, "carbonCredit"), {
-        companyName: 'code2 new deal',
-        companyUserId: user?.uid,
-        startDate : startDate,
-        endDate : endDate,
-        carbonReduction : carbonReduction,
-        standard : standard,
-        standardStatus : standardStatus,
-        validation : validation,
-        validationStatus :validationStatus,
-        carbonCreditRegister : carbonCreditRegister,
-        carbonCreditRegisterStatus : carbonCreditRegisterStatus,
-        carbonCreditTrades: carbonCreditTrades,
-        carbonCreditTradesStatus: carbonCreditTradesStatus,
+      if (querySnapshot.size > 0) { 
+        const firstDoc = querySnapshot.docs[0];
+        const docRef = doc(db, dataItem, firstDoc.id);
+  
+        await updateDoc(docRef, newData);
+        console.log(`Document with companyUserId ${companyUserId} updated successfully.`);
 
-        active : true,
-        isApproved : false
-      });
-      setStartDate('')
-      setEndDate('')
-      setCarbonReduction('')
-      setStandard('')
-      setStandardStatus('')
-      setValidation('')
-      setValidationStatus('')
-      setCarbonCreditRegister('')
-      setCarbonCreditRegisterStatus('')
-      setCarbonCreditTrades('')
-      setCarbonCreditTradesStatus('')
-      toast('Added successfully')
+      } else {
+          await setDoc(doc(rewardBookCollection), { ...newData, companyUserId });
+          console.log(`New document with companyUserId ${companyUserId} added successfully.`);
+      }
+      
+      // setStartDate('')
+      // setEndDate('')
+      // setCarbonReduction('')
+      // setStandard('')
+      // setStandardStatus('')
+      // setValidation('')
+      // setValidationStatus('')
+      // setCarbonCreditRegister('')
+      // setCarbonCreditRegisterStatus('')
+      // setCarbonCreditTrades('')
+      // setCarbonCreditTradesStatus('')
+      toast('Updated sucessfully')
+      setLaoding(false)
     } catch (e) {
+      console.error('Error updating document: ', e);
       toast('Try again later')
-      console.error("Error adding document: ", e);
     }
-    setLaoding(false)
-    
   };
 
   return (
