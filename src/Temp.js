@@ -1,4 +1,4 @@
-import { collection, getDoc, getDocs } from 'firebase/firestore'
+import { collection, addDoc, getDocs, query, where,doc, setDoc, updateDoc } from "firebase/firestore"; 
 import React, { useEffect, useState } from 'react'
 import { db } from './firebaseConfig'
 import emailjs from 'emailjs-com';
@@ -45,6 +45,34 @@ function Temp() {
       });
     document.body.removeChild(form);
   }
+
+
+  // const handleSave = async () => {
+  //   setLaoding(true)
+    
+  //   try {
+  //     const docRef = await addDoc(collection(db, "rewardBook"), {
+  //       companyName: 'code2 new deal',
+  //       companyUserId: user?.uid,
+  //       startDate : startDate,
+  //       endDate : endDate,
+  //       turnoverCovered : turnoverCovered,
+  //       redemptionValue: redemptionValue,
+  //       distributionRatio : distributionRatio,
+  //       currency : currency,
+  //       maxDiscount : maxDiscount,
+  //       active : true,
+  //       isApproved : false
+  //     });
+      
+  //   } catch (e) {
+  //     toast('Try again later')
+  //     console.error("Error adding document: ", e);
+  //   }
+  //   setLaoding(false)
+    
+  // };
+
 
 
   // useEffect(()=>{

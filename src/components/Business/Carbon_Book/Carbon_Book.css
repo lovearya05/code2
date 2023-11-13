@@ -17,12 +17,17 @@
   font-weight: 400;
   line-height: normal;
 }
-.addButton {
+.flexrow{
+  display: flex;
+  flex-direction: row-reverse;
   width: 100%;
+}
+.addButton {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
+  cursor: pointer;
 }
 
 .plusButton {

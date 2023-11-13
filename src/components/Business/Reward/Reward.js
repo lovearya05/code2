@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useEffect, useState} from "react";
 import Navbar from "../../Navbar/Navbar";
 import "./Reward.css";
 import "../Carbon_Book/Carbon_Book.css";
@@ -6,7 +6,7 @@ import CalenderOption from "../Components/CalenderOption";
 import BusinessInput from "../Components/BusinessInput";
 import Dropdown from "../Components/Dropdown";
 import { useSelector } from "react-redux";
-import { collection, addDoc } from "firebase/firestore"; 
+import { collection, addDoc, getDocs, query, where,doc, setDoc, updateDoc } from "firebase/firestore"; 
 import { db } from "../../../firebaseConfig";
 import Loader from "../../login/EssentialComponents/Loader";
 import toast from "react-simple-toasts";
@@ -24,20 +24,19 @@ const Reward = () => {
   const [loading, setLaoding] = useState(false)
 
   // console.log(startDate, endDate, turnoverCovered, redemptionValue, distributionRatio, currency, maxDiscount )
-  const handleSaveBtn = ()=>{
+  useEffect(()=>{
+    const distributionFactor = 0.4
+    setDistributionRation(turnoverCovered*distributionFactor)
+  },[turnoverCovered])
+  
+  const handleSaveBtn = async ()=>{
+    
     if(!startDate || !endDate || !turnoverCovered || !redemptionValue || !distributionRatio || !currency || !maxDiscount){
       toast('please enter all values first')
       return
     }
-    console.log('save button click')
-    !loading && handleSave()
-  }
 
-  const handleSave = async () => {
-    setLaoding(true)
-    
-    try {
-      const docRef = await addDoc(collection(db, "rewardBook"), {
+    updateOrCreateRewardBook(user?.uid, {
         companyName: 'code2 new deal',
         companyUserId: user?.uid,
         startDate : startDate,
@@ -49,7 +48,28 @@ const Reward = () => {
         maxDiscount : maxDiscount,
         active : true,
         isApproved : false
-      });
+    })
+    // console.log('save button click')
+    // !loading && handleSave()
+  }
+
+  const updateOrCreateRewardBook = async (companyUserId, newData) => {
+    setLaoding(true)
+    const rewardBookCollection = collection(db, 'rewardBook');
+    const querySnapshot = await getDocs(query(rewardBookCollection, where('companyUserId', '==', companyUserId)));
+    
+    try {
+      if (querySnapshot.size > 0) { 
+        const firstDoc = querySnapshot.docs[0];
+        const docRef = doc(db, 'rewardBook', firstDoc.id);
+  
+        await updateDoc(docRef, newData);
+        console.log(`Document with companyUserId ${companyUserId} updated successfully.`);
+
+      } else {
+          await setDoc(doc(rewardBookCollection), { ...newData, companyUserId });
+          console.log(`New document with companyUserId ${companyUserId} added successfully.`);
+      }
       setMaxDiscount('')
       setStartDate('')
       setEndDate('')
@@ -59,13 +79,13 @@ const Reward = () => {
       setCurrency('')
       setMaxDiscount('')
       
-      toast('New Rewards added.')
+      toast('Rewards updated sucessfully')
+      setLaoding(false)
     } catch (e) {
+      console.error('Error updating document: ', e);
       toast('Try again later')
-      console.error("Error adding document: ", e);
+
     }
-    setLaoding(false)
-    
   };
 
   return (
@@ -97,7 +117,7 @@ const Reward = () => {
         <p>Maximum Possible Discount</p>
         <BusinessInput setValue={setMaxDiscount} currValue={maxDiscount} type={'number'} />
         <p>Reward Distribution ratio</p>
-        <BusinessInput setValue={setDistributionRation} currValue={distributionRatio} type={'number'} />
+        <BusinessInput isDisabled currValue={distributionRatio} />
 
 
         {/* <Dropdown /> */}

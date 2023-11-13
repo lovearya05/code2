@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../../Navbar/Navbar";
 import "./Carbon_Book.css";
 import Dropdown from "../Components/Dropdown";
@@ -17,24 +17,52 @@ const Carbon_Book = () => {
   const [renewalCountry, setRenewalCountry] = useState('')
   const [renewalType, setRenewalType] = useState('')
   const [generatedRenewal, setGeneratedRenewal] = useState('')
-  const [reductionByRenewal, setReductionByRenewal] = useState('')
-  const [kwhReductionByReduction, setkwhReductionByReduction] = useState('')
-  const [countryOfReduction, setCountryOfReduction] = useState('')
-  const [co2ReductionByOtherMeasure, setco2ReductionByOtherMeasure] = useState('')
+  const [reductionByRenewal, setReductionByRenewal] = useState('') // reductio1
+
   const [startDate, setStartDate] = useState('')
   const [endDate, setEndDate] = useState('')
-  const [totalco2Reduction, setTotalco2Reduction] = useState('')
-  const [totalco2Externally, setco2Externally] = useState('')
+  const [totalco2Reduction, setTotalco2Reduction] = useState('') // final reduction1
+  
+  // const [totalReductionIntExtr, setTotalReductionIntExtr] = useState('')
+  
+  // if other initatives 
+  const [showOtherInitatives, setShowOtherInitatives] = useState(false)
+  const [kwhReductionByReduction, setkwhReductionByReduction] = useState('')
+  const [countryOfReduction, setCountryOfReduction] = useState('')
+  const [co2ReductionByOtherMeasure, setco2ReductionByOtherMeasure] = useState('') // reductio 2
 
+  const [totalco2Externally, setco2Externally] = useState('')// user calculated reduction
+  
   const handleSaveBtn = ()=>{
-    if(!renewalCountry || !renewalType || !generatedRenewal || !reductionByRenewal || !kwhReductionByReduction || !countryOfReduction
-       || !co2ReductionByOtherMeasure || !startDate || !endDate || !totalco2Reduction || !totalco2Externally){
+    if(!renewalCountry || !renewalType || !generatedRenewal || !reductionByRenewal || showOtherInitatives && !kwhReductionByReduction ||
+      showOtherInitatives && !countryOfReduction || !startDate || !endDate){
       toast('please enter all values first')
       return
     }
     // console.log('save button click')
     // !loading && handleSave()
   }
+  useEffect(()=>{
+    if(co2ReductionByOtherMeasure && reductionByRenewal){
+      setTotalco2Reduction(co2ReductionByOtherMeasure+reductionByRenewal)
+    }else if(co2ReductionByOtherMeasure) {
+      setTotalco2Reduction(co2ReductionByOtherMeasure)
+    }else if(reductionByRenewal){
+      setTotalco2Reduction(reductionByRenewal)
+    }else{
+      setTotalco2Reduction('')
+    }
+  },[reductionByRenewal, co2ReductionByOtherMeasure])
+
+  useEffect(()=>{
+    // country based reduction 
+    const currentFactor = 0.4
+    setReductionByRenewal(currentFactor*generatedRenewal)
+  },[generatedRenewal])
+  useEffect(()=>{ // other initative measure calculation
+    const currentFactor = 0.4
+    setco2ReductionByOtherMeasure(currentFactor*kwhReductionByReduction)
+  },[kwhReductionByReduction])
 
   return (
     <div>
@@ -54,23 +82,27 @@ const Carbon_Book = () => {
           <p>Generated Renewal</p>
           <BusinessInput setValue={setGeneratedRenewal} currValue={generatedRenewal} type={'number'} />
 
-          <p>CO2 Reduction by Renewals </p>
-          <BusinessInput setValue={setReductionByRenewal} currValue={reductionByRenewal} type={'number'} />
-          {/*  */}
+          <p>CO2 Reduction </p> 
+          <BusinessInput isDisabled currValue={reductionByRenewal} />
 
-          <p>Kwh Reduction by other initiatives </p>
-          <BusinessInput setValue={setkwhReductionByReduction} currValue={kwhReductionByReduction} type={'number'} />
+          {/* other initiatives */}
+          {!showOtherInitatives && <div className="flexrow" >
+            <div onClick={()=>setShowOtherInitatives(true)} className="addButton">
+              <AiOutlinePlusCircle className="plusButton" />
+              <p>Add Other Initiatives</p>
+            </div>
+          </div>}
 
-          <p>Country of Reduction </p>
-          <BusinessInput setValue={setCountryOfReduction} currValue={countryOfReduction} type={'text'} />
+          {showOtherInitatives && <div className="carbon__input" >
+            <p>Kwh Reduction by other initiatives </p>
+            <BusinessInput setValue={setkwhReductionByReduction} currValue={kwhReductionByReduction} type={'number'} />
 
-          <p>CO2 Reduction by other measures </p>
-          <BusinessInput setValue={setco2ReductionByOtherMeasure} currValue={co2ReductionByOtherMeasure} type={'number'} />
+            <p>Country of Reduction </p>
+            <BusinessInput setValue={setCountryOfReduction} currValue={countryOfReduction} type={'text'} />
 
-          <div className="addButton">
-            <AiOutlinePlusCircle className="plusButton" />
-            <p>Add Other Initiatives</p>
-          </div>
+            <p>CO2 Reduction by other measures </p>
+            <BusinessInput currValue={co2ReductionByOtherMeasure} />
+          </div>}
 
           <div className="calender__selection">
             <div className="calender__from">
@@ -83,7 +115,7 @@ const Carbon_Book = () => {
             </div>
           </div>
           <p>Total CO2 Reduction</p>
-          <BusinessInput setValue={setTotalco2Reduction} currValue={totalco2Reduction} type={'number'} />
+          <BusinessInput isDisabled currValue={totalco2Reduction} />
           <p>Total CO2 Reduction(Externally Calculated) </p>
           <BusinessInput setValue={setco2Externally} currValue={totalco2Externally} type={'number'} />
         </div>
