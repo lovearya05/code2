@@ -6,6 +6,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { ThemeProvider } from "styled-components";
 import { format } from 'date-fns'
+import dayjs from 'dayjs';
 
 import { createTheme } from '@mui/material/styles'
 const CalenderOption = ({setValue=()=>{}, currValue='' }) => {
@@ -27,10 +28,11 @@ const newTheme = (theme) => createTheme({
     }
   }
 })
+const dateString = currValue.length>=8 ? currValue.substring(0,4)+'-'+currValue.substring(4,6)+'-'+currValue.substring(6,8)  : ''
   return (
     <ThemeProvider theme={newTheme}>
-      <DatePicker value={currValue} onChange={(newValue) => {
-        console.log(newValue)
+      <DatePicker  defaultValue={dayjs(dateString)} onChange={(newValue) => {
+        // console.log(newValue)
         const formattedDate = format(newValue.$d, 'yyyyMMdd');
         setValue(formattedDate)
         }}  />
