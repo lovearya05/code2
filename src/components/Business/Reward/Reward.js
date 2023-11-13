@@ -23,6 +23,32 @@ const Reward = () => {
   const { user } = useSelector(state => state?.appData)
   const [loading, setLaoding] = useState(false)
 
+  useEffect(()=>{
+    loadInitalData()
+  },[])
+
+  const loadInitalData = async ()=>{
+    setLaoding(true)
+    try{
+      const dataItem = 'rewardBook'
+      const rewardBookCollection = collection(db, dataItem);
+      const querySnapshot = await getDocs(query(rewardBookCollection, where('companyUserId', '==', user?.uid)));
+      if (querySnapshot.size > 0){
+        const firstDoc = querySnapshot.docs[0];
+        const data = firstDoc?.data()
+        // setStartDate(data?.startDate)
+        // setEndDate(data?.endDate)
+        setTurnoverCovered(data?.turnoverCovered)
+        setRedemptionValue(data?.redemptionValue)
+        setDistributionRation(data?.distributionRatio)
+        setCurrency(data?.currency)
+        setMaxDiscount(data?.maxDiscount)
+        // console.log(data?.startDate)
+      }
+    }catch(e){console.log(e)}
+    setLaoding(false)
+  }
+
   // console.log(startDate, endDate, turnoverCovered, redemptionValue, distributionRatio, currency, maxDiscount )
   useEffect(()=>{
     const distributionFactor = 0.4

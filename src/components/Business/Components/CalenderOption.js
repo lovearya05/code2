@@ -30,6 +30,7 @@ const newTheme = (theme) => createTheme({
   return (
     <ThemeProvider theme={newTheme}>
       <DatePicker value={currValue} onChange={(newValue) => {
+        console.log(newValue)
         const formattedDate = format(newValue.$d, 'yyyyMMdd');
         setValue(formattedDate)
         }}  />
