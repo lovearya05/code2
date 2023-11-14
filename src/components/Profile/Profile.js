@@ -22,11 +22,13 @@ const Profile = () => {
       <div className="boxes">
         <ProfileBox
           title="Individual"
+          img={1}
           isSelected={selectedButton === "Individual"}
           onClick={() => handleButtonClick("Individual")}
         />
         <ProfileBox
           title="Business"
+          img={2}
           isSelected={selectedButton === "Business"}
           onClick={() => handleButtonClick("Business")}
         />
