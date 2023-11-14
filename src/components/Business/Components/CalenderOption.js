@@ -1,9 +1,9 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import "./CalenderOption.css";
 import { SlCalender } from "react-icons/sl";
 // import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { ThemeProvider } from "styled-components";
 import { format } from 'date-fns'
 import dayjs from 'dayjs';

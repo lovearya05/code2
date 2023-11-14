@@ -3,6 +3,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  z-index: -1;
   /* width: 100%; */
   border-radius: 8px;
   border: 1px solid var(--Stroke_color, #404040);

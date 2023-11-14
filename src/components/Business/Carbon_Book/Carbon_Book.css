@@ -53,6 +53,7 @@
   width: 100%;
 }
 .calender__from {
+  z-index: 1;
   width: 45%;
 }
 .calender__from > p {

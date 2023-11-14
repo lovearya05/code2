@@ -1,20 +1,62 @@
+/* Default styles for all devices */
+.login__left {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 60px;
+
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    #272727;
+}
+
+.login__left > .login__left__logo {
+  width: 140px;
+  width: 142px;
+}
+.login__left > .login__lefttext {
+  width: 77px;
+  margin-top: 50px;
+  height: 17.271px;
+}
+.login__left > h2 {
+  color: #fff;
+  width: 55%;
+  font-family: "Poppins";
+  font-size: 48px;
+  font-style: normal;
+  margin: 0;
+  font-weight: 600;
+  line-height: normal;
+}
+.login__right {
+  width: 55%;
+}
 .loginPage {
   background: #272727;
   padding: 15px;
+  background: #272727;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login__page {
+  width: 55%;
 }
 .loginLogoImg {
   width: 28.993px;
   height: 29.5px;
 }
-
 .loginPageText img {
   margin-left: 5px;
   width: 28%;
 }
-.loginPageLeft {
-  height: 50%;
-}
-/* upperLogin Part */
+
 .upperLoginPart {
   padding: 12% 0%;
   display: flex;
@@ -25,30 +67,26 @@
   display: flex;
   width: 100%;
   flex-direction: row;
-  align-items: center; /* Align content vertically in the center */
-  margin-left: 4%; /* Position it 8% from the left */
+  align-items: center;
+  margin-left: 4%;
 }
-
 .loginPageText h2 {
   color: #fff;
-  font-family: "Poppins", sans-serif; /* Use proper font-family syntax */
-  font-size: 24px;
+  font-family: "Poppins";
+  font-size: 28px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  margin: 0; /* Remove default margin to prevent extra space */
+  margin: 0;
 }
-
 .loginPageText img.logoText {
-  margin-left: 15px; /* Add space between the image and text */
-  max-height: 100%; /* Ensure the image does not exceed the container height */
+  margin-left: 15px;
+  max-height: 100%;
 }
-/* Middle part of login page */
-
 .forgotText {
   cursor: pointer;
   color: #fff;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   margin-top: 0px;
   font-size: 12px;
   font-style: normal;
@@ -66,7 +104,7 @@
 .alreadyUser > p {
   margin-right: 5px;
   color: #fff;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -75,39 +113,58 @@
 .alreadyUser > a {
   text-decoration: none;
   color: #00955f;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   text-decoration-line: underline;
 }
-.continue {
+.continue,
+.bottomLogin,
+.bottomLogin p,
+.bottomLogin > p > a {
   text-align: center;
-  color: #a9a3a3;
-  font-family: 'Poppins', sans-serif;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  margin-top: 40px;
+  font-family: "Poppins", sans-serif;
 }
-.bottomLogin {
-  text-align: center;
-}
+.continue,
 .bottomLogin p {
-  color: #a9a3a3;
-  font-family: 'Poppins', sans-serif;
   font-size: 12px;
-  font-style: normal;
   font-weight: 400;
   line-height: normal;
+  color: #a9a3a3;
 }
 .bottomLogin > p > a {
   color: #00955f;
-  font-family: 'Poppins', sans-serif;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
   text-decoration-line: underline;
+}
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 768px) {
+  .login__left {
+    display: none;
+  }
+  .login__page {
+    width: 95%;
+  }
+  .login__right {
+    width: 100%;
+  }
+  /* Adjust styles for mobile devices */
+  .upperLoginPart {
+    padding: 10% 5%;
+  }
+  .loginPageText {
+    margin-left: 2%;
+  }
+  .loginPageText h2 {
+    font-size: 20px;
+  }
+  .alreadyUser > p,
+  .alreadyUser > a,
+  .bottomLogin p,
+  .bottomLogin > p > a {
+    font-size: 10px;
+  }
 }
