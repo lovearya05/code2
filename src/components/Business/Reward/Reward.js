@@ -36,8 +36,8 @@ const Reward = () => {
       if (querySnapshot.size > 0){
         const firstDoc = querySnapshot.docs[0];
         const data = firstDoc?.data()
-        // setStartDate(data?.startDate)
-        // setEndDate(data?.endDate)
+        setStartDate(data?.startDate)
+        setEndDate(data?.endDate)
         setTurnoverCovered(data?.turnoverCovered)
         setRedemptionValue(data?.redemptionValue)
         setDistributionRation(data?.distributionRatio)
@@ -125,11 +125,11 @@ const Reward = () => {
         <div className="calender__selection">
           <div className="calender__from">
             <p>From</p>
-            <CalenderOption currValue={startDate} setValue={setStartDate} />
+            {!loading && <CalenderOption currValue={startDate} setValue={setStartDate} />}
           </div>
           <div className="calender__to">
             <p>To</p>
-            <CalenderOption currValue={endDate} setValue={setEndDate} />
+            {!loading && <CalenderOption currValue={endDate} setValue={setEndDate} />}
           </div>
         </div>
 
