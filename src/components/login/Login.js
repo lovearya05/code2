@@ -30,7 +30,6 @@ const Login = () => {
   const [loading, setLaoding] = useState(false);
 
   // navigate('/profile',{ replace: true })
-  console.log({ email, password });
 
   const handlleLoginClick = async () => {
     // if (loading) return

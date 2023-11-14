@@ -96,14 +96,14 @@ const Reward = () => {
           await setDoc(doc(rewardBookCollection), { ...newData, companyUserId });
           console.log(`New document with companyUserId ${companyUserId} added successfully.`);
       }
-      setMaxDiscount('')
-      setStartDate('')
-      setEndDate('')
-      setTurnoverCovered('')
-      setRedemptionValue('')
-      setDistributionRation('')
-      setCurrency('')
-      setMaxDiscount('')
+      // setMaxDiscount('')
+      // setStartDate('')
+      // setEndDate('')
+      // setTurnoverCovered('')
+      // setRedemptionValue('')
+      // setDistributionRation('')
+      // setCurrency('')
+      // setMaxDiscount('')
       
       toast('Rewards updated sucessfully')
       setLaoding(false)
