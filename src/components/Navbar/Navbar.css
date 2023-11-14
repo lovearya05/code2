@@ -40,7 +40,11 @@
   overflow-x: hidden;
   transition: 0.5s; /* Add transition for smooth animation */
 }
-
+.sidebar-open {
+  background-color: #302f2f;
+  width: 25%;
+  padding: 15px;
+}
 .sidebar button {
   padding: 15px;
   text-decoration: none;
@@ -55,11 +59,6 @@
   background-color: #272727; /* Change the color on hover */
 }
 
-.sidebar-open {
-  background-color: #302f2f;
-  width: 65%;
-  padding: 15px;
-}
 .sidebar_open_navbar {
   display: flex;
   flex-direction: row;
@@ -128,4 +127,11 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+}
+@media only screen and (max-width: 768px) {
+  .sidebar-open {
+    background-color: #302f2f;
+    width: 65%;
+    padding: 15px;
+  }
 }
