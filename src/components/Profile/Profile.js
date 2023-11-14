@@ -13,6 +13,9 @@ const Profile = () => {
   const handleGoClick = () => {
     if (selectedButton === "Business") {
       navigate("/code2/tracker", { replace: true });
+    }else if(selectedButton === "Individual"){
+      navigate("/code2/TrackerConsumer", { replace: true });
+      
     }
   };
 
