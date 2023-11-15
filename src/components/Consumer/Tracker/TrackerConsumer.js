@@ -77,20 +77,19 @@ const TrackerConsumer = () => {
           <CircularBtn onClickBtn={()=>setListToShow('code2Earned')} 
           isActive={listToShow === 'code2Earned' } text="Earned Code 2" />
         </div>
-
-        {listToShow === 'transection' && <div>
-          <RecentTransectionCard showTopLine={false}/>
-          <RecentTransectionCard/>
-          <RecentTransectionCard/>
-        </div>}
-
-        {listToShow === 'code2Earned' && <div>
-          <EarnedCode2Card />
-          <EarnedCode2Card />
-          <EarnedCode2Card />
-        </div>}
-
       </div>
+
+      {listToShow === 'transection' && <div>
+        <RecentTransectionCard showTopLine={false}/>
+        <RecentTransectionCard/>
+        <RecentTransectionCard/>
+      </div>}
+
+      {listToShow === 'code2Earned' && <div>
+        <EarnedCode2Card />
+        <EarnedCode2Card />
+        <EarnedCode2Card />
+      </div>}
     </div>
   );
 };

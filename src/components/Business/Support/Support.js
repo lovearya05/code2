@@ -13,7 +13,6 @@ const Support = () => {
   const { user } = useSelector(state => state?.appData)
   const [loading, setLaoding] = useState(false)
 
-  console.log({ user }) 
   const [issue, setIssue] = useState('');
 
   const handlePost =()=>{
@@ -29,12 +28,13 @@ const Support = () => {
     
     try {
       const docRef = await addDoc(collection(db, "supportTicket"), {
-        companyName: 'code2 support ticket',
-        companyUserId: user?.uid,
+        entityName: 'code2 support ticket',
+        entityUserId: user?.uid,
         issueDescription: issue,
         status : 'open',
         active : true,
-        isApproved : false
+        isApproved : false,
+        suppoerProfile : 'business'
       });
       toast('Support message sent')
       setIssue('')

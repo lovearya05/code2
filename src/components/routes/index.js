@@ -19,6 +19,7 @@ import ExploreStoreConsumer from "../Consumer/exploreStore/ExploreStoreConsumer"
 import RedeemCODE2 from "../Consumer/redeemCODE2/RedeemCODE2";
 import ProfileConsumer from "../Consumer/profileConsumer/ProfileConsumer";
 import SupportConsumer from "../Consumer/supportConsumer/SupportConsumer";
+import EditProfileConsumer from "../Consumer/profileConsumer/EditProfileConsumer";
 
 export default function RoutesServer() {
   const { user } = useSelector((state) => state?.appData);
@@ -45,6 +46,7 @@ export default function RoutesServer() {
           <Route exact path="/code2/redeemCODE2" element={<RedeemCODE2 />} />
           <Route exact path="/code2/profileConsumer" element={<ProfileConsumer />} />
           <Route exact path="/code2/supportConsumer" element={<SupportConsumer />} />
+          <Route exact path="/code2/editProfileConsumer" element={<EditProfileConsumer />} />
           <Route exact path="/code2/profile" element={<Profile />}></Route>
         </Routes>
         
