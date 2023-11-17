@@ -16,6 +16,7 @@ import {
   setDoc,
   updateDoc,
 } from "firebase/firestore";
+import BusinessWebNavbar from "../../WebNavbar.js/BusinessWebNavbar";
 
 const Tracker = () => {
   const { user } = useSelector((state) => state?.appData);
@@ -53,32 +54,55 @@ const Tracker = () => {
   return (
     <div>
       {loading && <Loader />}
-      <Navbar />
+      <div className="BusinessMobNavbar">
+        <Navbar />
+      </div>
+      <div className="BusinessWebNavbar">
+        <BusinessWebNavbar />
+      </div>
       <div className="tracker">
         <div className="business__title">
-          <p>Tracker</p>
+          <p className="bt__tracker">Tracker</p>
+          <p className="bt__dashboard">Dashboard</p>
         </div>
         <div className="business__boxes">
           <TrackerBox
-            value={totalco2Reduction}
+            // value={totalco2Reduction}
+            value="25000"
+            logo={true}
+            logoText={true}
+            show={false}
             colorBox="#f0ad00"
             value2="CO2 Reduction"
           />
           <TrackerBox
-            value={totalCode2Generated}
+            // value={totalCode2Generated}
+            value="23,3333"
             colorBox="#FFF"
-            value2="CODE2 Generated"
+            code2="CODE"
+            show={true}
+            value2="Generated"
           />
           <TrackerBox
             value="0,000"
             colorBox="#FFF"
-            value2="CODE2 Distributed"
+            code2="CODE"
+            show={true}
+            value2="Distributed"
           />
-          <TrackerBox value="00,000" colorBox="#FFF" value2="CODE2 Redeemed" />
           <TrackerBox
             value="00,000"
             colorBox="#FFF"
-            value2="Code2 Redeemed Value"
+            code2="CODE"
+            show={true}
+            value2="Redeemed"
+          />
+          <TrackerBox
+            value="00,000"
+            colorBox="#FFF"
+            code2="CODE"
+            show={true}
+            value2="Redeemed value"
           />
         </div>
       </div>

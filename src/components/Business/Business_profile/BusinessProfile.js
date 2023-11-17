@@ -3,11 +3,17 @@ import Navbar from "../../Navbar/Navbar";
 import "./BusinessProfile.css";
 import { TbPencilMinus } from "react-icons/tb";
 import ProfileComponent from "./ProfileComponent";
+import BusinessWebNavbar from "../../WebNavbar.js/BusinessWebNavbar";
 
 const BusinessProfile = () => {
   return (
     <div>
-      <Navbar />
+      <div className="BusinessMobNavbar">
+        <Navbar />
+      </div>
+      <div className="BusinessWebNavbar">
+        <BusinessWebNavbar />
+      </div>
       <div className="business__profile">
         <div className="profile__front">
           <div className="business__title">

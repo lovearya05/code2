@@ -1,0 +1,79 @@
+.bw_navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 15px;
+  align-items: center;
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    #272727;
+}
+.businessWebNavbar__middle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.businessWebNavbar__middle > button {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  color: var(--Secondary_Text_grey, #d9d9d9);
+  font-family: "Poppins";
+  font-size: 14px;
+  margin: 0px 5px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.businessWebNavbar__middle .bw__greenText {
+  color: var(--Secondary_Green, #3dc182);
+  font-family: "Poppins";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  border-bottom: 1px solid var(--Secondary_Green, #3dc182);
+}
+.businessWebNavbar__left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.businessWebNavbar__left .bw_logo {
+  width: 32px;
+  height: 32px;
+  margin-right: 6px;
+}
+.businessWebNavbar__left .bw_logoText {
+  width: 80px;
+}
+.businessWebNavbar__right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 200px;
+  background: rgba(0, 0, 0, 0.17);
+  padding: 3px 7px 3px 2px;
+}
+.businessWebNavbar__right > p {
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  border-radius: 3333.333px;
+  background: #f0af09;
+  color: #000;
+  margin: 0;
+  font-family: "Poppins";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+}
+.businessWebNavbar__right .bw__userIcon {
+  font-size: 14px;
+  margin-left: 5px;
+  color: white;
+}

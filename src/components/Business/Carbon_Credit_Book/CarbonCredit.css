@@ -1,8 +1,12 @@
 .credit__book {
-  padding: 2px 15px;
+  padding: 1% 30%;
+}
+.credit__book .business__title > p {
+  text-align: center;
 }
 .credit__book > p {
   color: #787878;
+
   font-size: 14px;
   font-style: normal;
   margin: 15px 0px 7px;
@@ -14,4 +18,27 @@
   /* flex-direction: row;
   justify-content: space-between;
   align-items: center; */
+}
+
+@media only screen and (max-width: 768px) {
+  .credit__book {
+    padding: 2px 15px;
+  }
+  .credit__book .business__title > p {
+    text-align: left;
+  }
+  .credit__book > p {
+    color: #787878;
+    font-size: 14px;
+    font-style: normal;
+    margin: 15px 0px 7px;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .status__dropdown {
+    display: flex;
+    /* flex-direction: row;
+  justify-content: space-between;
+  align-items: center; */
+  }
 }
