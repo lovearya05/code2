@@ -14,6 +14,10 @@ import Reward from "../Business/Reward/Reward";
 import Support from "../Business/Support/Support";
 import UpdateDeals from "../Business/Update_Deals/UpdateDeals";
 import { useSelector } from "react-redux";
+import AdminTracker from "../Admin/Tracker/AdminTracker";
+import AdminSupport from "../Admin/Support/AdminSupport";
+import AdminSupportPage from "../Admin/Support/AdminSupportPage";
+import PaymentTracker from "../Admin/PaymentTracker/PaymentTracker";
 
 export default function RoutesServer() {
   const { user } = useSelector((state) => state?.appData);
@@ -65,6 +69,11 @@ export default function RoutesServer() {
           <Routes>
             <Route exact path="/code2/login" element={<Login />}></Route>
             <Route exact path="/code2/signup" element={<Signup />}></Route>
+            <Route
+              exact
+              path="/code2/admin"
+              element={<PaymentTracker />}
+            ></Route>
           </Routes>
         )}
       </div>

@@ -1,0 +1,22 @@
+@media only screen and (max-width: 768px) {
+  .admin__button {
+    padding: 15px 25px;
+  }
+  .admin__button > button {
+    margin-right: 15px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding-bottom: 14px;
+
+    color: var(--Primary_text-color, #fff);
+    font-family: "Poppins";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  .admin__button .admin__button__clicked {
+    border-bottom: 1px solid var(--Stroke_color, #404040);
+  }
+}

@@ -1,24 +1,118 @@
+.splash__screen {
+  background-image: url("./image\ 72.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+.splash__screen .splash__leftImage {
+  margin: 15px;
+}
 .container {
-  padding: 15px;
-  margin-top: 32%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90vh;
 }
 
-.mainView {
-  background-color: var(--backColor);
+.container .splashText {
+  display: none;
 }
-.logoDiv .logoImg {
-  width: 40%;
-  margin-bottom: 30px;
+.container .splashLogo img {
+  width: 350px;
 }
-.logoDiv .logoText {
-  width: 25%;
+.container > .splashLeftText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
-.text1splash {
-  color: #fff;
-  font-size: 3.2rem;
-  font-family: "Poppins", sans-serif;
-  /* font-style: normal; */
-  font-weight: 600;
-  line-height: normal;
-  margin-top: 10px;
+.container .splashLeftText {
+  width: 45%;
+  margin-left: 40px;
+}
+.container .splashLeftText > h2 {
+  /* margin-left: 30px; */
+  margin: 0px;
+  width: 100%;
+  color: var(--White, #fff);
+  font-family: "Poppins";
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%;
+}
+.container .splashLeftText > p {
+  /* margin: 0; */
+  color: var(--Grey, #747474);
+  font-family: "Poppins";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 450;
+  line-height: 130%; /* 41.6px */
+}
+.container .splashGreen {
+  color: var(--Green, #00955f);
+  font-family: "Poppins";
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%;
+}
+@media only screen and (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+    height: 90vh;
+    background-image: none;
+  }
+  .splash__screen {
+    background-image: none;
+  }
+  .container .splashGreen {
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%;
+  }
+  .container .splashLogo img {
+    width: 139.558px;
+    /* height: 142px; */
+    margin-bottom: 30px;
+  }
+  .container .splashLeftText > p {
+    display: none;
+  }
+  .splash__screen .splash__leftImage > img {
+    display: none;
+  }
+  .splash__screen .splash__leftImage {
+    margin: 0px;
+  }
+  .container .splashText img {
+    width: 100%;
+  }
+  .container .splashText {
+    display: block;
+  }
+
+  .container .splashLeftText {
+    width: 80%;
+    margin-left: 0px;
+  }
+  .container .splashLeftText > h2 {
+    margin-left: 0px;
+    color: #fff;
+    font-family: "Poppins";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: 10px;
+  }
 }
