@@ -6,6 +6,7 @@ import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../../firebaseConfig";
 import Loader from "../../login/EssentialComponents/Loader";
 import toast from "react-simple-toasts";
+import { getCurrentDateTimeString } from "../../../utils/utilFunctions";
 
 
 const UpdateDeals = () => {
@@ -36,7 +37,8 @@ const UpdateDeals = () => {
         itemForDiscount : itemForDiscount,
         maxDiscount : maxDiscount,
         active : true,
-        isApproved : false
+        isApproved : false,
+        cDate : getCurrentDateTimeString()
       });
       setMaxDiscount('')
       setItemForDiscount('')

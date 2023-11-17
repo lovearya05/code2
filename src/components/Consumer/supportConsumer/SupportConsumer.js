@@ -60,7 +60,7 @@ const SupportConsumer = () => {
           <p className="support__contact">+3456 567 89</p>
         </div>
         <div className="support__inputBox">
-          <textarea rows="2" placeholder="Write something.." value={issue} onChange={(e)=>setIssue(e.target.value)} />
+          <textarea rows="2" placeholder="Not received CODE2 points after new purchase" value={issue} onChange={(e)=>setIssue(e.target.value)} />
         </div>
         <button className="support__post" onClick={handlePost} >Post</button>
       </div>

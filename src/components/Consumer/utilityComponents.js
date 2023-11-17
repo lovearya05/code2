@@ -23,21 +23,21 @@ export const RecentTransectionCard = ({showTopLine=true})=>{
     </div>
   )
 }
-export const EarnedCode2Card = ({showBottomLine=true})=>{
+export const EarnedCode2Card = ({showBottomLine=true, maxDiscount=0, companyName='', dateString=''})=>{
   return(
     <div className={`earnedCardMain ${showBottomLine ? 'bottomLine' : ''} `} >
       <div className='earnedCardInner'>
         
         <div className='flexRowSpaceBtn' >
           <img src={walmartLogo} alt="" className="" />
-          <div className='greenText1'>35</div>
+          <div className='greenText1'>{maxDiscount}% OFF</div>
         </div>
 
         <div className='flexRowSpaceBtn marginTop6' >
-          <div className='whiteText1'>Automobile Co.</div>
+          <div className='whiteText1'>{companyName}</div>
           <div className='whiteText2'>1 AED = 0.5</div>
         </div>
-        <div className='dateSmall' >Nov 1, 2023</div>
+        <div className='dateSmall' >{dateString}</div>
       </div>
     </div>
   )

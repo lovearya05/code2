@@ -3,6 +3,7 @@ export const storeSlice = createSlice({
   name:"appData",
   initialState:{
     user:null,
+    userProfileType:null,
   },
   
   reducers: {
@@ -12,8 +13,11 @@ export const storeSlice = createSlice({
       logout: (state) => {
         state.user = null;
       },
+      updateUserProfileType : (state, action) =>{
+        state.userProfileType = action.payload;
+      }
     },
 })
 
-export const { login, logout } = storeSlice.actions;
+export const { login, logout, updateUserProfileType } = storeSlice.actions;
 export default storeSlice.reducer;

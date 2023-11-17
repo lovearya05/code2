@@ -10,14 +10,14 @@ import { collection, addDoc, getDocs, query, where,doc, setDoc, updateDoc } from
 import { db } from "../../../firebaseConfig";
 import Loader from "../../login/EssentialComponents/Loader";
 import toast from "react-simple-toasts";
-
+import { getCurrentDateTimeString } from "../../../utils/utilFunctions";
 
 const Reward = () => {
   const [startDate, setStartDate] = useState('')
   const [endDate, setEndDate] = useState('')
   const [turnoverCovered, setTurnoverCovered] = useState('')
   const [redemptionValue, setRedemptionValue] = useState('')
-  const [distributionRatio, setDistributionRation] = useState('')
+  const [distributionRatio, setDistributionRation] = useState('0')
   const [currency, setCurrency] = useState('')
   const [maxDiscount, setMaxDiscount] = useState('')
   const { user } = useSelector(state => state?.appData)
@@ -52,7 +52,7 @@ const Reward = () => {
   // console.log(startDate, endDate, turnoverCovered, redemptionValue, distributionRatio, currency, maxDiscount )
   useEffect(()=>{
     const distributionFactor = 0.4
-    setDistributionRation(turnoverCovered*distributionFactor)
+    // setDistributionRation(turnoverCovered*distributionFactor)
   },[turnoverCovered])
   
   const handleSaveBtn = async ()=>{
@@ -72,6 +72,7 @@ const Reward = () => {
         distributionRatio : distributionRatio,
         currency : currency,
         maxDiscount : maxDiscount,
+        cDate : getCurrentDateTimeString(),
         active : true,
         isApproved : false
     })

@@ -23,10 +23,6 @@ const Carbon_Book = () => {
   const [startDate, setStartDate] = useState('')
   const [endDate, setEndDate] = useState('')
 
-  console.log({startDate})
-  
-  // const [totalReductionIntExtr, setTotalReductionIntExtr] = useState('')
-  
   // if other initatives 
   const [showOtherInitatives, setShowOtherInitatives] = useState(false)
   const [otherCountryOfReduction, setOtherCountryOfReduction] = useState('')
@@ -91,7 +87,7 @@ const Carbon_Book = () => {
       otherkwhReduction : otherkwhReduction,
       reductionByOtherMeasure : reductionByOtherMeasure,
       totalco2Reduction : totalco2Reduction,
-      totalco2Externally : totalco2Externally,     
+      totalco2Externally : totalco2Externally,   
   })
     // console.log('save button click')
     // handleSave()

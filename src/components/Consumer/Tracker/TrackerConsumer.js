@@ -9,6 +9,8 @@ import toast from "react-simple-toasts";
 import { collection, addDoc, getDocs, query, where,doc, setDoc, updateDoc } from "firebase/firestore"; 
 import NavbarConsumer from "../navbarConsumer/NavbarConsumer";
 import { CircularBtn, RecentTransectionCard, EarnedCode2Card } from "../utilityComponents";
+import { getAllData } from "../utilityFunction";
+import { getDateMonthYear } from "../../../utils/utilFunctions";
 
 
 const TrackerConsumer = () => {
@@ -17,9 +19,12 @@ const TrackerConsumer = () => {
   const [totalco2Reduction, setTotalco2Reduction] = useState('')
   const [totalCode2Generated, setTotalCode2Generated] = useState('')
   const [listToShow, setListToShow] = useState('transection')
+  const [allDeals, setAllDeals] = useState([])
+
 
   useEffect(()=>{
     // loadInitalData()
+    loadDealsData()
   },[])
 
   const loadInitalData = async ()=>{
@@ -36,6 +41,11 @@ const TrackerConsumer = () => {
       }
     }catch(e){console.log(e)}
     setLaoding(false)
+  }
+  const loadDealsData = async()=>{
+    const data = await getAllData(db, 'allDeals', 'active', true, ()=>setLaoding(true), ()=>setLaoding(false))
+    console.log({data})
+    setAllDeals(data)
   }
 
   return (
@@ -86,9 +96,9 @@ const TrackerConsumer = () => {
       </div>}
 
       {listToShow === 'code2Earned' && <div>
-        <EarnedCode2Card />
-        <EarnedCode2Card />
-        <EarnedCode2Card />
+      {allDeals.map((item, i)=>{
+         return <EarnedCode2Card key={i} maxDiscount={item?.maxDiscount} companyName={item?.itemForDiscount} dateString={getDateMonthYear(item?.cDate)} />
+        })}
       </div>}
     </div>
   );

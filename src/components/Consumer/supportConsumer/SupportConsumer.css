@@ -72,3 +72,7 @@
   border-radius: 8px;
   background: #00955f;
 }
+textarea::placeholder {
+  color: #a7a1a1;
+  opacity: 0.9;
+}

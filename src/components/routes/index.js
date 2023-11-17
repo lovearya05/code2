@@ -22,8 +22,10 @@ import SupportConsumer from "../Consumer/supportConsumer/SupportConsumer";
 import EditProfileConsumer from "../Consumer/profileConsumer/EditProfileConsumer";
 
 export default function RoutesServer() {
-  const { user } = useSelector((state) => state?.appData);
-  const userType = false ?  "business" : 'consumer';
+  const { user, userProfileType } = useSelector((state) => state?.appData);
+  // const userType = false ?  "business" : 'consumer';
+  const userType = userProfileType;
+
   return (
     <div style={{ backgroundColor: "#272727", width: "100%" }}>
       <div
@@ -31,12 +33,20 @@ export default function RoutesServer() {
           display: "flex",
           flexDirection: "column",
           minHeight: "100vh",
-        }}
-      >
+        }}>
         <Routes>
           <Route exact path="/code2/" element={<Splash />}></Route>
           <Route exact path="/code2/temp" element={<Temp />}></Route>
         </Routes>
+        
+        {!user && <Routes>
+          <Route exact path="/code2/login" element={<Login />}></Route>
+          <Route exact path="/code2/signup" element={<Signup />}></Route>
+        </Routes>}
+
+        {user && <Routes>
+          <Route exact path="/code2/profile" element={<Profile />}></Route>
+        </Routes>}
 
         {user && userType === "consumer" && 
         <Routes>
@@ -47,12 +57,8 @@ export default function RoutesServer() {
           <Route exact path="/code2/profileConsumer" element={<ProfileConsumer />} />
           <Route exact path="/code2/supportConsumer" element={<SupportConsumer />} />
           <Route exact path="/code2/editProfileConsumer" element={<EditProfileConsumer />} />
-          <Route exact path="/code2/profile" element={<Profile />}></Route>
-        </Routes>
-        
-        }
-
-        {user && userType === "business" ? (
+        </Routes>}
+        {user && userType === "business" &&
           <Routes>
             <Route element={<Tracker />} />
             <Route index exact
@@ -76,15 +82,7 @@ export default function RoutesServer() {
             <Route exact path="/code2/support" element={<Support />}></Route>
             <Route exact path="/code2/profile" element={<Profile />}></Route>
           </Routes>
-        ) : (
-          <Routes>
-            <Route exact path="/code2/login" element={<Login />}></Route>
-            <Route exact path="/code2/signup" element={<Signup />}></Route>
-          </Routes>
-        )}
-
-
-
+        }
       </div>
        {" "}
     </div>
