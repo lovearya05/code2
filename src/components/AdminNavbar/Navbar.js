@@ -61,25 +61,27 @@ const Navbar = () => {
         <div>
           <div className="upperSideNavigation">
             <button
-              onClick={() => gotoLocation("tracker")}
+              onClick={() => gotoLocation("admin-tracker")}
               className={`sidebar_button ${
-                location.pathname === "/code2/admin" ? "greenText" : ""
+                location.pathname === "/code2/admin-tracker" ? "greenText" : ""
               }`}
             >
               Tracker
             </button>
             <button
-              onClick={() => gotoLocation("carbon_book")}
+              onClick={() => gotoLocation("payment-tracker")}
               className={`sidebar_button ${
-                location.pathname === "/code2/carbon_book" ? "greenText" : ""
+                location.pathname === "/code2/payment-tracker"
+                  ? "greenText"
+                  : ""
               }`}
             >
               Payment Tracker
             </button>
             <button
-              onClick={() => gotoLocation("credit_book")}
+              onClick={() => gotoLocation("factor")}
               className={`sidebar_button ${
-                location.pathname === "/code2/credit_book" ? "greenText" : ""
+                location.pathname === "/code2/factor" ? "greenText" : ""
               }`}
             >
               Set 'G' Factor
@@ -93,9 +95,9 @@ const Navbar = () => {
               Profile
             </button>
             <button
-              onClick={() => gotoLocation("deals")}
+              onClick={() => gotoLocation("admin-support")}
               className={`sidebar_button ${
-                location.pathname === "/code2/deals" ? "greenText" : ""
+                location.pathname === "/code2/admin-support" ? "greenText" : ""
               }`}
             >
               Support

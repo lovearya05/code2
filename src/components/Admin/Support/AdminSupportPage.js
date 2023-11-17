@@ -2,15 +2,21 @@ import React from "react";
 import Navbar from "../../AdminNavbar/Navbar";
 import "./AdminSupport.css";
 import { FaCaretDown } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const AdminSupportPage = () => {
+  const navigate = useNavigate();
+  const goBackFunction = () => {
+    navigate(-1);
+  };
+
   return (
     <div>
       <Navbar />
       <div className="admin__support__page">
         <div className="admin__support__page__title">
           <h2>Support</h2>
-          <button>Back</button>
+          <button onClick={goBackFunction}>Back</button>
         </div>
         <div className="adminSupport__page__middle">
           <p>TK10103456</p>

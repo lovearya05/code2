@@ -1,0 +1,34 @@
+@media only screen and (max-width: 768px) {
+  .factor__component {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 15px;
+    border-bottom: 1px solid var(--Stroke_color, #404040);
+  }
+  .fc_left > p {
+    color: var(--Primary_text-color, #fff);
+    font-family: "Poppins";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  .fc_middle > p {
+    color: var(--Primary_text-color, #fff);
+    font-family: "Poppins";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .fc_right > p {
+    color: var(--Secondary_Green, #3dc182);
+    font-family: "Poppins";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+}

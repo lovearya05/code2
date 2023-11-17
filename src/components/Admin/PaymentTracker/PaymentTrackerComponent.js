@@ -2,9 +2,16 @@ import React from "react";
 import "./PaymentTrackerComponent.css";
 import AdminTextTemp from "../Tracker/Components/AdminTextTemp";
 import { BsThreeDotsVertical } from "react-icons/bs";
-import "./PaymentTrackerComponent.css"
+import "./PaymentTrackerComponent.css";
+import { useNavigate } from "react-router-dom";
 
 const BusinessList = ({ activate }) => {
+  const navigate = useNavigate();
+
+  const gotoLocation = (urlLocation) => {
+    navigate(`/code2/${urlLocation}`);
+  };
+
   return (
     <div className="business__list">
       <div className="business__list_container">
@@ -26,7 +33,9 @@ const BusinessList = ({ activate }) => {
           <p>971509128576</p>
         </div>
         <div className="edit__fee">
-          <button>Edit fee</button>
+          <button onClick={() => gotoLocation("additionalfee")}>
+            Edit fee
+          </button>
         </div>
       </div>
     </div>

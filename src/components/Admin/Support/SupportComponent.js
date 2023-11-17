@@ -1,8 +1,14 @@
 import React from "react";
 import "./SupportComponent.css";
 import { FaAngleRight } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
-const SupportComponent = ({open}) => {
+const SupportComponent = ({ open }) => {
+  const Navigate = useNavigate();
+  const openSupport = (urlLocation) => {
+    Navigate(`/code2/${urlLocation}`);
+  };
+
   return (
     <div className="support__component">
       <div className="support__component__upper">
@@ -13,7 +19,9 @@ const SupportComponent = ({open}) => {
         </div>
         {open && open ? (
           <div className="support__component__upper__right">
-            <button>Open</button>
+            <button onClick={() => openSupport("admin-supportpage")}>
+              Open
+            </button>
           </div>
         ) : (
           <div className="support__component__upper__right__closed">

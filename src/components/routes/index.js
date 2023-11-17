@@ -18,6 +18,9 @@ import AdminTracker from "../Admin/Tracker/AdminTracker";
 import AdminSupport from "../Admin/Support/AdminSupport";
 import AdminSupportPage from "../Admin/Support/AdminSupportPage";
 import PaymentTracker from "../Admin/PaymentTracker/PaymentTracker";
+import AdditionalFee from "../Admin/PaymentTracker/AdditionalFee";
+import Factor from "../Admin/Factor/Factor";
+import FactorList from "../Admin/Factor/FactorList";
 
 export default function RoutesServer() {
   const { user } = useSelector((state) => state?.appData);
@@ -71,8 +74,29 @@ export default function RoutesServer() {
             <Route exact path="/code2/signup" element={<Signup />}></Route>
             <Route
               exact
-              path="/code2/admin"
+              path="/code2/admin-tracker"
+              element={<AdminTracker />}
+            ></Route>
+            <Route
+              exact
+              path="/code2/payment-tracker"
               element={<PaymentTracker />}
+            ></Route>
+            <Route exact path="/code2/factor" element={<Factor />}></Route>
+            <Route
+              exact
+              path="/code2/admin-supportpage"
+              element={<AdminSupportPage />}
+            ></Route>
+            <Route
+              exact
+              path="/code2/additionalfee"
+              element={<AdditionalFee />}
+            ></Route>
+            <Route
+              exact
+              path="/code2/admin-support"
+              element={<AdminSupport />}
             ></Route>
           </Routes>
         )}
