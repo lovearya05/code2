@@ -38,6 +38,35 @@ export default function RoutesServer() {
           <Route exact path="/code2/" element={<Splash />}></Route>
           <Route exact path="/code2/temp" element={<Temp />}></Route>
         </Routes>
+        
+        {user && <Routes>
+          <Route
+            exact
+            path="/code2/admin-tracker"
+            element={<AdminTracker />}
+          ></Route>
+          <Route
+            exact
+            path="/code2/payment-tracker"
+            element={<PaymentTracker />}
+          ></Route> ̰
+          <Route exact path="/code2/factor" element={<Factor />}></Route>
+          <Route
+            exact
+            path="/code2/admin-supportpage"
+            element={<AdminSupportPage />}
+          ></Route>
+          <Route
+            exact
+            path="/code2/additionalfee"
+            element={<AdditionalFee />}
+          ></Route>
+          <Route
+            exact
+            path="/code2/admin-support"
+            element={<AdminSupport />}
+          ></Route>
+        </Routes>}
 
         {user && userType === "business" ? (
           <Routes>
@@ -72,38 +101,13 @@ export default function RoutesServer() {
           <Routes>
             <Route exact path="/code2/login" element={<Login />}></Route>
             <Route exact path="/code2/signup" element={<Signup />}></Route>
-            <Route
-              exact
-              path="/code2/admin-tracker"
-              element={<AdminTracker />}
-            ></Route>
-            <Route
-              exact
-              path="/code2/payment-tracker"
-              element={<PaymentTracker />}
-            ></Route>
-            <Route exact path="/code2/factor" element={<Factor />}></Route>
-            <Route
-              exact
-              path="/code2/admin-supportpage"
-              element={<AdminSupportPage />}
-            ></Route>
-            <Route
-              exact
-              path="/code2/additionalfee"
-              element={<AdditionalFee />}
-            ></Route>
-            <Route
-              exact
-              path="/code2/admin-support"
-              element={<AdminSupport />}
-            ></Route>
+
 
             {/* <Route exact path="/code2/tracker" element={<Tracker />}></Route> */}
           </Routes>
         )}
       </div>
-       {" "}
+      {" "}
     </div>
   );
 }
