@@ -4,6 +4,7 @@ import "./AdditionalFee.css";
 import Dropdown from "../../Business/Components/Dropdown";
 import Business__Input from "../../Business/Components/BusinessInput";
 import { useNavigate } from "react-router-dom";
+import AdminWebNavbar from "../../WebNavbar.js/AdminWebNavbar";
 const AdditionalFee = () => {
   const navigate = useNavigate();
   const goBackFunction = () => {
@@ -11,7 +12,12 @@ const AdditionalFee = () => {
   };
   return (
     <div>
-      <Navbar />
+      <div className="pt__mob__navbar">
+        <Navbar />
+      </div>
+      <div className="pt__web__navbar">
+        <AdminWebNavbar />
+      </div>
       <div className="additional__fee">
         <div className="additionalFee">
           <h2>Additional fee</h2>

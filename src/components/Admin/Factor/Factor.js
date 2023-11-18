@@ -3,11 +3,17 @@ import "./Factor.css";
 import Navbar from "../../AdminNavbar/Navbar";
 import Dropdown from "../../Business/Components/Dropdown";
 import Business__Input from "../../Business/Components/BusinessInput";
+import AdminWebNavbar from "../../WebNavbar.js/AdminWebNavbar";
 
 const Factor = () => {
   return (
     <div>
-      <Navbar />
+      <div className="factor__mob__navbar">
+        <Navbar />
+      </div>
+      <div className="factor__web__navbar">
+        <AdminWebNavbar />
+      </div>
       <div className="factor">
         <div className="factor__title">
           <h2>Factor</h2>

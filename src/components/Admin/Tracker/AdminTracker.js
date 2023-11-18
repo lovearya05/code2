@@ -3,6 +3,7 @@ import Navbar from "../../AdminNavbar/Navbar";
 import "./AdminTracker.css";
 import TrackerBox from "../../Business/Tracker/TrackerBox";
 import ListComponent from "./Components/BusinessList";
+import AdminWebNavbar from "../../WebNavbar.js/AdminWebNavbar";
 
 const AdminTracker = () => {
   const [change, setChange] = useState(true);
@@ -11,7 +12,12 @@ const AdminTracker = () => {
   };
   return (
     <div>
-      <Navbar />
+      <div className="admin__mob__navbar">
+        <Navbar />
+      </div>
+      <div className="admin__web__navbar">
+        <AdminWebNavbar />
+      </div>
       <div className="admin">
         <div className="admin__button">
           <button

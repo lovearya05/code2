@@ -1,14 +1,49 @@
+.payment__tracker__admin {
+  padding: 1% 20%;
+}
+.pt__mob__navbar {
+  display: none;
+}
+.pt__web__navbar {
+  display: block;
+}
+.payment__tracker__support > h2 {
+  color: var(--Primary_text-color, #fff);
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.plusPosition {
+  position: fixed;
+  bottom: 10%;
+  right: 18%;
+  border: none;
+  background: transparent;
+}
+
+.AddPaymentTracker {
+  background: var(--Primary_color, #00955f);
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.AdminPlus {
+  text-align: center;
+  font-size: 24px;
+  color: white;
+}
 @media only screen and (max-width: 768px) {
+  .payment__tracker__admin {
+    padding: 0px 0px;
+  }
   .payment__tracker__support {
     padding: 2px 15px;
-  }
-  .payment__tracker__support > h2 {
-    color: var(--Primary_text-color, #fff);
-    font-family: "Poppins", sans-serif;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
   }
   .plusPosition {
     position: fixed;
@@ -18,19 +53,10 @@
     background: transparent;
   }
 
-  .AddPaymentTracker {
-    background: var(--Primary_color, #00955f);
-    width: 50px;
-    height: 50px;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
+  .pt__mob__navbar {
+    display: block;
   }
-  .AdminPlus {
-    text-align: center;
-    font-size: 24px;
-    color: white;
+  .pt__web__navbar {
+    display: none;
   }
 }

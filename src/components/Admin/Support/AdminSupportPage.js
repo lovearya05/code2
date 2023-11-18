@@ -3,6 +3,7 @@ import Navbar from "../../AdminNavbar/Navbar";
 import "./AdminSupport.css";
 import { FaCaretDown } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import AdminWebNavbar from "../../WebNavbar.js/AdminWebNavbar";
 
 const AdminSupportPage = () => {
   const navigate = useNavigate();
@@ -12,7 +13,12 @@ const AdminSupportPage = () => {
 
   return (
     <div>
-      <Navbar />
+      <div className="sp__mob__navabr">
+        <Navbar />
+      </div>
+      <div className="sp__web__navabr">
+        <AdminWebNavbar />
+      </div>
       <div className="admin__support__page">
         <div className="admin__support__page__title">
           <h2>Support</h2>

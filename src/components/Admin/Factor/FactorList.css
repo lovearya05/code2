@@ -1,14 +1,18 @@
+.factor__list {
+  padding: 1% 20%;
+}
+.factor__listTitle > h2 {
+  padding: 0px 15px;
+  margin: 30px 0px 10px;
+  color: var(--Primary_text-color, #fff);
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
 @media only screen and (max-width: 768px) {
   .factor__list {
-  }
-  .factor__listTitle > h2 {
-    padding: 0px 15px;
-    margin: 30px 0px 10px;
-    color: var(--Primary_text-color, #fff);
-    font-family: "Poppins", sans-serif;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
+    padding: 2px 15px;
   }
 }

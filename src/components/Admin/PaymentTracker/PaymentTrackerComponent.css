@@ -1,5 +1,6 @@
 .business__list:nth-child(even) {
   background: transparent;
+  padding: 10px 10px;
 }
 
 .business__list:nth-child(odd) {
@@ -9,6 +10,7 @@
       rgba(255, 255, 255, 0.12) 100%
     ),
     #000;
+  padding: 10px 10px;
 }
 .business__list_container {
   padding: 10px 15px;
@@ -91,4 +93,14 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+@media only screen and (max-width: 768px) {
+  .business__list:nth-child(even) {
+    background: transparent;
+    padding: 0px;
+  }
+
+  .business__list:nth-child(odd) {
+    padding: 0px;
+  }
 }
