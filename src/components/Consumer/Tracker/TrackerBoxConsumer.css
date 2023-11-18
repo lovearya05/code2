@@ -1,0 +1,44 @@
+.trackerBox {
+  background-color: rgb(30, 30, 32);
+  display: flex;
+  flex-direction: column;
+  width: 42%;
+  padding: 15px 10px;
+  border-radius: 16px;
+  margin-bottom: 25px;
+}
+
+.fullWidth {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.boxContent {
+  /* display: flex;
+  flex-direction: row;
+  justify-content: space-between; */
+  width: 100%; /* take full width */
+}
+
+.trackerBox .hightlight__value {
+  /* color: #f0ad00; */
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  margin: 0px 10px 2px;
+  font-weight: bold;
+  line-height: normal;
+}
+.trackerBox .box_smalText {
+  margin: 0px 10px 0px;
+  color: #787878;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

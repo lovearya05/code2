@@ -1,0 +1,27 @@
+.tracker {
+  padding: 2px 15px;
+}
+.business__title {
+  color: var(--Primary_text-color, #fff);
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+/* .business__boxes {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+} */
+.business__boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.PointsButtonsDiv{
+  display: flex;
+  flex-direction: row;
+}

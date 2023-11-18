@@ -12,38 +12,39 @@ const Support = () => {
   const { user } = useSelector((state) => state?.appData);
   const [loading, setLaoding] = useState(false);
 
-  console.log({ user });
-  const [issue, setIssue] = useState("");
+  const [issue, setIssue] = useState('');
 
   const handlePost = () => {
     if (!issue || issue.length == 0) {
       toast("please enter message first");
       return;
     }
-    submitTicket();
-  };
+    submitTicket()
+  }
 
   const submitTicket = async () => {
-    setLaoding(true);
-
+    setLaoding(true)
+    
     try {
       const docRef = await addDoc(collection(db, "supportTicket"), {
-        companyName: "code2 support ticket",
-        companyUserId: user?.uid,
+        entityName: 'code2 support ticket',
+        entityUserId: user?.uid,
         issueDescription: issue,
-        status: "open",
-        active: true,
-        isApproved: false,
+        status : 'open',
+        active : true,
+        isApproved : false,
+        suppoerProfile : 'business'
       });
-      toast("Support message sent");
-      setIssue("");
+      toast('Support message sent')
+      setIssue('')
     } catch (e) {
-      toast("Try again later");
+      toast('Try again later')
       console.error("Error adding document: ", e);
     }
-    setLaoding(false);
+    setLaoding(false)
+    
   };
-
+  
   return (
     <div>
       {loading && <Loader />}

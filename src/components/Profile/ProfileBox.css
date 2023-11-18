@@ -13,7 +13,6 @@
     ),
     rgba(0, 0, 0, 0.64);
   margin: 15px 15px;
-  border: 1px solid transparent;
   width: 170px;
   height: 160px;
 }
@@ -28,7 +27,7 @@
   text-align: center;
 }
 .selected {
-  border-color: #3dc182;
+  border: 1px solid #3DC182;
 }
 @media only screen and (max-width: 768px) {
   .profileBox {

@@ -20,6 +20,7 @@ import { db } from "../../../firebaseConfig";
 import Loader from "../../login/EssentialComponents/Loader";
 import toast from "react-simple-toasts";
 import BusinessWebNavbar from "../../WebNavbar.js/BusinessWebNavbar";
+import { getCurrentDateTimeString } from "../../../utils/utilFunctions";
 
 const Reward = () => {
   const [startDate, setStartDate] = useState("");
@@ -63,38 +64,40 @@ const Reward = () => {
   };
 
   // console.log(startDate, endDate, turnoverCovered, redemptionValue, distributionRatio, currency, maxDiscount )
-  useEffect(() => {
-    const distributionFactor = 0.4;
-    setDistributionRation(turnoverCovered * distributionFactor);
-  }, [turnoverCovered]);
-
-  const handleSaveBtn = async () => {
-    if (
+  useEffect(()=>{
+    const distributionFactor = 0.4
+    // setDistributionRation(turnoverCovered*distributionFactor)
+  },[turnoverCovered])
+  
+  const handleSaveBtn = async ()=>{
+    
+    if(
       !startDate ||
-      !endDate ||
-      !turnoverCovered ||
-      !redemptionValue ||
-      !distributionRatio ||
-      !currency ||
+      !endDate || 
+      !turnoverCovered || 
+      !redemptionValue || 
+      !distributionRatio || 
+      !currency || 
       !maxDiscount
-    ) {
-      toast("please enter all values first");
-      return;
+    ){
+      toast('please enter all values first')
+      return
     }
 
     updateOrCreateRewardBook(user?.uid, {
-      companyName: "code2 new deal",
-      companyUserId: user?.uid,
-      startDate: startDate,
-      endDate: endDate,
-      turnoverCovered: turnoverCovered,
-      redemptionValue: redemptionValue,
-      distributionRatio: distributionRatio,
-      currency: currency,
-      maxDiscount: maxDiscount,
-      active: true,
-      isApproved: false,
-    });
+        companyName: 'code2 new deal',
+        companyUserId: user?.uid,
+        startDate : startDate,
+        endDate : endDate,
+        turnoverCovered : turnoverCovered,
+        redemptionValue: redemptionValue,
+        distributionRatio : distributionRatio,
+        currency : currency,
+        maxDiscount : maxDiscount,
+        cDate : getCurrentDateTimeString(),
+        active : true,
+        isApproved : false
+    })
     // console.log('save button click')
     // !loading && handleSave()
   };

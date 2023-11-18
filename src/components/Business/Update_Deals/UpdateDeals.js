@@ -7,6 +7,8 @@ import { db } from "../../../firebaseConfig";
 import Loader from "../../login/EssentialComponents/Loader";
 import toast from "react-simple-toasts";
 import BusinessWebNavbar from "../../WebNavbar.js/BusinessWebNavbar";
+import { getCurrentDateTimeString } from "../../../utils/utilFunctions";
+
 
 const UpdateDeals = () => {
   const { user } = useSelector((state) => state?.appData);
@@ -33,9 +35,10 @@ const UpdateDeals = () => {
         companyName: "code2 new deal",
         companyUserId: user?.uid,
         itemForDiscount: itemForDiscount,
-        maxDiscount: maxDiscount,
         active: true,
-        isApproved: false,
+        maxDiscount : maxDiscount,
+        isApproved : false,
+        cDate : getCurrentDateTimeString()
       });
       setMaxDiscount("");
       setItemForDiscount("");

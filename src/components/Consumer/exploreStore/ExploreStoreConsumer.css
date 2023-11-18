@@ -1,0 +1,42 @@
+.flexCenter{
+    display: flex;
+    padding: 8px 16px 4px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.text1explore{
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.yellowText{
+    display: flex;
+    padding: 0px 6px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 200px;
+    background: #F0AD00;
+}
+.blackTextExplore{
+    color: #000;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.text2Explore{
+    color: var(--Primary_text-color, #FFF);
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.paddHori16{
+    padding: 0 16px ;
+}

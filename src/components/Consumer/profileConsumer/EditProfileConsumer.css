@@ -1,0 +1,34 @@
+.edit__input1 {
+    margin-top: 18px;
+}
+.edit__input1 > p {
+    margin: 0 0px 7px;
+    color: #787878;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.edit__input1 > input {
+    background: none;
+    border-radius: 8px;
+    padding: 15px 10px;
+    border: 1px solid var(--Stroke_color, #404040);
+    width: 95%;
+    font-size: 16px;
+    color: #fff;
+  }
+  .paddHori{
+    padding: 0 16px;
+  }
+  .edit__input1 > input::placeholder {
+    color: #CFCCCC;
+    opacity: 0.6;
+  }
+
+  .profile_save {
+    display: flex;
+    justify-content: center;
+  }
