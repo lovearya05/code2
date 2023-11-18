@@ -77,7 +77,7 @@ const Tracker = () => {
           />
           <TrackerBox
             // value={totalCode2Generated}
-            value="23,3333"
+            value="23,333"
             colorBox="#FFF"
             code2="CODE"
             show={true}
