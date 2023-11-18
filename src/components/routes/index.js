@@ -98,6 +98,7 @@ export default function RoutesServer() {
               path="/code2/admin-support"
               element={<AdminSupport />}
             ></Route>
+            <Route exact path="/code2/tracker" element={<Tracker />}></Route>
           </Routes>
         )}
       </div>
