@@ -77,30 +77,17 @@ export default function RoutesServer() {
         {user && userType === "business" &&
           <Routes>
             <Route element={<Tracker />} />
-            <Route index exact
-              path="/code2/tracker"
-              element={<Tracker />}
-            ></Route>
-            <Route exact
-              path="/code2/carbon_book"
-              element={<Carbon_Book />}
-            ></Route>
-            <Route exact
-              path="/code2/credit_book"
-              element={<CarbonCredit />}
-            ></Route>
-            <Route exact path="/code2/deals" element={<UpdateDeals />}></Route>
-            <Route exact path="/code2/reward" element={<Reward />}></Route>
-            <Route exact
-              path="/code2/business_profile"
-              element={<BusinessProfile />}
-            ></Route>
-            <Route exact path="/code2/support" element={<Support />}></Route>
-            <Route exact path="/code2/profile" element={<Profile />}></Route>
+            <Route index exact path="/code2/tracker" element={<Tracker />} />
+            <Route exact path="/code2/carbon_book" element={<Carbon_Book />}/>
+            <Route exact path="/code2/credit_book" element={<CarbonCredit />}/>
+            <Route exact path="/code2/deals" element={<UpdateDeals />}/>
+            <Route exact path="/code2/reward" element={<Reward />}/>
+            <Route exact path="/code2/business_profile" element={<BusinessProfile />}/>
+            <Route exact path="/code2/support" element={<Support />}/>
+            <Route exact path="/code2/profile" element={<Profile />}/>
           </Routes>
         }
       </div>
-      {" "}
     </div>
   );
 }
