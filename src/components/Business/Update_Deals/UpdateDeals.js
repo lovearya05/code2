@@ -7,7 +7,7 @@ import { db } from "../../../firebaseConfig";
 import Loader from "../../login/EssentialComponents/Loader";
 import toast from "react-simple-toasts";
 import BusinessWebNavbar from "../../WebNavbar.js/BusinessWebNavbar";
-import { getCurrentDateTimeString } from "../../../utils/utilFunctions";
+import { getCurrentDateTimeString } from "../../utilFunctions";
 
 
 const UpdateDeals = () => {

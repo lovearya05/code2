@@ -1,11 +1,11 @@
 import React from "react";
 import "./AdminTextTemp.css";
 
-const AdminTextTemp = () => {
+const AdminTextTemp = ({countNumber=0, text=''}) => {
   return (
     <div className="adminText">
-      <h2>25,000</h2>
-      <p>Code 2 redemption</p>
+      <h2>{countNumber}</h2>
+      <p>{text}</p>
     </div>
   );
 };

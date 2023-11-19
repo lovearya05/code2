@@ -1,0 +1,4 @@
+code2Earned
+code2Distributed
+code2Balance
+code2Redeemed

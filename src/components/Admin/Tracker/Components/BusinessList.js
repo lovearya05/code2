@@ -3,7 +3,7 @@ import "./BusinessList.css";
 import AdminTextTemp from "./AdminTextTemp";
 import { BsThreeDotsVertical } from "react-icons/bs";
 
-const BusinessList = ({ activate }) => {
+const BusinessList = ({ companyName='', pocName='', contactNumber='',  isActive=false, code2Earned='', text2='', code2Distributed='', code2Balance='' }) => {
   const [clicked, setClicked] = useState(false);
   const [clickedActivate, setClickedActivate] = useState(false);
 
@@ -18,9 +18,9 @@ const BusinessList = ({ activate }) => {
     <div className="business__list">
       <div className="business__list_container">
         <div className="business__list__upper">
-          <AdminTextTemp />
-          <AdminTextTemp />
-          <AdminTextTemp />
+          <AdminTextTemp countNumber={code2Earned} text={'CODE2 Earned'}/>
+          <AdminTextTemp countNumber={code2Distributed} text={text2}/>
+          <AdminTextTemp countNumber={code2Balance} text={'CODE2 Balance'}/>
           <div onClick={dropEdit}>
             <BsThreeDotsVertical className="business__list__icon" />
           </div>
@@ -34,13 +34,13 @@ const BusinessList = ({ activate }) => {
       </div>
       <div className="business__list__down">
         <div className="business__list__down__left">
-          <h2>Etisalat</h2>
-          <p>Simon Williams</p>
+          <h2>{companyName}</h2>
+          <p>{pocName}</p>
         </div>
         <div className="business__list__down__no">
-          <p>971509128576</p>
+          <p>{contactNumber}</p>
         </div>
-        {activate && activate ? (
+        { isActive ? (
           <div className="activate" onClick={dropActivate}>
             <button onClick={() => dropActivate()}>Activate</button>
           </div>

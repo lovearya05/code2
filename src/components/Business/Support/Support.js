@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../../Navbar/Navbar";
 import "./Support.css";
 import { useSelector } from "react-redux";
@@ -7,12 +7,31 @@ import { db } from "../../../firebaseConfig";
 import Loader from "../../login/EssentialComponents/Loader";
 import toast from "react-simple-toasts";
 import BusinessWebNavbar from "../../WebNavbar.js/BusinessWebNavbar";
+import {getData} from '../../utilityFunction'
 
 const Support = () => {
   const { user } = useSelector((state) => state?.appData);
   const [loading, setLaoding] = useState(false);
 
   const [issue, setIssue] = useState('');
+  const [userProfileData, setUserProfileData] = useState({})
+
+  useEffect(()=>{
+    if(user){
+      loadBusinessProfiles ()
+    }
+  },[user])
+
+  const loadBusinessProfiles = async ()=>{
+    const data = await getData(db,'businessProfile', 'uid', user?.uid, ()=>{}, ()=>{})
+    console.log('loadBusinessProfiles',data)
+    if(data) setUserProfileData({
+      name : data?.POCName,
+      mobileNumber : data?.POCPhone
+    })
+    // console.log('profiles', data)
+  }
+
 
   const handlePost = () => {
     if (!issue || issue.length == 0) {
@@ -27,13 +46,13 @@ const Support = () => {
     
     try {
       const docRef = await addDoc(collection(db, "supportTicket"), {
-        entityName: 'code2 support ticket',
+        // entityName: 'code2 support ticket',
         entityUserId: user?.uid,
         issueDescription: issue,
         status : 'open',
         active : true,
         isApproved : false,
-        suppoerProfile : 'business'
+        supportProfile : 'business'
       });
       toast('Support message sent')
       setIssue('')
@@ -48,12 +67,14 @@ const Support = () => {
   return (
     <div>
       {loading && <Loader />}
+      
       <div className="BusinessMobNavbar">
         <Navbar />
       </div>
       <div className="BusinessWebNavbar">
         <BusinessWebNavbar />
       </div>
+
       <div className="support">
         <div className="business__title">
           <p className="support__title">Support</p>
@@ -72,8 +93,8 @@ const Support = () => {
             <h2>Etisalat</h2>
           </div>
           <div className="support__user__right">
-            <p>Simon Williams</p>
-            <p>971509128576</p>
+            <p>{userProfileData?.name}</p>
+            <p>{userProfileData?.mobileNumber}</p>
           </div>
         </div>
         <div className="support__inputBox">

@@ -20,7 +20,7 @@ import { db } from "../../../firebaseConfig";
 import Loader from "../../login/EssentialComponents/Loader";
 import toast from "react-simple-toasts";
 import BusinessWebNavbar from "../../WebNavbar.js/BusinessWebNavbar";
-import { getCurrentDateTimeString } from "../../../utils/utilFunctions";
+import { getCurrentDateTimeString } from "../../utilFunctions";
 
 const Reward = () => {
   const [startDate, setStartDate] = useState("");
@@ -35,7 +35,7 @@ const Reward = () => {
 
   useEffect(() => {
     loadInitalData();
-  }, []);
+  }, [user]);
 
   const loadInitalData = async () => {
     setLaoding(true);

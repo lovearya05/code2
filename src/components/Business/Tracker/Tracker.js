@@ -26,7 +26,7 @@ const Tracker = () => {
 
   useEffect(() => {
     loadInitalData();
-  }, []);
+  }, [user]);
 
   const loadInitalData = async () => {
     setLaoding(true);

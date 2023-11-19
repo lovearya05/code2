@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react'
 import NavbarConsumer from '../navbarConsumer/NavbarConsumer'
 import './ExploreStoreConsumer.css'
 import {EarnedCode2Card} from '../utilityComponents'
-import {getAllData} from '../utilityFunction'
+import {getAllData} from '../../utilityFunction'
 import { db } from '../../../firebaseConfig';
 import { useSelector } from 'react-redux';
 import Loader from '../../login/EssentialComponents/Loader';
-import {getCurrentDateTimeString, getDateMonthYear} from '../../../utils/utilFunctions'
+import {getCurrentDateTimeString, getDateMonthYear} from '../../utilFunctions'
 
 function ExploreStoreConsumer() {
   const [allDeals, setAllDeals] = useState([])

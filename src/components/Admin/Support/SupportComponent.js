@@ -1,23 +1,57 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./SupportComponent.css";
 import { FaAngleRight } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { db } from '../../../firebaseConfig';
+import {getData} from '../../utilityFunction'
 
-const SupportComponent = ({ open }) => {
+
+
+const SupportComponent = ({ userId='', supportProfile='', ticketID='', isTicketOpen=false, supportDescription='' }) => {
   const Navigate = useNavigate();
   const openSupport = (urlLocation) => {
     Navigate(`/code2/${urlLocation}`);
   };
+  
+  const [userProfileData, setUserProfileData] = useState({})
+
+  useEffect(()=>{
+    if(supportProfile){
+      supportProfile === 'business' && loadBusinessProfiles ()
+      supportProfile === 'consumer' && loadConsumerProfiles ()
+    }
+  },[supportProfile])
+
+  const loadBusinessProfiles = async ()=>{
+    const data = await getData(db,'businessProfile', 'uid', userId, ()=>{}, ()=>{})
+    // console.log('loadBusinessProfiles',data)
+    if(data) setUserProfileData({
+      name : data?.POCName,
+      mobileNumber : data?.POCPhone
+    })
+  }
+
+  
+  const loadConsumerProfiles = async ()=>{
+    const data = await getData(db,'consumerProfile', 'uid', userId, ()=>{}, ()=>{})
+    // console.log('loadBusinessProfiles',data)
+    if(data) setUserProfileData({
+      name : data?.userName,
+      mobileNumber : data?.contactNumber
+    })
+  }
+
+  
 
   return (
     <div className="support__component">
       <div className="support__component__upper">
         <div className="support__component__upper__left">
-          <p>TK10103456</p>
-          <h2>Roger Grahame</h2>
-          <p>+3456 567 89</p>
+          {ticketID && <p>{ticketID}</p>}
+          <h2>{userProfileData?.name}</h2>
+          <p>{userProfileData?.mobileNumber}</p>
         </div>
-        {open && open ? (
+        {isTicketOpen ? (
           <div className="support__component__upper__right">
             <button onClick={() => openSupport("admin-supportpage")}>
               Open
@@ -30,7 +64,7 @@ const SupportComponent = ({ open }) => {
         )}
       </div>
       <div className="support__component__down">
-        <p>My points deducted automaically..</p>
+        <p>{supportDescription}</p>
         <FaAngleRight className="right__arrow" />
       </div>
     </div>

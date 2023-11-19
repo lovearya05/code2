@@ -61,6 +61,14 @@ const BusinessWebNavbar = () => {
           Update Deals
         </button>
         <button
+          onClick={() => gotoLocation("ProfileBusiness")}
+          className={`bw_button ${
+            location.pathname === "/code2/ProfileBusiness" ? "bw__greenText" : ""
+          }`}
+        >
+          Profile
+        </button>
+        <button
           onClick={() => gotoLocation("support")}
           className={`bw_button ${
             location.pathname === "/code2/support" ? "bw__greenText" : ""

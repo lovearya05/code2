@@ -101,9 +101,9 @@ const Navbar = () => {
               Update Deals
             </button>
             <button
-              onClick={() => gotoLocation("business_profile")}
+              onClick={() => gotoLocation("ProfileBusiness")}
               className={`sidebar_button ${
-                location.pathname === "/code2/business_profile"
+                location.pathname === "/code2/ProfileBusiness"
                   ? "greenText"
                   : ""
               }`}

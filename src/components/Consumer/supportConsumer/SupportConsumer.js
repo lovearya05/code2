@@ -28,13 +28,12 @@ const SupportConsumer = () => {
     
     try {
       const docRef = await addDoc(collection(db, "supportTicket"), {
-        entityName: 'code2 support ticket',
         entityUserId: user?.uid,
         issueDescription: issue,
         status : 'open',
         active : true,
         isApproved : false,
-        suppoerProfile : 'consumer'
+        supportProfile : 'consumer'
       });
       toast('Support message sent')
       setIssue('')

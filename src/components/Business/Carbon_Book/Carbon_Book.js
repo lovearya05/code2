@@ -47,7 +47,7 @@ const Carbon_Book = () => {
 
   useEffect(() => {
     loadInitalData();
-  }, []);
+  }, [user]);
 
   const loadInitalData = async () => {
     setLaoding(true);

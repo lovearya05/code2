@@ -45,19 +45,32 @@ export const getData = async (db, collectionName='', toMatchField='', matchId=''
     console.log(e)
   }
 }
-export const getAllData = async (db, collectionName='', toMatchField='', matchId='', prevFunction=()=>{}, nextFunction=()=>{})=>{
+export const getAllData = async (db, collectionName='', toMatchField='', matchId='', prevFunction=()=>{}, nextFunction=()=>{}, loadWithoutCondition=false)=>{
   prevFunction()
   try{
     const rewardBookCollection = collection(db, collectionName);
-    const querySnapshot = await getDocs(query(rewardBookCollection, where(toMatchField, '==', matchId)));
-    const matchingData = [];
+    if(!loadWithoutCondition){
+      const querySnapshot = await getDocs(query(rewardBookCollection, where(toMatchField, '==', matchId)));
+      const matchingData = [];
+  
+      querySnapshot.forEach((doc) => {
+        matchingData.push(doc.data());
+      });
+  
+      nextFunction();
+      return matchingData;
 
-    querySnapshot.forEach((doc) => {
-      matchingData.push(doc.data());
-    });
-
-    nextFunction();
-    return matchingData;
+    }else{
+      const querySnapshot = await getDocs(query(rewardBookCollection));
+      const matchingData = [];
+  
+      querySnapshot.forEach((doc) => {
+        matchingData.push(doc.data());
+      });
+  
+      nextFunction();
+      return matchingData;
+    }
   } catch(e) {
     // nextFunction()
     console.log(e);

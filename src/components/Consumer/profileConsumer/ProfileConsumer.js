@@ -5,7 +5,7 @@ import { TbPencilMinus } from "react-icons/tb";
 import ProfileComponent from "./ProfileComponent";
 import profileIcon from '../assets/profileIcon.svg'
 import { useNavigate } from 'react-router-dom';
-import { getData } from '../utilityFunction';
+import { getData } from '../../utilityFunction';
 import { db } from '../../../firebaseConfig';
 import { useSelector } from 'react-redux';
 import Loader from '../../login/EssentialComponents/Loader';
@@ -19,7 +19,7 @@ function ProfileConsumer() {
 
   useEffect(()=>{
     loadInitalData()
-  },[])
+  },[user])
   const loadInitalData = async()=>{
       const data = await getData(db, 'consumerProfile', 'uid', user?.uid, ()=>setLaoding(true), ()=>setLaoding(false))
       if(data){

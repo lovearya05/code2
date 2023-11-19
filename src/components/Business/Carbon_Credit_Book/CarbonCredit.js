@@ -44,7 +44,7 @@ const CarbonCredit = () => {
 
   useEffect(() => {
     loadInitalData();
-  }, []);
+  }, [user]);
 
   const loadInitalData = async () => {
     setLaoding(true);

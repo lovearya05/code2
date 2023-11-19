@@ -9,8 +9,8 @@ import toast from "react-simple-toasts";
 import { collection, addDoc, getDocs, query, where,doc, setDoc, updateDoc } from "firebase/firestore"; 
 import NavbarConsumer from "../navbarConsumer/NavbarConsumer";
 import { CircularBtn, RecentTransectionCard, EarnedCode2Card } from "../utilityComponents";
-import { getAllData } from "../utilityFunction";
-import { getDateMonthYear } from "../../../utils/utilFunctions";
+import { getAllData } from "../../utilityFunction";
+import { getDateMonthYear } from "../../utilFunctions";
 
 
 const TrackerConsumer = () => {
@@ -25,7 +25,7 @@ const TrackerConsumer = () => {
   useEffect(()=>{
     // loadInitalData()
     loadDealsData()
-  },[])
+  },[user])
 
   const loadInitalData = async ()=>{
     setLaoding(true)

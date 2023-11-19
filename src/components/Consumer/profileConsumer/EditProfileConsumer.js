@@ -6,7 +6,8 @@ import ProfileComponent from "./ProfileComponent";
 import profileIcon from '../assets/profileIcon.svg'
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-simple-toasts';
-import { updateOrCreateData, getData } from '../utilityFunction';
+import { updateOrCreateData, getData } from '../../utilityFunction';
+import { getCurrentDateTimeString} from '../../utilFunctions';
 import { useSelector } from 'react-redux';
 import Loader from '../../login/EssentialComponents/Loader';
 import { db } from "../../../firebaseConfig";
@@ -27,12 +28,17 @@ function EditProfileConsumer() {
             toast('mobile number invalid')
             return
         }
-        await updateOrCreateData(db, 'consumerProfile', 'uid', user?.uid, {...profileData, uid : user?.uid}, 
+        await updateOrCreateData(db, 'consumerProfile', 'uid', user?.uid, {
+            ...profileData,
+             uid : user?.uid,
+             active : true,
+             cDate : getCurrentDateTimeString()
+            }, 
         ()=>setLaoding(true), ()=>setLaoding(false))
     }
     useEffect(()=>{
         loadInitalData()
-    },[])
+    },[user])
     const loadInitalData = async()=>{
         const data = await getData(db, 'consumerProfile', 'uid', user?.uid, ()=>setLaoding(true), ()=>setLaoding(false))
         if(data){
