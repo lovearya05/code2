@@ -12,7 +12,7 @@ const TrackerBox = ({
   logoText,
   show,
 }) => {
-  const isFullWidth = value2.length > 17; // Adjust the character count as needed
+  const isFullWidth = value2.length > 13; // Adjust the character count as needed
 
   return (
     <div
@@ -27,7 +27,7 @@ const TrackerBox = ({
           <p className="tb__code2">
             {code2}
             {show ? (
-              <span style={{ color: "#3DC182" }}>2</span>
+              <span style={{}}>2</span>
             ) : (
               <div style={{ display: "None" }}></div>
             )}
