@@ -41,7 +41,8 @@ export default function RoutesServer() {
           display: "flex",
           flexDirection: "column",
           minHeight: "100vh",
-        }}>
+        }}
+      >
         <Routes>
           <Route exact path="/code2/" element={<Splash />}></Route>
           <Route exact path="/code2/temp" element={<Temp />}></Route>
@@ -59,8 +60,9 @@ export default function RoutesServer() {
           <Route exact path="/code2/admin-support" element={<AdminSupport />} />
 
             {/* this profile is of user type business or consumer  */}
-          <Route exact path="/code2/profile" element={<Profile />}/> 
-        </Routes>}
+            <Route exact path="/code2/profile" element={<Profile />} />
+          </Routes>
+        }
 
         {user && userType === "consumer" &&
         <Routes>

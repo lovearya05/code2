@@ -1,5 +1,8 @@
-.business__profile {
-  padding: 2px 15px;
+.consumer__profile {
+  padding: 1% 20%;
+}
+.pc__mob__navbar {
+  display: none;
 }
 .profile__front {
   display: flex;
@@ -7,6 +10,7 @@
   justify-content: space-between;
   align-items: center;
 }
+
 .edit__profile {
   cursor: pointer;
   margin-top: 10px;
@@ -31,18 +35,41 @@
   margin-left: 10px;
   font-size: 24px;
 }
-.allCenter{
+.allCenter {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.userText{
+.userText {
   margin-top: 14px;
-  color: var(--Primary_text-color, #FFF);
+  color: var(--Primary_text-color, #fff);
   font-family: Poppins;
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+}
+.profile__front > p {
+  color: var(--Primary_text-color, #fff);
+  font-family: "Poppins";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+@media only screen and (max-width: 768px) {
+  .business__profile {
+    padding: 2px 15px;
+  }
+  .consumer__profile {
+    padding: 0px;
+  }
+
+  .pc__web__navbar {
+    display: none;
+  }
+  .pc__mob__navbar {
+    display: block;
+  }
 }
