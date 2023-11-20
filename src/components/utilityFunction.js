@@ -2,6 +2,21 @@ import toast from "react-simple-toasts";
 import { collection, addDoc, getDocs, query, where,doc, setDoc, updateDoc } from "firebase/firestore"; 
 
 // updateOrCreateData(db, collectionName, 'uid',user?.uid, {...profileData, uid : user?.uid}, ()=>{}, ()=>{})
+export const createData = async (db, collectionName='', newData={},prevFunction=()=>{}, nextFunction=()=>{}) => {
+  prevFunction()
+  const rewardBookCollection = collection(db, collectionName);
+  
+  try {
+      await setDoc(doc(rewardBookCollection), { ...newData });
+      console.log(`New document with added successfully.`);
+        
+    nextFunction()
+    toast('Updated sucessfully')
+  } catch (e) {
+    console.error('Error updating document: ', e);
+    toast('Try again later')
+  }
+};
 export const updateOrCreateData = async (db, collectionName='', toMatchField='', matchId='', newData={},prevFunction=()=>{}, nextFunction=()=>{}) => {
   prevFunction()
   const rewardBookCollection = collection(db, collectionName);

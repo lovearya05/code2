@@ -18,6 +18,8 @@ import { login } from "../../reduxStore/storeSlicer";
 import toast, { toastConfig } from "react-simple-toasts";
 import Loader from "./EssentialComponents/Loader";
 import { app } from "../../firebaseConfig";
+import { updateUserProfileType } from "../../reduxStore/storeSlicer";
+
 
 toastConfig({ theme: "dark" });
 
@@ -66,6 +68,11 @@ const Login = () => {
           photoUrl: "",
         })
       );
+      if(email=='lovepreetarya1405@gmail.com'){
+        dispatch(updateUserProfileType('admin'))
+        navigate("/code2/admin-tracker", { replace: true });
+        return
+      }
       navigate("/code2/profile", { replace: true });
     } catch (error) {
       const errorCode = error.code;

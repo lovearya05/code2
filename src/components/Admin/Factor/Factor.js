@@ -11,7 +11,6 @@ import { getCurrentDateTimeString } from "../../utilFunctions";
 import Loader from '../../login/EssentialComponents/Loader';
 
 
-
 const Factor = () => {
   const [country, setCountary] = useState('')
   const [fuelType, setFuelType] = useState('')

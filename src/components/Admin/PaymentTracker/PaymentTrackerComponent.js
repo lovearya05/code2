@@ -5,7 +5,7 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import "./PaymentTrackerComponent.css";
 import { useNavigate } from "react-router-dom";
 
-const BusinessList = ({ activate }) => {
+const BusinessList = ({ activate, countName='', countValue=0, countValue1=0, countName1='', countValue2=0, countName2='' }) => {
   const navigate = useNavigate();
 
   const gotoLocation = (urlLocation) => {
@@ -16,9 +16,9 @@ const BusinessList = ({ activate }) => {
     <div className="business__list">
       <div className="business__list_container">
         <div className="business__list__upper">
-          <AdminTextTemp />
-          <AdminTextTemp />
-          <AdminTextTemp />
+          <AdminTextTemp  countNumber={countValue} text={countName} />
+          <AdminTextTemp  countNumber={countValue1} text={countName1} />
+          <AdminTextTemp  countNumber={countValue2} text={countName2} />
           <div>
             <BsThreeDotsVertical className="business__list__icon" />
           </div>
@@ -33,7 +33,7 @@ const BusinessList = ({ activate }) => {
           <p>971509128576</p>
         </div>
         <div className="edit__fee">
-          <button onClick={() => gotoLocation("additionalfee")}>
+          <button >
             Edit fee
           </button>
         </div>

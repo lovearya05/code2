@@ -1,12 +1,45 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./PaymentTracker.css";
 import Navbar from "../../AdminNavbar/Navbar";
 import PaymentTrackerComponent from "./PaymentTrackerComponent";
 import { FaPlus } from "react-icons/fa6";
 import AdminWebNavbar from "../../WebNavbar.js/AdminWebNavbar";
+import { useNavigate } from "react-router-dom";
+import {getAllData, createData} from '../../utilityFunction'
+import { db } from '../../../firebaseConfig';
+import Loader from "../../login/EssentialComponents/Loader";
+import { useSelector } from "react-redux";
+
+
+
+
 const PaymentTracker = () => {
+  const [loading, setLaoding] = useState(false)
+  const { user } = useSelector(state => state?.appData)
+
+  const navigate = useNavigate();
+  const [paymentTrackingData, setPaymentTrackingData] = useState()
+  // console.log({paymentTrackingData})
+
+  useEffect(()=>{
+    loadInitalData()
+},[user])
+
+const loadInitalData = async()=>{
+    const data = await getAllData(db,'paymentTracking','', '', ()=>setLaoding(true), ()=>setLaoding(false), true)
+    if(data){
+      setPaymentTrackingData(data)
+    }
+}
+
+  const gotoLocation = (urlLocation) => {
+    navigate(`/code2/${urlLocation}`);
+  };
+
   return (
     <div>
+      {loading && <Loader />}
+
       <div className="pt__mob__navbar">
         <Navbar />
       </div>
@@ -18,12 +51,20 @@ const PaymentTracker = () => {
           <h2>Payment Tracker</h2>
         </div>
         <div>
-          <PaymentTrackerComponent />
-          <PaymentTrackerComponent />
-          <PaymentTrackerComponent />
+          {paymentTrackingData && paymentTrackingData.map((item, i)=>{
+            return <PaymentTrackerComponent
+             activate 
+             countName={'Total Fee'}
+             countValue={item?.totalFeeCalculated}
+
+             countName1={'Subscription fee'}
+             countValue1={item?.subscriptionFee}
+             countValue2={item?.referalFeeValue}
+             countName2={'Referral fee'}  />
+          })}
         </div>
         <button className="plusPosition">
-          <div className="AddPaymentTracker">
+          <div className="AddPaymentTracker" onClick={() => gotoLocation("additionalfee")}>
             <FaPlus className="AdminPlus" />
           </div>
         </button>

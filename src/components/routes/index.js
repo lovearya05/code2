@@ -45,7 +45,10 @@ export default function RoutesServer() {
         <Routes>
           <Route exact path="/code2/" element={<Splash />}></Route>
           <Route exact path="/code2/temp" element={<Temp />}></Route>
+          <Route exact path="/code2/login" element={<Login />}/>
+          <Route exact path="/code2/signup" element={<Signup />}/>
         </Routes>
+
         
         {user && <Routes>
           <Route exact path="/code2/admin-tracker" element={<AdminTracker />} />
@@ -55,14 +58,11 @@ export default function RoutesServer() {
           <Route exact path="/code2/additionalfee" element={<AdditionalFee />} />
           <Route exact path="/code2/admin-support" element={<AdminSupport />} />
 
-          <Route exact path="/code2/login" element={<Login />}/>
-          <Route exact path="/code2/signup" element={<Signup />}/>
-
             {/* this profile is of user type business or consumer  */}
           <Route exact path="/code2/profile" element={<Profile />}/> 
         </Routes>}
 
-        {user && userType === "consumer" || true &&
+        {user && userType === "consumer" &&
         <Routes>
           <Route element={<TrackerConsumer />} />
           <Route index exact path="/code2/trackerConsumer" element={<TrackerConsumer />} />
@@ -73,7 +73,7 @@ export default function RoutesServer() {
           <Route exact path="/code2/editProfileConsumer" element={<EditProfileConsumer />} />
         </Routes>}
         
-        {user && userType === "business" || true &&
+        {user && userType === "business"  &&
           <Routes>
             <Route element={<Tracker />} />
             <Route index exact path="/code2/tracker" element={<Tracker />} />
