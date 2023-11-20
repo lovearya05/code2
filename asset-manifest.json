@@ -1,18 +1,21 @@
 {
   "files": {
-    "main.css": "/code2/static/css/main.ecdca378.css",
-    "main.js": "/code2/static/js/main.4c69bc6e.js",
+    "main.css": "/code2/static/css/main.50942f9d.css",
+    "main.js": "/code2/static/js/main.d322a1cb.js",
     "static/js/787.15c8b6b9.chunk.js": "/code2/static/js/787.15c8b6b9.chunk.js",
+    "static/media/image 72.png": "/code2/static/media/image 72.d5954dfd72d84a9e6654.png",
+    "static/media/walmart2.svg": "/code2/static/media/walmart2.a13a2d02fad4c06af179b48732abc652.svg",
     "static/media/avatar_7313885.svg": "/code2/static/media/avatar_7313885.3e87e101ae383861e7d8cad57907b060.svg",
     "static/media/code2LogoText.svg": "/code2/static/media/code2LogoText.fe2eba21060384a36daeebfc39e425e5.svg",
     "static/media/code2Logo.svg": "/code2/static/media/code2Logo.d163da6c0f6c821f59245b66dd47e34d.svg",
     "index.html": "/code2/index.html",
-    "main.ecdca378.css.map": "/code2/static/css/main.ecdca378.css.map",
-    "main.4c69bc6e.js.map": "/code2/static/js/main.4c69bc6e.js.map",
+    "static/media/profileIcon.svg": "/code2/static/media/profileIcon.b9c67f274dd2863ec4f0a59d84a078a4.svg",
+    "main.50942f9d.css.map": "/code2/static/css/main.50942f9d.css.map",
+    "main.d322a1cb.js.map": "/code2/static/js/main.d322a1cb.js.map",
     "787.15c8b6b9.chunk.js.map": "/code2/static/js/787.15c8b6b9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ecdca378.css",
-    "static/js/main.4c69bc6e.js"
+    "static/css/main.50942f9d.css",
+    "static/js/main.d322a1cb.js"
   ]
 }
