@@ -36,14 +36,11 @@
     flex-direction: row;
     height: 100%;
     flex-wrap: wrap;
+    justify-content: space-between;
   }
+
   .tracker {
     padding: 2px 15px;
-  }
-  .business__boxes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
   }
   .BusinessMobNavbar {
     display: block;
