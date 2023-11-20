@@ -19,7 +19,7 @@ function RedeemCODE2() {
         <p>Redeem CODE2</p>
       </div>
       <div className="reedem__code showInRow">
-        <div className="allCenter marginTop16" style={{marginRight:'10px'}} >
+        <div className="allCenter marginTop16" >
           <div className="redeemCard">
             <div className="flexColSpaceBtw">
               <div>
@@ -41,7 +41,7 @@ function RedeemCODE2() {
           </div>
         </div>
 
-        <div className="allCenter marginTop16">
+        <div className="allCenter marginTop16" style={{marginRight:'20px'}} >
           <div className="qrCode marginTop16"></div>
         </div>
 
