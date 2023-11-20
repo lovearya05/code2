@@ -1,13 +1,26 @@
 .tracker {
   padding: 2px 15px;
 }
+.tc__web__navbar {
+  display: block;
+}
+.tc__mob__navbar {
+  display: none;
+}
+.track__consumer {
+  padding: 1% 20%;
+}
 .business__title {
+  margin: 0;
   color: var(--Primary_text-color, #fff);
   font-family: "Poppins", sans-serif;
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+}
+.business__title > p {
+  margin: 3% 0px;
 }
 /* .business__boxes {
   width: 100%;
@@ -19,9 +32,32 @@
 .business__boxes {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   justify-content: space-between;
+  height: fit-content;
+  margin: 20px 0px;
 }
-.PointsButtonsDiv{
+.PointsButtonsDiv {
   display: flex;
   flex-direction: row;
+}
+@media only screen and (max-width: 768px) {
+  .track__consumer {
+    padding: 0px;
+  }
+  .tc__web__navbar {
+    display: none;
+  }
+  .tc__mob__navbar {
+    display: block;
+  }
+  .business__boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    /* height: fit-content; */
+    /* margin: 20px 0px; */
+  }
 }

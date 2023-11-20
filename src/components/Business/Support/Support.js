@@ -7,44 +7,44 @@ import { db } from "../../../firebaseConfig";
 import Loader from "../../login/EssentialComponents/Loader";
 import toast from "react-simple-toasts";
 import BusinessWebNavbar from "../../WebNavbar.js/BusinessWebNavbar";
+import ConsumerWebNavbar from "../../WebNavbar.js/ConsumerWebNavbar";
 
 const Support = () => {
   const { user } = useSelector((state) => state?.appData);
   const [loading, setLaoding] = useState(false);
 
-  const [issue, setIssue] = useState('');
+  const [issue, setIssue] = useState("");
 
   const handlePost = () => {
     if (!issue || issue.length == 0) {
       toast("please enter message first");
       return;
     }
-    submitTicket()
-  }
+    submitTicket();
+  };
 
   const submitTicket = async () => {
-    setLaoding(true)
-    
+    setLaoding(true);
+
     try {
       const docRef = await addDoc(collection(db, "supportTicket"), {
-        entityName: 'code2 support ticket',
+        entityName: "code2 support ticket",
         entityUserId: user?.uid,
         issueDescription: issue,
-        status : 'open',
-        active : true,
-        isApproved : false,
-        suppoerProfile : 'business'
+        status: "open",
+        active: true,
+        isApproved: false,
+        suppoerProfile: "business",
       });
-      toast('Support message sent')
-      setIssue('')
+      toast("Support message sent");
+      setIssue("");
     } catch (e) {
-      toast('Try again later')
+      toast("Try again later");
       console.error("Error adding document: ", e);
     }
-    setLaoding(false)
-    
+    setLaoding(false);
   };
-  
+
   return (
     <div>
       {loading && <Loader />}
@@ -52,7 +52,7 @@ const Support = () => {
         <Navbar />
       </div>
       <div className="BusinessWebNavbar">
-        <BusinessWebNavbar />
+        <ConsumerWebNavbar />
       </div>
       <div className="support">
         <div className="business__title">

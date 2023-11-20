@@ -1,5 +1,11 @@
 .support {
-  padding: 2px 15px;
+  padding: 1% 28%;
+}
+.c__web__navbar {
+  display: block;
+}
+.c__mob__navbar {
+  display: none;
 }
 .business__title {
   color: var(--Primary_text-color, #fff);
@@ -75,4 +81,15 @@
 textarea::placeholder {
   color: #a7a1a1;
   opacity: 0.9;
+}
+@media only screen and (max-width: 768px) {
+  .support {
+    padding: 2px 15px;
+  }
+  .c__web__navbar {
+    display: none;
+  }
+  .c__mob__navbar {
+    display: block;
+  }
 }

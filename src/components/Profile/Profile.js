@@ -15,11 +15,11 @@ const Profile = () => {
   };
   const handleGoClick = () => {
     if (selectedButton === "Business") {
-      dispatch(updateUserProfileType('business'))
+      dispatch(updateUserProfileType("business"));
       navigate("/code2/tracker", { replace: true });
-    }else if(selectedButton === "Individual"){
-      dispatch(updateUserProfileType('consumer'))
-      navigate("/code2/TrackerConsumer", { replace: true });
+    } else if (selectedButton === "Individual") {
+      dispatch(updateUserProfileType("consumer"));
+      navigate("/code2/trackerConsumer", { replace: true });
     }
   };
 

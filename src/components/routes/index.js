@@ -85,6 +85,12 @@ export default function RoutesServer() {
             <Route exact path="/code2/signup" element={<Signup />} />
 
             {/* this profile is of user type business or consumer  */}
+            <Route
+              exact
+              path="/code2/admin"
+              element={<EditProfileConsumer />}
+            />
+
             <Route exact path="/code2/profile" element={<Profile />} />
           </Routes>
         )}
@@ -111,11 +117,7 @@ export default function RoutesServer() {
               path="/code2/profileConsumer"
               element={<ProfileConsumer />}
             />
-            <Route
-              exact
-              path="/code2/supportConsumer"
-              element={<SupportConsumer />}
-            />
+            <Route exact path="/code2/supportConsumer" element={<Support />} />
             <Route
               exact
               path="/code2/editProfileConsumer"
@@ -137,7 +139,6 @@ export default function RoutesServer() {
               path="/code2/business_profile"
               element={<BusinessProfile />}
             />
-            <Route exact path="/code2/support" element={<Support />} />
           </Routes>
         )}
       </div>
