@@ -18,8 +18,8 @@ function RedeemCODE2() {
       <div className="business__title">
         <p>Redeem CODE2</p>
       </div>
-      <div className="reedem__code">
-        <div className="allCenter marginTop16">
+      <div className="reedem__code showInRow">
+        <div className="allCenter marginTop16" style={{marginRight:'10px'}} >
           <div className="redeemCard">
             <div className="flexColSpaceBtw">
               <div>
@@ -44,6 +44,7 @@ function RedeemCODE2() {
         <div className="allCenter marginTop16">
           <div className="qrCode marginTop16"></div>
         </div>
+
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ import profileIcon from '../assets/profileIcon.svg'
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-simple-toasts';
 import { updateOrCreateData, getData } from '../../utilityFunction';
-import { getCurrentDateTimeString} from '../../utilFunctions';
+import { getCurrentDateTimeString } from '../../utilFunctions';
 import { useSelector } from 'react-redux';
 import Loader from '../../login/EssentialComponents/Loader';
 import { db } from "../../../firebaseConfig";
@@ -54,11 +54,12 @@ function EditProfileConsumer() {
             return
         }
         await updateOrCreateData(db, 'businessProfile', 'uid', user?.uid,
-         { ...profileData,
-           uid: user?.uid, 
-           active : true,
-           cDate : getCurrentDateTimeString()
-        },
+            {
+                ...profileData,
+                uid: user?.uid,
+                active: true,
+                cDate: getCurrentDateTimeString()
+            },
             () => setLaoding(true), () => setLaoding(false))
     }
 

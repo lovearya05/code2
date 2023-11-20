@@ -1,5 +1,12 @@
 .business__profile {
-  padding: 2px 15px;
+  /* padding: 2px 15px; */
+  padding: 1% 20%;
+}
+.BusinessMobNavbar {
+  display: none;
+}
+.profile__data{
+  padding: 1% 20%;
 }
 .profile__front {
   display: flex;
@@ -45,4 +52,30 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+}
+.profile__front > p {
+  color: var(--Primary_text-color, #fff);
+  font-family: "Poppins";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+@media only screen and (max-width: 768px) {
+  .profile__data{
+    padding: 1% 2%;
+  }
+  .business__profile {
+    padding: 2px 15px;
+  }
+  .business__profile {
+    padding: 0px;
+  }
+
+  .BusinessWebNavbar {
+    display: none;
+  }
+  .BusinessMobNavbar {
+    display: block;
+  }
 }

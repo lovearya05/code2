@@ -21,7 +21,7 @@
     color: #fff;
   }
   .paddHori{
-    padding: 0 16px;
+  padding: 1% 20%;
   }
   .edit__input1 > input::placeholder {
     color: #CFCCCC;
@@ -32,3 +32,9 @@
     display: flex;
     justify-content: center;
   }
+  @media only screen and (max-width: 768px) {
+    .paddHori{
+      padding: 1% 2%;
+      }
+  }
+  
