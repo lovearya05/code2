@@ -5,38 +5,48 @@ import Dropdown from "../../Business/Components/Dropdown";
 import Business__Input from "../../Business/Components/BusinessInput";
 import AdminWebNavbar from "../../WebNavbar.js/AdminWebNavbar";
 import toast from "react-simple-toasts";
-import { updateOrCreateData, getData } from '../../utilityFunction';
-import { db } from '../../../firebaseConfig';
+import { updateOrCreateData, getData } from "../../utilityFunction";
+import { db } from "../../../firebaseConfig";
 import { getCurrentDateTimeString } from "../../utilFunctions";
-import Loader from '../../login/EssentialComponents/Loader';
-
+import Loader from "../../login/EssentialComponents/Loader";
+import FactorHeader from "./FactorHeader";
+import FactorData from "./FactorData";
 
 const Factor = () => {
-  const [country, setCountary] = useState('')
-  const [fuelType, setFuelType] = useState('')
-  const [multiplyingFactor, setMultiplyingFactor] = useState('')
+  const [country, setCountary] = useState("");
+  const [fuelType, setFuelType] = useState("");
+  const [multiplyingFactor, setMultiplyingFactor] = useState("");
   const [loading, setLaoding] = useState(false);
 
-
-  const handleSaveButton = ()=>{
-    if(!country || !fuelType || !multiplyingFactor){
-      toast('please fill all the inputs first')
-      return
+  const handleSaveButton = () => {
+    if (!country || !fuelType || !multiplyingFactor) {
+      toast("please fill all the inputs first");
+      return;
     }
     handleCreate({
-      'country' : country,
-      "fuelType" : fuelType,
-      "multiplyingFactor" : multiplyingFactor,
-      "active" : true,
-      "cDate" : getCurrentDateTimeString(),
-    })
-  }
-  const handleCreate = async(newData={})=>{
-    try{
-      const data = await updateOrCreateData(db, 'multiplyFactors', 'country', country, newData,()=>setLaoding(true), ()=>setLaoding(false))
-      console.log(data)
-    }catch(e){console.log(e)}
-  }
+      country: country,
+      fuelType: fuelType,
+      multiplyingFactor: multiplyingFactor,
+      active: true,
+      cDate: getCurrentDateTimeString(),
+    });
+  };
+  const handleCreate = async (newData = {}) => {
+    try {
+      const data = await updateOrCreateData(
+        db,
+        "multiplyFactors",
+        "country",
+        country,
+        newData,
+        () => setLaoding(true),
+        () => setLaoding(false)
+      );
+      console.log(data);
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   return (
     <div>
@@ -48,19 +58,50 @@ const Factor = () => {
         <AdminWebNavbar />
       </div>
       <div className="factor">
-        <div className="factor__title">
-          <h2>Factor</h2>
-        </div>
-        <div className="factor__form">
-          <p>Country</p>
-          <Dropdown setValue={setCountary} currValue={country} options={["🇦🇪UAE", "🇬🇧London", "🇦🇹Vienna"]} />
-          <p>Fuel type</p>
-          <Dropdown setValue={setFuelType} currValue={fuelType} options={["🟡Solar", "💧Hydro", "Tidal"]} />
-          <p>Multiplying factor</p>
-          <Business__Input setValue={setMultiplyingFactor} currValue={multiplyingFactor} />
-          <div onClick={handleSaveButton} className="factor__save">
-            <button>Save</button>
+        <div className="factor__mob">
+          <div className="factor__title">
+            <h2>Factor</h2>
           </div>
+          <div className="factor__form">
+            <p>Country</p>
+            <Dropdown
+              setValue={setCountary}
+              currValue={country}
+              options={["🇦🇪UAE", "🇬🇧London", "🇦🇹Vienna"]}
+            />
+            <p>Fuel type</p>
+            <Dropdown
+              setValue={setFuelType}
+              currValue={fuelType}
+              options={["🟡Solar", "💧Hydro", "Tidal"]}
+            />
+            <p>Multiplying factor</p>
+            <Business__Input
+              setValue={setMultiplyingFactor}
+              currValue={multiplyingFactor}
+            />
+            <div onClick={handleSaveButton} className="factor__save">
+              <button>Save</button>
+            </div>
+          </div>
+        </div>
+        <div className="factor__web">
+          <div className="fw__btn">
+            <button>Add New Factor</button>
+          </div>
+          <FactorHeader />
+          <FactorData
+            header1="#4556"
+            header2="UAE"
+            header3="Solar"
+            header4="0.4"
+          />
+          <FactorData
+            header1="#4557"
+            header2="London"
+            header3="Tidal"
+            header4="0.4"
+          />
         </div>
       </div>
     </div>

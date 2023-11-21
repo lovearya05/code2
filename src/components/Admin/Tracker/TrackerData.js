@@ -2,7 +2,7 @@ import React from "react";
 import "./TrackerData.css";
 import { FaPencilAlt } from "react-icons/fa";
 
-const TrackerData = ({ activate }) => {
+const TrackerData = ({ value }) => {
   return (
     <div className="tracker__header">
       <div className="td_tracker__header__list">
@@ -23,13 +23,17 @@ const TrackerData = ({ activate }) => {
       <div className="td_tracker__header__list">
         <p>160k</p>
       </div>
-      {activate ? (
+      {value == "activate" ? (
         <div className="td_tracker__header__list__activate">
           <p>Activate</p>
         </div>
-      ) : (
+      ) : value == "deactivate" ? (
         <div className="td_tracker__header__list__deactivate">
           <p>Deactivated</p>
+        </div>
+      ) : (
+        <div className="td_tracker__header__list__pending">
+          <p>Pending</p>
         </div>
       )}
 

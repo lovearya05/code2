@@ -29,6 +29,21 @@
   width: 14.28%;
   padding: 10px 0px;
 }
+
+.tracker__header .td_tracker__header__list__pending {
+  width: 14.28%;
+  padding: 10px 0px;
+}
+.tracker__header .td_tracker__header__list__pending > p {
+  color: var(--Primary_text-color, #fff);
+  font-family: "Poppins";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 10px 15px;
+  margin: 0;
+}
 .tracker__header .td_tracker__header__list__deactivate {
   width: 14.28%;
   padding: 10px 0px;
@@ -95,6 +110,7 @@
   padding: 10px 15px;
   margin: 0;
 }
+
 .tracker__header .tdind_tracker__header__list__activate > p {
   padding: 10px 15px;
   margin: 0;

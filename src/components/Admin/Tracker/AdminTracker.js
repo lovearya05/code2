@@ -115,12 +115,12 @@ const AdminTracker = () => {
                 header6="CODE2 Balance"
                 header7="Status"
               />
-              <TrackerData activate={true} />
-              <TrackerData activate={false} />
-              <TrackerData activate={true} />
-              <TrackerData activate={false} />
-              <TrackerData activate={false} />
-              <TrackerData activate={false} />
+              <TrackerData value={"activate"} />
+              <TrackerData value={"activate"} />
+              <TrackerData value={"deactivate"} />
+              <TrackerData value={"pending"} />
+              <TrackerData value={"pending"} />
+              <TrackerData value={"deactivate"} />
             </div>
           ) : (
             <div className="admin__tracker__web">
@@ -133,11 +133,11 @@ const AdminTracker = () => {
                 header6="Mostly Shopped"
                 header7="Status"
               />
-              <TrackerDataInd activate={true} />
-              <TrackerDataInd activate={false} />
-              <TrackerDataInd activate={true} />
-              <TrackerDataInd activate={true} />
-              <TrackerDataInd activate={true} />
+              <TrackerDataInd value={true} />
+              <TrackerDataInd value={false} />
+              <TrackerDataInd value={true} />
+              <TrackerDataInd value={true} />
+              <TrackerDataInd value={true} />
             </div>
           )}
         </div>

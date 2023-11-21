@@ -4,7 +4,7 @@ import walmartLogo from './assets/walmart2.svg'
 
 export const CircularBtn = ({isActive=false, text='',onClickBtn=()=>{} }) => {
   return (
-    <div onClick={onClickBtn} className={isActive ? `circularBtnActive` : 'circularBtn'} >
+    <div onClick={onClickBtn} className={isActive ? `highlight__tracker` : 'normal__tracker'} >
         {text}
     </div>
   )

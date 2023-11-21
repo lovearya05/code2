@@ -1,106 +1,126 @@
-.circularBtnActive{
-    cursor: pointer;
-    color: var(--Secondary_Green, #3DC182);
-    font-family: Poppins;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
+.circularBtnActive {
+  cursor: pointer;
+  color: var(--Secondary_Green, #3dc182);
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 
-    padding: 4px 8px;
-    display: inline;
-    gap: 10px;
-    border-radius: 200px;
-    border: 1px solid var(--Secondary_Green, #3DC182);
+  padding: 4px 8px;
+  display: inline;
+  gap: 10px;
+  border-radius: 200px;
+  border: 1px solid var(--Secondary_Green, #3dc182);
 }
-.circularBtn{
-    cursor: pointer;
-    color: var(--Secondary_Green, #D9D9D9);
-    font-family: Poppins;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
+.circularBtn {
+  cursor: pointer;
+  color: var(--Secondary_Green, #d9d9d9);
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 
-    padding: 4px 8px;
-    display: inline;
-    gap: 10px;
-    border-radius: 200px;
-    border: 1px solid rgba(138, 138, 138, 0.31);
+  padding: 4px 8px;
+  display: inline;
+  gap: 10px;
+  border-radius: 200px;
+  border: 1px solid rgba(138, 138, 138, 0.31);
 }
-.transectionCardMain{
-    display: flex;
-    /* width: 360px; */
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
+.normal__tracker {
+  cursor: pointer;
+  color: var(--Secondary_Text_grey, #d9d9d9);
+  font-family: "Poppins";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
-.topLine{
-    border-top: 1px solid var(--Stroke_color, #404040);
+.highlight__tracker {
+  cursor: pointer;
+  margin-right: 10px;
+  color: var(--Secondary_Green, #3dc182);
+  font-family: "Poppins";
+  border-bottom: 1px solid var(--Secondary_Green, #3dc182);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 }
-.bottomLine{
-    border-bottom: 1px solid var(--Stroke_color, #404040);
+.transectionCardMain {
+  display: flex;
+  /* width: 360px; */
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
 }
-.marginTop16{
-    margin-top: 16px;
+.topLine {
+  border-top: 1px solid var(--Stroke_color, #404040);
 }
-.marginTop6{
-    margin-top: 6px;
+.bottomLine {
+  border-bottom: 1px solid var(--Stroke_color, #404040);
 }
-.transectionCardInner{
-    padding: 10px 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2px;
-    align-self: stretch;
+.marginTop16 {
+  margin-top: 16px;
 }
-.dateSmall{
-    color: #A9A3A3;
-    font-family: Poppins;
-    font-size: 10px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+.marginTop6 {
+  margin-top: 6px;
 }
-.transectionCardInner > .content{
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    align-self: stretch;
+.transectionCardInner {
+  padding: 10px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  align-self: stretch;
+}
+.dateSmall {
+  color: #a9a3a3;
+  font-family: Poppins;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.transectionCardInner > .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-self: stretch;
 
-    color: var(--Primary_text-color, #FFF);
-    font-family: Poppins;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+  color: var(--Primary_text-color, #fff);
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
-.transectionCardInner > .content2{
-    color: #A19C9C;
-    font-family: Poppins;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+.transectionCardInner > .content2 {
+  color: #a19c9c;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
-.earnedCardMain{
-    display: flex;
-    /* width: 360px; */
-    padding: 12px 0px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+.earnedCardMain {
+  display: flex;
+  /* width: 360px; */
+  padding: 12px 0px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
 }
-.earnedCardInner{
-    flex-direction: row;
-    padding: 10px 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2px;
-    align-self: stretch;
-    /* background-color: red; */
+.earnedCardInner {
+  flex-direction: row;
+  padding: 10px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  align-self: stretch;
+  /* background-color: red; */
 }
 /* .earnedCardInner > .row1{
     color: var(--Secondary_Green, #3DC182);
@@ -110,33 +130,33 @@
     font-weight: 600;
     line-height: normal;
 } */
-.flexRowSpaceBtn{
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    align-self: stretch;
+.flexRowSpaceBtn {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-self: stretch;
 }
-.greenText1{
-    color: var(--Secondary_Green, #3DC182);
-    font-family: Poppins;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
+.greenText1 {
+  color: var(--Secondary_Green, #3dc182);
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 }
-.whiteText1{
-    color: var(--Primary_text-color, #FFF);
-    font-family: Poppins;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
+.whiteText1 {
+  color: var(--Primary_text-color, #fff);
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }
-.whiteText2{
-    color: var(--Primary_text-color, #FFF);
-    font-family: Poppins;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
+.whiteText2 {
+  color: var(--Primary_text-color, #fff);
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }

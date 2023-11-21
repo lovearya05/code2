@@ -4,6 +4,9 @@
 .factor__web__navbar {
   display: block;
 }
+.factor__mob {
+  display: none;
+}
 .factor__mob__navbar {
   display: none;
 }
@@ -44,12 +47,36 @@
   font-weight: 400;
   line-height: normal;
 }
+.factor__web .fw__btn {
+  display: flex;
+  justify-content: flex-end;
+
+  margin: 20px 0px;
+}
+.factor__web .fw__btn > button {
+  border-radius: 8px;
+  cursor: pointer;
+  background: var(--Primary_color, #00955f);
+  border: none;
+  padding: 8px 12px;
+  outline: none;
+  color: var(--Primary_text-color, #fff);
+  font-family: "Poppins";
+
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
 @media only screen and (max-width: 768px) {
   .factor {
     padding: 2px 15px;
   }
   .factor__web__navbar {
     display: none;
+  }
+  .factor__mob {
+    display: block;
   }
   .factor__mob__navbar {
     display: block;
