@@ -78,3 +78,79 @@
   margin-left: 5px;
   color: white;
 }
+.bw_navbar {
+  position: relative;
+}
+
+.bw_navbar .logout__consumer {
+  position: absolute;
+  top: 108%;
+  right: 1%;
+  display: flex;
+  flex-direction: column;
+  padding: 6px 12px;
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    #272727;
+  border-radius: 16px;
+}
+.bw_navbar .logout__consumer .logout__consumer__top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 2px 6px;
+}
+.bw_navbar .logout__consumer .logout__consumer__bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 2px 6px;
+}
+.bw_navbar .logout__consumer .logout__consumer__top .lc_view__icon {
+  color: white;
+  font-size: 14px;
+}
+.bw_navbar .logout__consumer .logout__consumer__bottom .lc_logout__icon {
+  color: white;
+  font-size: 14px;
+}
+.bw_navbar .logout__consumer .logout__consumer__top > button {
+  /* padding: 6px 12px; */
+  cursor: pointer;
+  border: none;
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    #272727;
+  padding: 6px 12px;
+  color: var(--Secondary_Text_grey, #d9d9d9);
+  font-family: "Poppins";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.bw_navbar .logout__consumer .logout__consumer__bottom > button {
+  padding: 6px 12px;
+  cursor: pointer;
+  border: none;
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    #272727;
+
+  color: var(--Secondary_Text_grey, #d9d9d9);
+  font-family: "Poppins";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

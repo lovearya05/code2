@@ -11,15 +11,7 @@
   border-radius: 16px;
   margin-bottom: 25px;
 }
-.trackerBox .box_smalText .highlight__code2 {
-  color: #fff;
-  font-family: "Poppins";
-  font-size: 11.853px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 120%; /* 14.224px */
-}
-.trackerBox .box_smalText .highlight__code2 .lastCharacter {
+.trackerBox .box_smalText__web .highlight__code2 .lastCharacter {
   color: var(--Secondary_Green, #3dc182);
   font-family: "Poppins";
   font-size: 11.853px;
@@ -54,11 +46,11 @@
 .trackerBox .box_smalText__web {
   margin: 0px 10px 0px;
   color: #fff;
-  font-family: "Poppins", sans-serif;
-  font-size: 14px;
+  font-family: "Poppins";
+  font-size: 11.853px;
   font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  font-weight: 600;
+  line-height: 120%; /* 14.224px */
 }
 .box_smalText__mob {
   display: none;
