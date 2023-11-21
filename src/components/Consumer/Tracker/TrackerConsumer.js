@@ -54,10 +54,10 @@ const TrackerConsumer = () => {
   return (
     <div>
       {loading && <Loader />}
-      <div className="tc_mob_navbar">
+      <div className="tc__mob__navbar">
         <NavbarConsumer />
       </div>
-      <div className="tc_web_navbar">
+      <div className="tc__web__navbar">
         <ConsumerWebNavbar />
       </div>
       <div className="track__consumer">

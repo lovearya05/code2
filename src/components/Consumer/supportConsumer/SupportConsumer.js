@@ -9,6 +9,8 @@ import toast from "react-simple-toasts";
 import BusinessWebNavbar from "../../WebNavbar.js/BusinessWebNavbar";
 import ConsumerWebNavbar from "../../WebNavbar.js/ConsumerWebNavbar";
 import {getData} from '../../utilityFunction'
+import NavbarConsumer from "../navbarConsumer/NavbarConsumer";
+
 
 
 const SupportConsumer = () => {
@@ -69,7 +71,7 @@ const SupportConsumer = () => {
     <div>
       {loading && <Loader />}
       <div className="BusinessMobNavbar">
-        <Navbar />
+        <NavbarConsumer />
       </div>
       <div className="BusinessWebNavbar">
         <ConsumerWebNavbar />
