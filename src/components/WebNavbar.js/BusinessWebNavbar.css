@@ -58,6 +58,7 @@
   border-radius: 200px;
   background: rgba(0, 0, 0, 0.17);
   padding: 3px 7px 3px 2px;
+  cursor: pointer;
 }
 .businessWebNavbar__right > p {
   width: 25px;

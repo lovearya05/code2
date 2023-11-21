@@ -4,6 +4,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import "./BusinessWebNavbar.css";
 import code2Logo from "../../assets/code2Logo.svg";
 import { FaChevronDown } from "react-icons/fa6";
+import toast from "react-simple-toasts";
+import { getAuth, signOut } from "firebase/auth";
 
 const AdminWebNavbar = () => {
   const navigate = useNavigate();
@@ -13,6 +15,19 @@ const AdminWebNavbar = () => {
   const gotoLocation = (urlLocation) => {
     navigate(`/code2/${urlLocation}`);
   };
+  const handleLogOut = () => {
+    const auth = getAuth();
+    signOut(auth)
+      .then(() => {
+        toast("Logout successful.");
+        navigate(`/code2/login`);
+      })
+      .catch((error) => {
+        // An error happened.
+        console.log(error);
+      });
+  };
+
   return (
     <div className="bw_navbar">
       <div className="businessWebNavbar__left">
@@ -55,8 +70,8 @@ const AdminWebNavbar = () => {
           Support
         </button>
       </div>
-      <div className="businessWebNavbar__right">
-        <p>B</p>
+      <div onClick={handleLogOut} className="businessWebNavbar__right">
+        <p>A</p>
         <FaChevronDown className="bw__userIcon" />
       </div>
     </div>
