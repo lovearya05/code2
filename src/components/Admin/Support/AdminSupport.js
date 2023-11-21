@@ -38,11 +38,13 @@ const AdminSupport = () => {
         </div>
         <div>
           {supportData.map((item, i)=>{
+            console.log(item)
             return <SupportComponent 
             supportProfile={item?.supportProfile} 
             userId={item?.entityUserId} key={i} 
             ticketID='' isTicketOpen={item?.status=='open'} 
-            supportDescription={item?.issueDescription} />
+            supportDescription={item?.issueDescription}
+             />
           })}
           {/* <SupportComponent open={true} /> */}
           {/* <SupportComponent open={false} /> */}

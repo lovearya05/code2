@@ -29,7 +29,7 @@ const AdminSupportPage = () => {
           {/* <p>TK10103456</p> */}
           <div className="name__individual">
             <h2>{location.state?.userName}</h2>
-            {/* <button>Individual</button> */}
+            <button>{location.state?.supportProfile}</button>
           </div>
           <p>{location.state?.mobileNumber}</p>
         </div>
