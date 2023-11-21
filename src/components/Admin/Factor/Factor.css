@@ -81,4 +81,7 @@
   .factor__mob__navbar {
     display: block;
   }
+  .factor__web{
+    display: none;
+  }
 }

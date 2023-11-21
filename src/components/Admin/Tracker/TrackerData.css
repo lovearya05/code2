@@ -7,11 +7,11 @@
   background: rgba(0, 0, 0, 0.2);
 }
 .tracker__header .td_tracker__header__list {
-  padding: 10px 0px;
-  width: 14.28%;
+  padding: 10px 10px;
+  width: 10.28%;
 }
 .tracker__header .td_tracker__header__list > p {
-  padding: 10px 15px;
+  padding: 10px 10px;
 
   /* max-width: 18%;
   min-width: fit-content; */
@@ -24,6 +24,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  /* text-align: center; */
 }
 .tracker__header .td_tracker__header__list__activate {
   width: 14.28%;
@@ -120,4 +121,34 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+.td_tracker_headerlist_activate > p {
+  padding: 10px 15px;
+  margin: 0;
+  color: var(--Primary_text-color, #3DC182);
+  font-family: "Poppins";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.td_tracker_headerlist_deactivate>p{
+  color: var(--Primary_text-color, #DE5151);
+  font-family: "Poppins";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 10px 15px;
+  margin: 0;
+}
+.td_tracker_headerlist_pending{
+  color: var(--Primary_text-color, #fff);
+  font-family: "Poppins";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 10px 15px;
+  margin: 0;
 }

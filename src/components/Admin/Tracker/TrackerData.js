@@ -2,27 +2,31 @@ import React from "react";
 import "./TrackerData.css";
 import { FaPencilAlt } from "react-icons/fa";
 
-const TrackerData = ({ value }) => {
+const TrackerData = ({ value = 'deactivate', isActivate = false, text1 = '', text2 = '', text3 = '', text4 = '', text5 = '', text6 = '', text7 = '' }) => {
   return (
     <div className="tracker__header">
       <div className="td_tracker__header__list">
-        <p>#4556</p>
+        <p>{text1}</p>
       </div>
       <div className="td_tracker__header__list">
-        <p>Amazon.com</p>
+        <p>{text2}</p>
       </div>
       <div className="td_tracker__header__list">
-        <p>Rajat Kumar</p>
+        <p>{text3}</p>
       </div>
       <div className="td_tracker__header__list">
-        <p>200k</p>
+        <p>{text4}</p>
       </div>
       <div className="td_tracker__header__list">
-        <p>160k</p>
+        <p>{text5}</p>
       </div>
       <div className="td_tracker__header__list">
-        <p>160k</p>
+        <p>{text6}</p>
       </div>
+      <div className="td_tracker__header__list">
+        <p>{text7}</p>
+      </div>
+
       {value == "activate" ? (
         <div className="td_tracker__header__list__activate">
           <p>Activate</p>
@@ -33,7 +37,9 @@ const TrackerData = ({ value }) => {
         </div>
       ) : (
         <div className="td_tracker__header__list__pending">
-          <p>Pending</p>
+          <div className="td_tracker__header__list">
+            <p>{'Pending'}</p>
+          </div>
         </div>
       )}
 
@@ -41,6 +47,7 @@ const TrackerData = ({ value }) => {
         <FaPencilAlt className="td__pencil__icon" />
       </div>
     </div>
+
   );
 };
 

@@ -82,7 +82,7 @@ const AdminTracker = () => {
               } `}
               onClick={() => changeFunction("business")}
             >
-              Business(20)
+              {`Business(${businessProfiles.length})`}
             </button>
             <button
               className={`${
@@ -92,7 +92,7 @@ const AdminTracker = () => {
               } `}
               onClick={() => changeFunction("individual")}
             >
-              Individual(10)
+              {`Individual(${consumerProfiles.length})`}
             </button>
           </div>
           <div className="tracker__filter">
@@ -110,17 +110,29 @@ const AdminTracker = () => {
                 header1="Uid"
                 header2="Company"
                 header3="Point of Contact"
-                header4="CODE2 Earned"
-                header5="CODE2 Distributed"
-                header6="CODE2 Balance"
-                header7="Status"
+                header4="Point of Number"
+                header5="CODE2 Earned"
+                header6="CODE2 Distributed"
+                header7="CODE2 Balance"
+                header8="Status"
               />
-              <TrackerData value={"activate"} />
-              <TrackerData value={"activate"} />
-              <TrackerData value={"deactivate"} />
-              <TrackerData value={"pending"} />
-              <TrackerData value={"pending"} />
-              <TrackerData value={"deactivate"} />
+              {businessProfiles.map((item,i)=>{
+                return <TrackerData key={i}
+                 text1={'#'} 
+                 text2={item?.company} 
+                 text3={item?.POCName} 
+                 text4={item?.POCPhone} 
+                 text5={item?.code2Earned || 0} 
+                 text6={item?.code2Distributed || 0}
+                 text7={item?.code2Balance || 0}
+                 isActivate={false} 
+                  />
+              })}
+              {/* <TrackerData activate={false} />
+              <TrackerData activate={true} />
+              <TrackerData activate={false} />
+              <TrackerData activate={false} />
+              <TrackerData activate={false} /> */}
             </div>
           ) : (
             <div className="admin__tracker__web">

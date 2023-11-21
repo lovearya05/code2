@@ -51,9 +51,9 @@ const Signup = () => {
   };
   const sendEmail = async () => {
     return new Promise((res, rej) => {
-      const serviceId = "service_6sbrjtd";
-      const templateId = "template_6s9rv5a";
-      const userId = "tswF0bxGlMJzKEnZO"; // public key
+      const serviceId = true ? 'service_0015cm6' : "service_6sbrjtd";
+      const templateId = true ? 'template_ppa2xxx' : "template_6s9rv5a";
+      const userId = true ? '1f6jN04TpbjAQLv8o' : "tswF0bxGlMJzKEnZO"; // public key
       const otp = parseInt(Math.random() * 10000);
       setOTP(otp);
       // console.log(otp)
