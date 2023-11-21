@@ -9,12 +9,21 @@ import {getData} from '../../utilityFunction'
 
 const SupportComponent = ({ userId='', supportProfile='', ticketID='', isTicketOpen=false, supportDescription='' }) => {
   const Navigate = useNavigate();
-  const openSupport = (urlLocation) => {
-    Navigate(`/code2/${urlLocation}`,{data:{name:'lovepreet'}});
-  };
   
   const [userProfileData, setUserProfileData] = useState({})
-
+  
+  const openSupport = (urlLocation) => {
+    Navigate(`/code2/${urlLocation}`,{state:{
+      userName : userProfileData?.name,
+      mobileNumber : userProfileData?.mobileNumber,
+      userId: userId,
+       supportProfile: supportProfile, 
+       ticketID: ticketID, 
+       isTicketOpen: isTicketOpen, 
+       supportDescription: supportDescription
+    }});
+  };
+  
   useEffect(()=>{
     if(supportProfile){
       supportProfile === 'business' && loadBusinessProfiles ()

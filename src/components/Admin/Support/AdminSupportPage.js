@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../../AdminNavbar/Navbar";
 import "./AdminSupport.css";
 import { FaCaretDown } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import AdminWebNavbar from "../../WebNavbar.js/AdminWebNavbar";
 
 const AdminSupportPage = () => {
@@ -10,6 +10,7 @@ const AdminSupportPage = () => {
   const goBackFunction = () => {
     navigate(-1);
   };
+  const location = useLocation();
 
   return (
     <div>
@@ -25,18 +26,16 @@ const AdminSupportPage = () => {
           <button onClick={goBackFunction}>Back</button>
         </div>
         <div className="adminSupport__page__middle">
-          <p>TK10103456</p>
+          {/* <p>TK10103456</p> */}
           <div className="name__individual">
-            <h2>Rajat Kumar</h2>
-            <button>Individual</button>
+            <h2>{location.state?.userName}</h2>
+            {/* <button>Individual</button> */}
           </div>
-          <p>+3456 567 89</p>
+          <p>{location.state?.mobileNumber}</p>
         </div>
         <div className="support__subject">
           <p>
-            My points deducted automaically. I wasn’t able to use it pay for the
-            items i bought in the refered store. I need a refund of the points
-            in my account as soon as possible.
+            {location.state?.supportDescription}
           </p>
         </div>
         <div className="support__changeStatus">
