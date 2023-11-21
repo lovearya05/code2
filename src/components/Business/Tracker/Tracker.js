@@ -60,12 +60,12 @@ const Tracker = () => {
       <div className="BusinessWebNavbar">
         <BusinessWebNavbar />
       </div>
-      <div className="tracker">
-        <div className="business__title">
+      <div className="bs_tracker">
+        <div className="bs_business__title">
           <p className="bt__tracker">Tracker</p>
           <p className="bt__dashboard">Dashboard</p>
         </div>
-        <div className="business__boxes">
+        <div className="bs_business__boxes">
           <TrackerBox
             // value={totalco2Reduction}
             value="25000"

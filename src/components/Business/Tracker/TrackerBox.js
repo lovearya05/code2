@@ -16,7 +16,7 @@ const TrackerBox = ({
 
   return (
     <div
-      className={`trackerBox ${isFullWidth ? "fullWidth" : ""}`}
+      className={`bs_trackerBox ${isFullWidth ? "bs_fullWidth" : ""}`}
       style={{ color: `${colorBox}` }}
     >
       {/* <div className="boxContent"> */}

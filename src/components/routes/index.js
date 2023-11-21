@@ -51,7 +51,7 @@ export default function RoutesServer() {
         </Routes>
 
         
-        {user && <Routes>
+        {user &&  <Routes>
           <Route exact path="/code2/admin-tracker" element={<AdminTracker />} />
           <Route exact path="/code2/payment-tracker" element={<PaymentTracker />} />
           <Route exact path="/code2/factor" element={<Factor />}></Route>

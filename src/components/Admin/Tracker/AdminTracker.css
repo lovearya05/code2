@@ -24,6 +24,12 @@
 }
 .admin__button .admin__button__clicked {
   border-bottom: 1px solid var(--Stroke_color, #404040);
+  color: var(--Secondary_Green, #3dc182);
+  font-family: "Poppins";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 }
 @media only screen and (max-width: 768px) {
   .admin {

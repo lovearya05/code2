@@ -1,4 +1,4 @@
-.trackerBox {
+.bs_trackerBox {
   /* background-color: rgb(30, 30, 32); */
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.02);
@@ -12,7 +12,7 @@
   margin-bottom: 25px;
   margin-right: 20px;
 }
-.trackerBox img {
+.bs_trackerBox img {
   width: 60px;
   margin-bottom: 15px;
   height: 60px;
@@ -47,7 +47,7 @@
   width: 100%; /* take full width */
 }
 
-.trackerBox .hightlight__value {
+.bs_trackerBox .hightlight__value {
   /* color: #f0ad00; */
   /* text-align: center; */
   font-family: "Poppins", sans-serif;
@@ -58,7 +58,7 @@
   font-weight: bold;
   line-height: normal;
 }
-.trackerBox .box_smalText {
+.bs_trackerBox .box_smalText {
   /* text-align: center; */
   margin: 0px 0px 0px;
   color: #787878;
@@ -68,10 +68,9 @@
   font-weight: 400;
   line-height: normal;
 }
-.hightlight__value .tb__highl .tb__code2 .tb__two {
-}
+
 @media only screen and (max-width: 768px) {
-  .trackerBox {
+  .bs_trackerBox {
     background-color: rgb(30, 30, 32);
     display: flex;
     flex-direction: column;
@@ -82,7 +81,7 @@
     margin-bottom: 25px;
   }
 
-  .trackerBox img {
+  .bs_trackerBox img {
     display: none;
   }
   /* .fullWidth {
@@ -106,7 +105,7 @@
   .tb__highl > .tb__code2 > span {
     color: #787878;
   }
-  .fullWidth {
+  .bs_fullWidth {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -121,7 +120,7 @@
     width: 100%; /* take full width */
   }
 
-  .trackerBox .hightlight__value {
+  .bs_trackerBox .hightlight__value {
     /* color: #f0ad00; */
     font-family: "Poppins", sans-serif;
     font-size: 14px;
@@ -132,7 +131,7 @@
     line-height: normal;
   }
 
-  .trackerBox .box_smalText {
+  .bs_trackerBox .box_smalText {
     /* margin: 0px 10px 0px; */
     color: #787878;
     font-family: "Poppins", sans-serif;
