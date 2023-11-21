@@ -12,7 +12,6 @@ import Loader from '../../login/EssentialComponents/Loader';
 import ConsumerWebNavbar from "../../WebNavbar.js/ConsumerWebNavbar";
 
 
-
 function ProfileConsumer() {
   const [profileData, setProfileData] = useState({userName:'', contactNumber : '',
   email:'', profession:'', address1:'', address2:'', typicallyBuy:'', lookingToBuy:''})

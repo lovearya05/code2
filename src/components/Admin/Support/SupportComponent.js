@@ -10,7 +10,7 @@ import {getData} from '../../utilityFunction'
 const SupportComponent = ({ userId='', supportProfile='', ticketID='', isTicketOpen=false, supportDescription='' }) => {
   const Navigate = useNavigate();
   const openSupport = (urlLocation) => {
-    Navigate(`/code2/${urlLocation}`);
+    Navigate(`/code2/${urlLocation}`,{data:{name:'lovepreet'}});
   };
   
   const [userProfileData, setUserProfileData] = useState({})
@@ -53,7 +53,7 @@ const SupportComponent = ({ userId='', supportProfile='', ticketID='', isTicketO
         </div>
         {isTicketOpen ? (
           <div className="support__component__upper__right">
-            <button onClick={() => openSupport("admin-supportpage")}>
+            <button >
               Open
             </button>
           </div>
@@ -65,7 +65,8 @@ const SupportComponent = ({ userId='', supportProfile='', ticketID='', isTicketO
       </div>
       <div className="support__component__down">
         <p>{supportDescription}</p>
-        <FaAngleRight className="right__arrow" />
+        <FaAngleRight onClick={() => openSupport("admin-supportpage")} 
+        className="right__arrow" style={{cursor:'pointer'}} />
       </div>
     </div>
   );

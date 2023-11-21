@@ -38,7 +38,11 @@ const AdminSupport = () => {
         </div>
         <div>
           {supportData.map((item, i)=>{
-            return <SupportComponent supportProfile={item?.supportProfile} userId={item?.entityUserId} key={i} ticketID='' isTicketOpen={item?.status=='open'} supportDescription={item?.issueDescription} />
+            return <SupportComponent 
+            supportProfile={item?.supportProfile} 
+            userId={item?.entityUserId} key={i} 
+            ticketID='' isTicketOpen={item?.status=='open'} 
+            supportDescription={item?.issueDescription} />
           })}
           {/* <SupportComponent open={true} /> */}
           {/* <SupportComponent open={false} /> */}
