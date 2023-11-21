@@ -1,0 +1,107 @@
+.tracker__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #000;
+  background: rgba(0, 0, 0, 0.2);
+}
+.tracker__header .td_tracker__header__list {
+  padding: 10px 0px;
+  width: 14.28%;
+}
+.tracker__header .td_tracker__header__list > p {
+  padding: 10px 15px;
+
+  /* max-width: 18%;
+  min-width: fit-content; */
+
+  /* width: fit-content; */
+  margin: 0;
+  color: var(--Primary_text-color, #fff);
+  font-family: "Poppins";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.tracker__header .td_tracker__header__list__activate {
+  width: 14.28%;
+  padding: 10px 0px;
+}
+.tracker__header .td_tracker__header__list__deactivate {
+  width: 14.28%;
+  padding: 10px 0px;
+}
+.tracker__header .td_tracker__header__list__deactivate > p {
+  color: #de5151;
+  font-family: "Poppins";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.tracker__header .td_tracker__header__list__activate > p {
+  padding: 10px 15px;
+  margin: 0;
+  color: var(--Secondary_Green, #3dc182);
+  font-family: "Poppins";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.tracker__header .td__pencil {
+  padding-right: 10px;
+  cursor: pointer;
+}
+.tracker__header .td__pencil .td__pencil__icon {
+  color: #d9d9d9;
+  font-size: 12px;
+}
+.tracker__header .tdind_tracker__header__list__activate {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 14.28%;
+  padding: 10px 0px;
+}
+.tracker__header .tdind_tracker__header__list__deactivate {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 14.28%;
+  padding: 10px 0px;
+}
+.tracker__header .tdind_tracker__header__list__deactivate > .td__pencil__icon {
+  color: #fff;
+  font-size: 12px;
+}
+.tracker__header .tdind_tracker__header__list__activate > .td__pencil__icon {
+  color: #fff;
+  font-size: 12px;
+}
+.tracker__header .tdind_tracker__header__list__deactivate {
+  /* width: 14.28%; */
+  padding: 10px 0px;
+}
+.tracker__header .tdind_tracker__header__list__deactivate > p {
+  color: var(--Primary_text-color, #fff);
+  font-family: "Poppins";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 10px 15px;
+  margin: 0;
+}
+.tracker__header .tdind_tracker__header__list__activate > p {
+  padding: 10px 15px;
+  margin: 0;
+  color: var(--Primary_text-color, #fff);
+  font-family: "Poppins";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
