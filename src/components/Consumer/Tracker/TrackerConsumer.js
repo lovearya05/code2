@@ -17,7 +17,11 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import NavbarConsumer from "../navbarConsumer/NavbarConsumer";
-import { CircularBtn, RecentTransectionCard, EarnedCode2Card } from "../utilityComponents";
+import {
+  CircularBtn,
+  RecentTransectionCard,
+  EarnedCode2Card,
+} from "../utilityComponents";
 import { getAllData } from "../../utilityFunction";
 import { getDateMonthYear } from "../../utilFunctions";
 
@@ -31,8 +35,8 @@ const TrackerConsumer = () => {
 
   useEffect(() => {
     // loadInitalData()
-    loadDealsData()
-  },[user])
+    loadDealsData();
+  }, [user]);
 
   const loadDealsData = async () => {
     const data = await getAllData(
@@ -50,10 +54,10 @@ const TrackerConsumer = () => {
   return (
     <div>
       {loading && <Loader />}
-      <div className="tc__mob__navbar">
+      <div className="tc_mob_navbar">
         <NavbarConsumer />
       </div>
-      <div className="tc__web__navbar">
+      <div className="tc_web_navbar">
         <ConsumerWebNavbar />
       </div>
       <div className="track__consumer">

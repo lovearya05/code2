@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../../Navbar/Navbar";
 import "./SupportConsumer.css";
 import { useSelector } from "react-redux";
@@ -8,12 +8,32 @@ import Loader from "../../login/EssentialComponents/Loader";
 import toast from "react-simple-toasts";
 import BusinessWebNavbar from "../../WebNavbar.js/BusinessWebNavbar";
 import ConsumerWebNavbar from "../../WebNavbar.js/ConsumerWebNavbar";
+import {getData} from '../../utilityFunction'
+
 
 const SupportConsumer = () => {
   const { user } = useSelector((state) => state?.appData);
   const [loading, setLaoding] = useState(false);
 
   const [issue, setIssue] = useState("");
+  const [userProfileData, setUserProfileData] = useState({})
+
+  useEffect(()=>{
+    if(user){
+      loadconsumerProfile ()
+    }
+  },[user])
+
+  const loadconsumerProfile = async ()=>{
+    const data = await getData(db,'consumerProfile', 'uid', user?.uid, ()=>{}, ()=>{})
+    // console.log('loadBusinessProfiles',data)
+    if(data) setUserProfileData({
+      name : data?.userName,
+      mobileNumber : data?.contactNumber
+    })
+    // console.log('profiles', data)
+  }
+
 
   const handlePost = () => {
     if (!issue || issue.length == 0) {
@@ -72,8 +92,8 @@ const SupportConsumer = () => {
             <h2>Etisalat</h2>
           </div>
           <div className="support__user__right">
-            <p>Simon Williams</p>
-            <p>971509128576</p>
+            <p>{userProfileData?.name}</p>
+            <p>{ userProfileData?.mobileNumber}</p>
           </div>
         </div>
         <div className="support__inputBox">

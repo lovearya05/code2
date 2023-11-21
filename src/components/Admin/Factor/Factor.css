@@ -1,10 +1,13 @@
 .factor {
   padding: 1% 20%;
 }
-.factor__web__navbar {
+.factor_web_navbar {
   display: block;
 }
-.factor__mob__navbar {
+.factor__mob {
+  display: none;
+}
+.factor_mob_navbar {
   display: none;
 }
 .factor__title > h2 {
@@ -44,14 +47,38 @@
   font-weight: 400;
   line-height: normal;
 }
+.factor_web .fw_btn {
+  display: flex;
+  justify-content: flex-end;
+
+  margin: 20px 0px;
+}
+.factor_web .fw_btn > button {
+  border-radius: 8px;
+  cursor: pointer;
+  background: var(--Primary_color, #00955f);
+  border: none;
+  padding: 8px 12px;
+  outline: none;
+  color: var(--Primary_text-color, #fff);
+  font-family: "Poppins";
+
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
 @media only screen and (max-width: 768px) {
   .factor {
     padding: 2px 15px;
   }
-  .factor__web__navbar {
+  .factor_web_navbar {
     display: none;
   }
-  .factor__mob__navbar {
+  .factor__mob {
+    display: block;
+  }
+  .factor_mob_navbar {
     display: block;
   }
 }

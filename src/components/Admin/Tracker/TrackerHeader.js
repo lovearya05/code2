@@ -2,7 +2,7 @@ import React from "react";
 import "./TrackerHeader.css";
 import { FaPencilAlt } from "react-icons/fa";
 
-const TrackerHeader = ({header1, header2, header3, header4, header5, header6, header7}) => {
+const TrackerHeader = ({header1, header2, header3, header4, header5, header6, header7, header8}) => {
   return (
     <div className="tracker__header">
       <div className="tracker__header__list">
@@ -25,6 +25,9 @@ const TrackerHeader = ({header1, header2, header3, header4, header5, header6, he
       </div>
       <div className="tracker__header__list">
         <p>{header7}</p>
+      </div>
+      <div className="tracker__header__list">
+        <p>{header8}</p>
       </div>
       <div className="td__pencil__header">
         <FaPencilAlt className="td__pencil__icon" />
