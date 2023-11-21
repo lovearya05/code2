@@ -1,11 +1,13 @@
 .payment__tracker__admin {
-  padding: 1% 20%;
+  padding: 1% 15%;
 }
 .pt__mob__navbar {
   display: none;
 }
 .pt__web__navbar {
   display: block;
+}
+.pt__web__data {
 }
 .payment__tracker__support > h2 {
   color: var(--Primary_text-color, #fff);
@@ -38,12 +40,21 @@
   font-size: 24px;
   color: white;
 }
+.pt__mob__data {
+  display: none;
+}
 @media only screen and (max-width: 768px) {
   .payment__tracker__admin {
     padding: 0px 0px;
   }
+  .pt__mob__data {
+    display: block;
+  }
   .payment__tracker__support {
     padding: 2px 15px;
+  }
+  .pt__web__data {
+    display: none;
   }
   .plusPosition {
     position: fixed;

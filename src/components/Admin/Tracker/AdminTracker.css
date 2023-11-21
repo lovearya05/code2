@@ -2,12 +2,52 @@
   display: none;
 }
 .admin {
-  padding: 1% 20%;
+  padding: 1% 15%;
+}
+.admin__tracker__mob {
+  display: none;
 }
 /* .admin__web__navbar{
     display: none;
   } */
-.admin__button > button {
+.admin__button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.tracker__filter__icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.admin__button .tracker__filter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.admin__button .tracker__filter .tracker__filter__icon {
+  padding: 5px 15px;
+  background: var(--Dark-Hower, #313131);
+  margin-left: 10px;
+  border-radius: 10px;
+}
+.admin__button .tracker__filter .tracker__filter__icon .tf__icon {
+  font-size: 12px;
+  color: white;
+}
+.admin__button .tracker__filter .tracker__filter__icon > button {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+
+  color: var(--Light-Grey, #d6d6d6);
+  font-family: "Poppins";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 16.8px */
+}
+.admin__button .admin__button__left > button {
   margin-bottom: 20px;
   margin-right: 15px;
   background-color: transparent;
@@ -22,7 +62,7 @@
   font-weight: 600;
   line-height: normal;
 }
-.admin__button .admin__button__clicked {
+.admin__button .admin__button__left .admin__button__clicked {
   border-bottom: 1px solid var(--Stroke_color, #404040);
   color: var(--Secondary_Green, #3dc182);
   font-family: "Poppins";
@@ -31,9 +71,26 @@
   font-weight: 600;
   line-height: normal;
 }
+.tracker__filter > p {
+  color: var(--Grey, #747474);
+  font-family: "Poppins";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 16.8px */
+}
 @media only screen and (max-width: 768px) {
   .admin {
     padding: 0px 0px;
+  }
+  .admin__button .tracker__filter {
+    display: none;
+  }
+  .admin__tracker__mob {
+    display: block;
+  }
+  .admin__tracker__web {
+    display: none;
   }
   .admin__button {
     padding: 15px 25px;
