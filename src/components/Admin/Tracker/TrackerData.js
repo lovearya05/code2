@@ -43,9 +43,9 @@ const TrackerData = ({ value = 'activate', isActivate = false, text1 = '', text2
         </div>
       )}
 
-      <div className="td__pencil">
+      {/* <div className="td__pencil">
         <FaPencilAlt className="td__pencil__icon" />
-      </div>
+      </div> */}
     </div>
 
   );

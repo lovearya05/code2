@@ -68,7 +68,7 @@ const Login = () => {
           photoUrl: "",
         })
       );
-      if(email=='lovepreetarya1405@gmail.com'){
+      if(email=='lovepreetarya1405@gmail.com' || 'code2.contactus@gmail.com'){
         dispatch(updateUserProfileType('admin'))
         navigate("/code2/admin-tracker", { replace: true });
         return

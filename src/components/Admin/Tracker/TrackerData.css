@@ -7,11 +7,14 @@
   background: rgba(0, 0, 0, 0.2);
 }
 .tracker__header .td_tracker__header__list {
-  padding: 10px 10px;
-  width: 10.28%;
+  padding: 10px 0px;
+  width: 14.28%;
+  
 }
 .tracker__header .td_tracker__header__list > p {
   padding: 10px 10px;
+  /* width: 10.28%; */
+
 
   /* max-width: 18%;
   min-width: fit-content; */
@@ -27,12 +30,12 @@
   /* text-align: center; */
 }
 .tracker__header .td_tracker__header__list__activate {
-  width: 14.28%;
+  width: 10.28%;
   padding: 10px 0px;
 }
 
 .tracker__header .td_tracker__header__list__pending {
-  width: 14.28%;
+  width: 10.28%;
   padding: 10px 0px;
 }
 .tracker__header .td_tracker__header__list__pending > p {

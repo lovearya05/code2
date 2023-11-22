@@ -26,12 +26,12 @@ const TrackerDataInd = ({ activate, text1='',text2='',text3='',text4='',text5=''
       {activate ? (
         <div className="tdind_tracker__header__list__activate">
           <p>Activate</p>
-          <FaPencilAlt className="td__pencil__icon" />
+          {/* <FaPencilAlt className="td__pencil__icon" /> */}
         </div>
       ) : (
         <div className="tdind_tracker__header__list__deactivate">
           <p>Deactivated</p>
-          <FaPencilAlt className="td__pencil__icon" />
+          {/* <FaPencilAlt className="td__pencil__icon" /> */}
         </div>
       )}
     </div>

@@ -26,9 +26,9 @@ const TrackerHeader = ({header1, header2, header3, header4, header5, header6, he
       <div className="tracker__header__list">
         <p>{header7}</p>
       </div>
-      <div className="tracker__header__list">
+      {/* <div className="tracker__header__list">
         <p>{header8}</p>
-      </div>
+      </div> */}
       <div className="td__pencil__header">
         <FaPencilAlt className="td__pencil__icon" />
       </div>

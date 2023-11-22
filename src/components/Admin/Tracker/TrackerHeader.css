@@ -6,9 +6,9 @@
   border-bottom: 1px solid #000;
   background: rgba(0, 0, 0, 0.2);
 }
-/* .tracker__header .tracker__header__list {
+.tracker__header .tracker__header__list {
   width: 14.28%;
-} */
+}
 .tracker__header .tracker__header__list > p {
   padding: 10px 15px;
   color: #919191;
