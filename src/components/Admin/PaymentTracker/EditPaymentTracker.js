@@ -6,13 +6,13 @@ import Business__Input from "../../Business/Components/BusinessInput";
 import { useNavigate } from "react-router-dom";
 import AdminWebNavbar from "../../WebNavbar.js/AdminWebNavbar";
 import { db } from '../../../firebaseConfig';
-import {getAllData, createData} from '../../utilityFunction'
+import {getAllData, createData, updateDataWithDocId} from '../../utilityFunction'
 import {getCurrentDateTimeString} from '../../utilFunctions'
 import { useSelector } from "react-redux";
 import Loader from "../../login/EssentialComponents/Loader";
 import toast from "react-simple-toasts";
 
-const AdditionalFee = () => {
+const EditPaymentTracker = ({setShowModal, selectedEditData={}, }) => {
   const [loading, setLaoding] = useState(false)
   const { user } = useSelector(state => state?.appData)
 
@@ -28,6 +28,10 @@ const AdditionalFee = () => {
     collectedReffelFee: '',
     totalFeeCalculated: '',
 })
+useEffect(()=>{
+  setPaymentTracking({...selectedEditData})
+  setCompany(selectedEditData?.company)
+},[selectedEditData])
 
 useEffect(() => {
   loadBusinessProfiles();
@@ -60,14 +64,13 @@ const handleSaveBtn = async () => {
       toast('please fill all the fields first')
       return
   }
-  await createData(db, 'paymentTracking',
-   { ...paymentTracking,
-    company : company,
-     uid: user?.uid, 
-     active : true,
-     cDate : getCurrentDateTimeString()
-  },
-  () => setLaoding(true), () => setLaoding(false))
+  try{
+    await updateDataWithDocId(db, 'paymentTracking', selectedEditData?.id, 
+    {...paymentTracking,
+      company : company
+    }, ()=>setLaoding(true), ()=>setLaoding(false))
+    setShowModal(false)
+  }catch(e){console.log(e)}
 }
 
   const navigate = useNavigate();
@@ -75,27 +78,10 @@ const handleSaveBtn = async () => {
     navigate(-1);
   };
 
-  // useEffect(()=>{
-  //   loadCountry()
-  // },[user])
-
-  // const loadCountry = async ()=>{
-  //   const data = await getAllData(db, 'multiplyFactors', '', '', ()=>setLaoding(true), ()=>setLaoding(false), true )
-  //   if(data) setAllCountryData(data)
-  //   // console.log('setAllCountryData data', data)
-  // }
-
-
   return (
     <div>
       {loading && <Loader />}
 
-      <div className="pt__mob__navbar">
-        <Navbar />
-      </div>
-      <div className="pt__web__navbar">
-        <AdminWebNavbar />
-      </div>
       <div className="additional__fee">
         <div className="additionalFee">
           <h2>Additional fee</h2>
@@ -144,4 +130,4 @@ const handleSaveBtn = async () => {
   );
 };
 
-export default AdditionalFee;
+export default EditPaymentTracker;

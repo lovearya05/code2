@@ -2,26 +2,26 @@ import React from "react";
 import "./TrackerData.css";
 import { FaPencilAlt } from "react-icons/fa";
 
-const TrackerDataInd = ({ activate }) => {
+const TrackerDataInd = ({ activate, text1='',text2='',text3='',text4='',text5='',text6='', }) => {
   return (
     <div className="tracker__header">
       <div className="td_tracker__header__list">
-        <p>#4556</p>
+        <p>{text1}</p>
       </div>
       <div className="td_tracker__header__list">
-        <p>Amazon.com</p>
+        <p>{text2}</p>
       </div>
       <div className="td_tracker__header__list">
-        <p>Rajat Kumar</p>
+        <p>{text3}</p>
       </div>
       <div className="td_tracker__header__list">
-        <p>200k</p>
+        <p>{text4}</p>
       </div>
       <div className="td_tracker__header__list">
-        <p>160k</p>
+        <p>{text5}</p>
       </div>
       <div className="td_tracker__header__list">
-        <p>160k</p>
+        <p>{text6}</p>
       </div>
       {activate ? (
         <div className="tdind_tracker__header__list__activate">

@@ -2,34 +2,35 @@ import React from "react";
 import "./TrackerDataPt.css";
 import { FaPencilAlt } from "react-icons/fa";
 
-const TrackerDataPt = ({ activate }) => {
+const TrackerDataPt = ({ text1='',text2='',text3='',text4='',text5='',text6='',text7='',item={}, setShowModal, setSelectedData  }) => {
   return (
     <div className="tracker__header">
       <div className="pt_tracker__header__list">
-        <p>#4556</p>
+        <p>{text1}</p>
       </div>
       <div className="pt_tracker__header__list">
-        <p>Amazon.com</p>
+        <p>{text2}</p>
       </div>
       <div className="pt_tracker__header__list_name">
-        <p>Rajat Kumar</p>
-        <p>+3456 567 89</p>
+        <p>{text3}</p>
       </div>
       <div className="pt_tracker__header__list">
-        <p>200k</p>
+        <p>{text4}</p>
       </div>
       <div className="pt_tracker__header__list">
-        <p>160k</p>
+        <p>{text5}</p>
       </div>
       <div className="pt_tracker__header__list">
-        <p>160k</p>
+        <p>{text6}</p>
       </div>
       <div className="pt_tracker__header__list">
-        <p>20%</p>
+        <p>{text7}</p>
       </div>
-
       <div className="td__pencil">
-        <FaPencilAlt className="td__pencil__icon" />
+        <FaPencilAlt className="td__pencil__icon" onClick={()=>{
+          setShowModal(true)
+          setSelectedData(item)
+        }} />
       </div>
     </div>
   );

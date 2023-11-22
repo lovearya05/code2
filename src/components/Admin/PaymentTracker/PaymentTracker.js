@@ -12,10 +12,13 @@ import { useSelector } from "react-redux";
 import TrackerHeader from "../Tracker/TrackerHeader";
 import TrackerData from "../Tracker/TrackerData";
 import TrackerDataPt from "./TrackerDataPt";
+import EditPaymentTracker from "./EditPaymentTracker";
 
 const PaymentTracker = () => {
   const [loading, setLaoding] = useState(false);
   const { user } = useSelector((state) => state?.appData);
+  const [showEditModal, setShowModal] = useState(false)
+  const [selectedEditData, setSelectedData] = useState({})
 
   const navigate = useNavigate();
   const [paymentTrackingData, setPaymentTrackingData] = useState();
@@ -23,7 +26,7 @@ const PaymentTracker = () => {
 
   useEffect(() => {
     loadInitalData();
-  }, [user]);
+  }, [user, showEditModal]);
 
   const loadInitalData = async () => {
     const data = await getAllData(
@@ -44,6 +47,8 @@ const PaymentTracker = () => {
     navigate(`/code2/${urlLocation}`);
   };
 
+ 
+
   return (
     <div>
       {loading && <Loader />}
@@ -54,25 +59,41 @@ const PaymentTracker = () => {
       <div className="pt__web__navbar">
         <AdminWebNavbar />
       </div>
+
+      {showEditModal ? 
+      <EditPaymentTracker selectedEditData={selectedEditData} setShowModal={setShowModal} />
+      :
+      <div>
       <div className="payment__tracker__admin">
         <div className="payment__tracker__support">
           <h2>Payment Tracker</h2>
         </div>
         <div className="pt__web__data">
           <TrackerHeader
-            header1="Uid"
-            header2="Company"
-            header3="Point of Contact"
-            header4="Subscription Fee"
-            header5="Collected Fee"
-            header6="Referal %age Fee"
+            header1="Company"
+            header2="Subscription Fee"
+            header3="Collected Sub Fee"
+            header4="Referral Fee %"
+            header5="Referal Fee value"
+            header6="Collected Ref Fee"
             header7="Total Fee"
           />
-          <TrackerDataPt />
-          <TrackerDataPt />
-          <TrackerDataPt />
-          <TrackerDataPt />
-          <TrackerDataPt />
+          {paymentTrackingData && paymentTrackingData.map((item,i)=>{
+            return(
+              <TrackerDataPt key={i} 
+              text1={item?.company}
+              text2={item?.subscriptionFee}
+              text3={item?.collectedSubFee}
+              text4={item?.referalPercent}
+              text5={item?.referalFeeValue}
+              text6={item?.collectedReffelFee}
+              text7={item?.totalFeeCalculated} 
+              item={item}
+              setShowModal={setShowModal}
+              setSelectedData={setSelectedData}
+              />
+            )
+          })}
         </div>
         <div className="pt__mob__data">
           <div>
@@ -87,6 +108,7 @@ const PaymentTracker = () => {
                     countValue1={item?.subscriptionFee}
                     countValue2={item?.referalFeeValue}
                     countName2={"Referral fee"}
+
                   />
                 );
               })}
@@ -101,6 +123,13 @@ const PaymentTracker = () => {
           </button>
         </div>
       </div>
+      </div>
+      
+    }
+
+
+
+
     </div>
   );
 };

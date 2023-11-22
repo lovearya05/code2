@@ -41,6 +41,19 @@ export const updateOrCreateData = async (db, collectionName='', toMatchField='',
     toast('Try again later')
   }
 };
+export const updateDataWithDocId = async (db, collectionName='', docId, newData={},prevFunction=()=>{}, nextFunction=()=>{}) => {
+  prevFunction()
+  try {
+    const docRef = doc(db, collectionName, docId);
+    await updateDoc(docRef, newData);
+
+    nextFunction()
+    toast('Updated sucessfully')
+  } catch (e) {
+    console.error('Error updating document: ', e);
+    toast('Try again later')
+  }
+};
 
 export const getData = async (db, collectionName='', toMatchField='', matchId='', prevFunction=()=>{}, nextFunction=()=>{})=>{
   prevFunction()
@@ -80,7 +93,7 @@ export const getAllData = async (db, collectionName='', toMatchField='', matchId
       const matchingData = [];
   
       querySnapshot.forEach((doc) => {
-        matchingData.push(doc.data());
+        matchingData.push({...doc.data(), id: doc.id});
       });
   
       nextFunction();

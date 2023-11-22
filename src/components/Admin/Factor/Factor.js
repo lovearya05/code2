@@ -1,22 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Factor.css";
 import Navbar from "../../AdminNavbar/Navbar";
 import Dropdown from "../../Business/Components/Dropdown";
 import Business__Input from "../../Business/Components/BusinessInput";
 import AdminWebNavbar from "../../WebNavbar.js/AdminWebNavbar";
 import toast from "react-simple-toasts";
-import { updateOrCreateData, getData } from "../../utilityFunction";
+import { updateOrCreateData, getData, getAllData } from "../../utilityFunction";
 import { db } from "../../../firebaseConfig";
 import { getCurrentDateTimeString } from "../../utilFunctions";
 import Loader from "../../login/EssentialComponents/Loader";
 import FactorHeader from "./FactorHeader";
 import FactorData from "./FactorData";
+import AddnewFactor from "./AddnewFactor";
+import { useSelector } from "react-redux";
 
 const Factor = () => {
   const [country, setCountary] = useState("");
   const [fuelType, setFuelType] = useState("");
   const [multiplyingFactor, setMultiplyingFactor] = useState("");
   const [loading, setLaoding] = useState(false);
+  const [showAddNewFactor, setAddNewFactor] = useState(false)
+  const [factorsData, setFactorsData] = useState([])
+  const { user } = useSelector((state) => state?.appData);
+
 
   const handleSaveButton = () => {
     if (!country || !fuelType || !multiplyingFactor) {
@@ -48,6 +54,24 @@ const Factor = () => {
     }
   };
 
+  useEffect(() => {
+    loadFactors();
+  }, [user]);
+
+  const loadFactors = async () => {
+    const data = await getAllData(
+      db,
+      "multiplyFactors",
+      "",
+      "",
+      () => setLaoding(true),
+      () => setLaoding(false),
+      true
+    );
+    if (data) setFactorsData(data);
+    // console.log('profiles', data)
+  };
+
   return (
     <div>
       {loading && <Loader />}
@@ -58,7 +82,10 @@ const Factor = () => {
         <AdminWebNavbar />
       </div>
       <div className="factor">
-        <div className="factor__mob">
+
+      {showAddNewFactor && <AddnewFactor setAddNewFactor={setAddNewFactor} setLaoding={setLaoding} loadFactors={loadFactors} />}
+
+        {!showAddNewFactor && <div className="factor__mob">
           <div className="factor__title">
             <h2>Factor</h2>
           </div>
@@ -84,25 +111,33 @@ const Factor = () => {
               <button>Save</button>
             </div>
           </div>
-        </div>
-        <div className="factor__web">
+        </div>}
+
+        {!showAddNewFactor && <div className="factor__web">
           <div className="fw__btn">
-            <button>Add New Factor</button>
+            <button onClick={()=>setAddNewFactor(true)} >Add New Factor</button>
           </div>
           <FactorHeader />
-          <FactorData
-            header1="#4556"
-            header2="UAE"
-            header3="Solar"
-            header4="0.4"
-          />
-          <FactorData
+
+          {factorsData && factorsData.map((item, i)=>{
+            return <FactorData
+              key={i}
+              header1="#"
+              header2={item?.country}
+              header3={item?.fuelType}
+              header4={item?.multiplyingFactor}
+              setAddNewFactor={setAddNewFactor}
+            />
+
+          })}
+          {/* <FactorData
             header1="#4557"
             header2="London"
             header3="Tidal"
             header4="0.4"
-          />
-        </div>
+          /> */}
+        </div>}
+
       </div>
     </div>
   );

@@ -128,28 +128,29 @@ const AdminTracker = () => {
                  isActivate={false} 
                   />
               })}
-              {/* <TrackerData activate={false} />
-              <TrackerData activate={true} />
-              <TrackerData activate={false} />
-              <TrackerData activate={false} />
-              <TrackerData activate={false} /> */}
             </div>
           ) : (
             <div className="admin__tracker__web">
               <TrackerHeader
-                header1="Uid"
-                header2="Name"
+                header1="Name"
+                header2="Contact Number"
                 header3="CODE2 Earned"
                 header4="CODE2 Redeemed"
                 header5="CODE2 Balance"
-                header6="Mostly Shopped"
+                header6="Last Shopping"
                 header7="Status"
               />
-              <TrackerDataInd value={true} />
-              <TrackerDataInd value={false} />
-              <TrackerDataInd value={true} />
-              <TrackerDataInd value={true} />
-              <TrackerDataInd value={true} />
+              {consumerProfiles.map((item, i)=>{
+                return <TrackerDataInd key={i}
+                  activate={true} 
+                  text1={item?.userName} 
+                  text2={item?.contactNumber} 
+                  text3={item?.code2Earned || 0}
+                  text4={item?.code2Redeemed || 0}
+                  text5={item?.code2Balance || 0}
+                  text6={item?.typicallyBuy || 0}
+                  />
+              })}
             </div>
           )}
         </div>
