@@ -194,7 +194,7 @@ const Reward = () => {
           type={"number"}
         />
         <p>Reward Distribution ratio</p>
-        <BusinessInput isDisabled currValue={distributionRatio} />
+        <BusinessInput setValue={setDistributionRation} currValue={distributionRatio} type={"number"} />
 
         {/* <Dropdown /> */}
         <div className="carbon__save">
