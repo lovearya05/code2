@@ -41,7 +41,7 @@ const Login = () => {
       toast("Please enter a valid Email");
       return;
     }
-    console.log("handle click pressed 1");
+    // console.log("handle click pressed 1");
     if (!password || password.length < 6) {
       toast("Password should be 6 chracter long");
       return;
@@ -58,7 +58,7 @@ const Login = () => {
         email,
         password
       );
-      console.log({ userCredential });
+      // console.log({ userCredential });
       // const user = userCredential.user;
       dispatch(
         login({
@@ -68,7 +68,7 @@ const Login = () => {
           photoUrl: "",
         })
       );
-      if(email=='lovepreetarya1405@gmail.com' || 'code2.contactus@gmail.com'){
+      if(email=='lovepreetarya1405@gmail.com' || email=='code2.contactus@gmail.com'){
         dispatch(updateUserProfileType('admin'))
         navigate("/code2/admin-tracker", { replace: true });
         return

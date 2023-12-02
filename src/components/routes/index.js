@@ -1,5 +1,5 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import Splash from "../login/Splash";
 import Login from "../login/Login";
 import Signup from "../Signup/Signup";
@@ -12,7 +12,7 @@ import CarbonCredit from "../Business/Carbon_Credit_Book/CarbonCredit";
 import Reward from "../Business/Reward/Reward";
 import Support from "../Business/Support/Support";
 import UpdateDeals from "../Business/Update_Deals/UpdateDeals";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import AdminTracker from "../Admin/Tracker/AdminTracker";
 import AdminSupport from "../Admin/Support/AdminSupport";
 import AdminSupportPage from "../Admin/Support/AdminSupportPage";
@@ -28,11 +28,30 @@ import SupportConsumer from "../Consumer/supportConsumer/SupportConsumer";
 import EditProfileConsumer from "../Consumer/profileConsumer/EditProfileConsumer";
 import ProfileBusiness from "../Business/profileBusiness/ProfileBusiness";
 import EditProfileBusiness from "../Business/profileBusiness/EditProfileBusiness";
+import { updateUserProfileType } from "../../reduxStore/storeSlicer";
 
 export default function RoutesServer() {
   const { user, userProfileType } = useSelector((state) => state?.appData);
   // const userType = false ?  "business" : 'consumer';
   const userType = userProfileType;
+  // email=='lovepreetarya1405@gmail.com' || email=='code2.contactus@gmail.com'
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  
+
+  useEffect(()=>{
+    const inter = setTimeout(()=>{
+      if(user && ( user?.email=='lovepreetarya1405@gmail.com' || user?.email=='code2.contactus@gmail.com') ){
+        dispatch(updateUserProfileType('admin'))
+        navigate(`/code2/admin-tracker`);
+      }else if(user) {
+        navigate(`/code2/profile`);
+      }else{
+        navigate(`/code2/`);
+      }
+    },10)
+    return ()=> clearTimeout(inter)
+  },[user])
 
   return (
     <div style={{ backgroundColor: "#272727", width: "100%" }}>
@@ -52,72 +71,34 @@ export default function RoutesServer() {
 
         {user && (
           <Routes>
-            <Route
-              exact
-              path="/code2/admin-tracker"
-              element={<AdminTracker />}
-            />
-            <Route
-              exact
-              path="/code2/payment-tracker"
-              element={<PaymentTracker />}
-            />
-            <Route exact path="/code2/factor" element={<Factor />}></Route>
-            <Route
-              exact
-              path="/code2/admin-supportpage"
-              element={<AdminSupportPage />}
-            />
-            <Route
-              exact
-              path="/code2/additionalfee"
-              element={<AdditionalFee />}
-            />
-            <Route
-              exact
-              path="/code2/admin-support"
-              element={<AdminSupport />}
-            />
-
             {/* this profile is of user type business or consumer  */}
             <Route exact path="/code2/profile" element={<Profile />} />
           </Routes>
         )}
-
-        {user && userType === "consumer" && (
+        { (user && (user?.email=='lovepreetarya1405@gmail.com' || user?.email=='code2.contactus@gmail.com') ) && ( // admin routes
           <Routes>
-            <Route element={<TrackerConsumer />} />
-            <Route
-              index
-              exact
-              path="/code2/trackerConsumer"
-              element={<TrackerConsumer />}
-            />
-            <Route
-              exact
-              path="/code2/exploreStoreConsumer"
-              element={<ExploreStoreConsumer />}
-            />
-            <Route exact path="/code2/redeemCODE2" element={<RedeemCODE2 />} />
-            <Route
-              exact
-              path="/code2/profileConsumer"
-              element={<ProfileConsumer />}
-            />
-            <Route
-              exact
-              path="/code2/supportConsumer"
-              element={<SupportConsumer />}
-            />
-            <Route
-              exact
-              path="/code2/editProfileConsumer"
-              element={<EditProfileConsumer />}
-            />
+            <Route exact path="/code2/admin-tracker" element={<AdminTracker />} />
+            <Route exact path="/code2/payment-tracker" element={<PaymentTracker />} />
+            <Route exact path="/code2/factor" element={<Factor />}></Route>
+            <Route exact path="/code2/admin-supportpage" element={<AdminSupportPage />} />
+            <Route exact path="/code2/additionalfee" element={<AdditionalFee />} />
+            <Route exact path="/code2/admin-support" element={<AdminSupport />} />
           </Routes>
         )}
 
-        {user && userType === "business" && (
+        {user && userType === "consumer" && (user?.email!=='lovepreetarya1405@gmail.com' && user?.email!=='code2.contactus@gmail.com')&& (
+          <Routes>
+            <Route element={<TrackerConsumer />} />
+            <Route index exact path="/code2/trackerConsumer" element={<TrackerConsumer />} />
+            <Route exact path="/code2/exploreStoreConsumer" element={<ExploreStoreConsumer />} />
+            <Route exact path="/code2/redeemCODE2" element={<RedeemCODE2 />} />
+            <Route exact path="/code2/profileConsumer" element={<ProfileConsumer />} />
+            <Route exact path="/code2/supportConsumer" element={<SupportConsumer />} />
+            <Route exact path="/code2/editProfileConsumer" element={<EditProfileConsumer />} />
+          </Routes>
+        )}
+
+        {user && userType === "business" && (user?.email!=='lovepreetarya1405@gmail.com' && user?.email!=='code2.contactus@gmail.com')&& (
           <Routes>
             <Route element={<Tracker />} />
             <Route index exact path="/code2/tracker" element={<Tracker />} />
@@ -125,16 +106,8 @@ export default function RoutesServer() {
             <Route exact path="/code2/credit_book" element={<CarbonCredit />} />
             <Route exact path="/code2/deals" element={<UpdateDeals />} />
             <Route exact path="/code2/reward" element={<Reward />} />
-            <Route
-              exact
-              path="/code2/ProfileBusiness"
-              element={<ProfileBusiness />}
-            />
-            <Route
-              exact
-              path="/code2/EditProfileBusiness"
-              element={<EditProfileBusiness />}
-            />
+            <Route exact path="/code2/ProfileBusiness" element={<ProfileBusiness />} />
+            <Route exact path="/code2/EditProfileBusiness" element={<EditProfileBusiness />} />
             <Route exact path="/code2/support" element={<Support />} />
           </Routes>
         )}
